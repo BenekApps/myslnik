@@ -122,6 +122,14 @@ dependencies {
     implementation(libs.androidx.appcompat)
     // Reminders without exact alarms.
     implementation(libs.androidx.work.runtime.ktx)
+    // Voluntary "Wesprzyj projekt" tips. Talks to the Play Store app over IPC,
+    // so no INTERNET permission is needed (the manifest removes it anyway).
+    implementation(libs.android.billing.ktx) {
+        // Billing's own telemetry (Google datatransport) would upload diagnostics.
+        // The app sends nothing anywhere; billing guards these calls with
+        // try/catch and works without them (checked in SupportBillingTest).
+        exclude(group = "com.google.android.datatransport")
+    }
     constraints {
         // room-testing (migration tests) needs kotlinx-serialization 1.8+.
         // Test dependencies are aligned to the app's, so raise it here.

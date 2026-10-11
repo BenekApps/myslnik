@@ -65,4 +65,6 @@ plan" (https://claude.ai/artifact/QmgJComfVWJzw6XRcJrmH3); decisions taken since
   (knowledge cards, Ukrainian).
 - Texts: Polish in `values/strings*.xml`, Ukrainian in `values-uk/` (TranslationsTest keeps
   them in sync). All are drafts waiting for the CBT review; Ukrainian also for a native speaker.
-- 51 unit tests and 24 instrumented tests pass locally.
+- "Wesprzyj projekt": Play Billing tips (`support_small/medium/large`), consumed after purchase,
+  billing telemetry (datatransport) excluded. Products still have to be created in Play Console.
+- 53 unit tests and 25 instrumented tests pass locally.

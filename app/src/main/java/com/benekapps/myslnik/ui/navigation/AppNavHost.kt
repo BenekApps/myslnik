@@ -65,6 +65,7 @@ import com.benekapps.myslnik.ui.settings.SettingsScreen
 import com.benekapps.myslnik.ui.sleep.SleepEntryScreen
 import com.benekapps.myslnik.ui.sleep.SleepScreen
 import com.benekapps.myslnik.ui.sos.GroundingScreen
+import com.benekapps.myslnik.ui.support.SupportScreen
 import com.benekapps.myslnik.ui.sos.SosScreen
 import com.benekapps.myslnik.ui.thought.ThoughtDetailScreen
 import com.benekapps.myslnik.ui.thought.ThoughtWizardScreen
@@ -108,6 +109,7 @@ object Routes {
     const val ABOUT = "about"
     const val SOURCES = "sources"
     const val PRIVACY = "privacy"
+    const val SUPPORT = "support"
 
     fun thoughtWizard(id: Long = 0) = "thought_wizard?id=$id"
     fun thoughtDetail(id: Long) = "thought/$id"
@@ -247,6 +249,7 @@ fun MainApp(modifier: Modifier = Modifier, navController: NavHostController = re
                     onAbout = { navController.navigate(Routes.ABOUT) },
                     onSources = { navController.navigate(Routes.SOURCES) },
                     onPrivacy = { navController.navigate(Routes.PRIVACY) },
+                    onSupport = { navController.navigate(Routes.SUPPORT) },
                     onSos = sos,
                 )
             }
@@ -405,7 +408,10 @@ fun MainApp(modifier: Modifier = Modifier, navController: NavHostController = re
             composable(Routes.BACKUP) { BackupScreen(onBack = { navController.back() }, onSos = sos) }
             composable(Routes.PIN_SETUP) { PinSetupScreen(onDone = { navController.back() }, onSos = sos) }
             composable(Routes.MODEL) { CognitiveModelScreen(onBack = { navController.back() }, onSos = sos) }
-            composable(Routes.ABOUT) { AboutScreen(onBack = { navController.back() }, onSos = sos) }
+            composable(Routes.ABOUT) {
+                AboutScreen(onBack = { navController.back() }, onSupport = { navController.navigate(Routes.SUPPORT) }, onSos = sos)
+            }
+            composable(Routes.SUPPORT) { SupportScreen(onBack = { navController.back() }, onSos = sos) }
             composable(Routes.SOURCES) { SourcesScreen(onBack = { navController.back() }, onSos = sos) }
             composable(Routes.PRIVACY) { PrivacyScreen(onBack = { navController.back() }, onSos = sos) }
         }

@@ -54,6 +54,10 @@ class AppContainer(private val context: Context) {
 
     val reminders = com.benekapps.myslnik.reminders.ReminderScheduler(context)
 
+    /** A new billing connection per support screen; closed when the screen goes away. */
+    fun supportBilling(): com.benekapps.myslnik.support.SupportBilling =
+        com.benekapps.myslnik.support.PlaySupportBilling(context)
+
     /** Generated PDFs, shared through FileProvider (res/xml/file_paths.xml). */
     val exportDir = File(context.cacheDir, "exports")
 }

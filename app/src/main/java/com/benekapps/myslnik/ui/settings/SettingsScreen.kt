@@ -103,6 +103,7 @@ fun SettingsScreen(
     onAbout: () -> Unit,
     onSources: () -> Unit,
     onPrivacy: () -> Unit,
+    onSupport: () -> Unit,
     onSos: () -> Unit,
     viewModel: SettingsViewModel = appViewModel { c -> SettingsViewModel(c.settings, c.entries, c.reminders) },
 ) {
@@ -234,6 +235,7 @@ fun SettingsScreen(
             ClickRow(stringResource(R.string.about_title), onClick = onAbout)
             ClickRow(stringResource(R.string.sources_title), onClick = onSources)
             ClickRow(stringResource(R.string.privacy_title), onClick = onPrivacy)
+            ClickRow(stringResource(R.string.support_title), subtitle = stringResource(R.string.support_subtitle), onClick = onSupport)
         }
     }
 

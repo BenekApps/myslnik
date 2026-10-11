@@ -256,6 +256,24 @@
     <string name="settings_language">Мова</string>
     <string name="language_system">Як у телефоні</string>
 
+    <!-- Voluntary support through Google Play (unlocks nothing) -->
+    <string name="support_title">Підтримати проєкт</string>
+    <string name="support_subtitle">Добровільні чайові. Нічого не розблоковують.</string>
+    <string-array name="support_paragraphs">
+        <item>Myślnik безкоштовний і таким залишиться: без реклами, без облікового запису й без платних функцій.</item>
+        <item>Якщо застосунок тобі допомагає і хочеш підтримати його розвиток, можна залишити добровільні чайові. Підтримка нічого не розблоковує і не змінює роботу застосунку.</item>
+    </string-array>
+    <string name="support_small">Маленька кава</string>
+    <string name="support_medium">Велика кава</string>
+    <string name="support_large">Кава й тістечко</string>
+    <string name="support_option">%1$s · %2$s</string>
+    <string name="support_unavailable">Підтримка через Google Play зараз недоступна. Спробуй пізніше або перевір, чи працює на телефоні Google Play Маркет.</string>
+    <string name="support_note">Оплату обробляє Google Play. Застосунок не зберігає й не надсилає жодних даних про оплату.</string>
+    <string name="support_thanks_title">Дякую!</string>
+    <string name="support_thanks_text">Твоя підтримка допомагає розвивати Myślnik і зберігати його безкоштовним для всіх.</string>
+    <string name="support_pending">Оплата очікує підтвердження. Дякую!</string>
+    <string name="support_failed">Не вдалося. Спробуй ще раз пізніше.</string>
+
     <!-- PDF -->
     <string name="pdf_activities_summary">Виконано: %1$d з %2$d запланованих активностей.</string>
     <string name="pdf_done">виконано</string>

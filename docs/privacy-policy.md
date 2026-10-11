@@ -42,6 +42,12 @@ Twoich wpisów. Przycisk „Zadzwoń” otwiera aplikację telefonu z wpisanym n
 Jeśli je włączysz, przypomnienia są planowane na telefonie (Android WorkManager), bez
 internetu. Na zablokowanym ekranie widać tylko „Myślnik – Przypomnienie”, bez treści.
 
+## Wsparcie projektu
+
+Dobrowolne wsparcie („Wesprzyj projekt”) to zakup w Google Play. Płatność obsługuje Google
+zgodnie ze swoją polityką prywatności. Aplikacja nie zapisuje ani nie wysyła danych o płatności,
+a wsparcie niczego w niej nie odblokowuje.
+
 ## Usuwanie danych
 
 Wszystkie wpisy usuniesz w Ustawieniach („Usuń wszystkie wpisy”). Odinstalowanie aplikacji

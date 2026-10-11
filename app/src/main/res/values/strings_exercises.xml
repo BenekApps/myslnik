@@ -259,6 +259,24 @@
     <string name="settings_language">Język</string>
     <string name="language_system">Jak w telefonie</string>
 
+    <!-- Voluntary support through Google Play (unlocks nothing) -->
+    <string name="support_title">Wesprzyj projekt</string>
+    <string name="support_subtitle">Dobrowolny napiwek. Niczego nie odblokowuje.</string>
+    <string-array name="support_paragraphs">
+        <item>Myślnik jest darmowy i taki zostanie: bez reklam, bez konta i bez płatnych funkcji.</item>
+        <item>Jeśli aplikacja Ci pomaga i chcesz wesprzeć jej rozwój, możesz zostawić dobrowolny napiwek. Wsparcie niczego nie odblokowuje i nie zmienia działania aplikacji.</item>
+    </string-array>
+    <string name="support_small">Mała kawa</string>
+    <string name="support_medium">Duża kawa</string>
+    <string name="support_large">Kawa i ciastko</string>
+    <string name="support_option">%1$s · %2$s</string>
+    <string name="support_unavailable">Wsparcie przez Google Play nie jest teraz dostępne. Spróbuj później albo sprawdź, czy na telefonie działa Sklep Google Play.</string>
+    <string name="support_note">Płatność obsługuje Google Play. Aplikacja nie zapisuje ani nie wysyła żadnych danych o płatności.</string>
+    <string name="support_thanks_title">Dziękuję!</string>
+    <string name="support_thanks_text">Twoje wsparcie pomaga rozwijać Myślnik i utrzymać go za darmo dla wszystkich.</string>
+    <string name="support_pending">Płatność czeka na potwierdzenie. Dziękuję!</string>
+    <string name="support_failed">Nie udało się. Spróbuj ponownie później.</string>
+
     <!-- PDF -->
     <string name="pdf_activities_summary">Zrobione: %1$d z %2$d zaplanowanych aktywności.</string>
     <string name="pdf_done">zrobione</string>

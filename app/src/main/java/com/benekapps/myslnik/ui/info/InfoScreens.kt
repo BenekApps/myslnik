@@ -83,7 +83,7 @@ private fun Arrow() {
 }
 
 @Composable
-fun AboutScreen(onBack: () -> Unit, onSos: () -> Unit) {
+fun AboutScreen(onBack: () -> Unit, onSupport: () -> Unit, onSos: () -> Unit) {
     val context = LocalContext.current
     val version = remember {
         runCatching { context.packageManager.getPackageInfo(context.packageName, 0).versionName }.getOrNull() ?: ""
@@ -105,6 +105,11 @@ fun AboutScreen(onBack: () -> Unit, onSos: () -> Unit) {
             }
             OutlinedButton(onClick = { openUrl(context, "$sourceUrl/issues") }, modifier = Modifier.padding(top = 8.dp)) {
                 Text(stringResource(R.string.about_report_issue))
+            }
+            SectionTitle(stringResource(R.string.support_title))
+            Text(stringResource(R.string.support_subtitle), style = MaterialTheme.typography.bodyLarge)
+            OutlinedButton(onClick = onSupport, modifier = Modifier.padding(top = 8.dp)) {
+                Text(stringResource(R.string.support_title))
             }
         }
     }

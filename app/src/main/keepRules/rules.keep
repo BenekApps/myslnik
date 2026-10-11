@@ -9,3 +9,6 @@
 -keep interface net.zetetic.database.** { *; }
 
 # JSON is built by hand with org.json; no model classes need keeping.
+
+# Billing's telemetry library is excluded on purpose (see app/build.gradle.kts).
+-dontwarn com.google.android.datatransport.**

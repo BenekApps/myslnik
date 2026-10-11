@@ -3,6 +3,22 @@
 Newest first. Each entry: what was decided and why. The product plan is the
 "Darmowa aplikacja CBT po polsku — plan" document (Claude Docs).
 
+## 2026-10-11 — "Wesprzyj projekt" through Google Play
+
+Mat asked for in-app support through Google Play. Three one-time products
+(`support_small`, `support_medium`, `support_large`, prices set in Play Console) that unlock
+nothing and are consumed right after purchase, so they can be bought again. Purchases that
+finished while the screen was closed (pending payments) are consumed on the next visit.
+Reached only from Settings → Informacje and from "O aplikacji", never from the start screen or
+near SOS. No purchase data is stored or sent.
+
+Play Billing talks to the Play Store app over IPC, so the app still has no INTERNET permission.
+Billing 8 pulls in Google's `datatransport` telemetry, which asks for INTERNET and would upload
+billing diagnostics. It is excluded in Gradle (`-dontwarn` in the keep rules): billing guards
+it with try/catch and logs "Skipping logging since initialization failed". `SupportBillingTest`
+checks that billing still starts. Without Play Store or without the products the screen shows
+a calm "not available" message.
+
 ## 2026-10-11 — Donation link (Buy Me a Coffee)
 
 The link https://buymeacoffee.com/benek.apps is on GitHub (README and `.github/FUNDING.yml`,
@@ -12,7 +28,7 @@ Play billing from the app or its listing; the only donation exception is tax-exe
 (charities), which a tip to the developer is not. A rejection would be costly for a health
 app on its first review. The app already links to the GitHub repository ("Kod źródłowy").
 A direct in-app link is fine for builds outside Play (F-Droid, GitHub APK) if they come later.
-An in-app "Wesprzyj projekt" would have to use Play billing (see TODO).
+An in-app "Wesprzyj projekt" uses Play billing instead (see the entry above).
 
 ## 2026-10-11 — Version 1.3 (1.1, 1.2 and 1.3 at once)
 
