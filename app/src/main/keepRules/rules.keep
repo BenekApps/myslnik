@@ -1,0 +1,11 @@
+# R8 rules for Myslnik. AGP combines all files in src/main/keepRules.
+
+# Readable stack traces in Play Console (the mapping file is in the bundle).
+-keepattributes SourceFile,LineNumberTable
+-renamesourcefileattribute SourceFile
+
+# SQLCipher calls into Java classes from native code (JNI).
+-keep class net.zetetic.database.** { *; }
+-keep interface net.zetetic.database.** { *; }
+
+# JSON is built by hand with org.json; no model classes need keeping.

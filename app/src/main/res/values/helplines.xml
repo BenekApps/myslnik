@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Help numbers for the SOS screen. This is the ONLY place with these numbers.
+    Verify every number, description and hours before every release and at
+    least once a year, then update helplines_verified_on.
+    Sources:
+      https://www.gov.pl/web/zdrowie/gdzie-uzyskac-pomoc-psychologiczna-i-psychiatryczna
+      https://116111.pl/ (116 111 hours)
+    The first three are also shown in short help cards (crisis card, onboarding).
+    All four arrays must have the same length and order.
+-->
+<resources>
+    <string name="helplines_verified_on" translatable="false">2026-10-11</string>
+
+    <string-array name="helpline_numbers" translatable="false">
+        <item>116 123</item>
+        <item>800 70 2222</item>
+        <item>112</item>
+        <item>800 190 590</item>
+        <item>116 111</item>
+    </string-array>
+
+    <string-array name="helpline_names">
+        <item>Telefon wsparcia emocjonalnego</item>
+        <item>Centrum Wsparcia dla dorosłych</item>
+        <item>Numer alarmowy</item>
+        <item>Telefoniczna Informacja Pacjenta</item>
+        <item>Telefon zaufania dla dzieci i młodzieży</item>
+    </string-array>
+
+    <string-array name="helpline_descriptions">
+        <item>Dla dorosłych w kryzysie emocjonalnym. Bezpłatnie.</item>
+        <item>Rozmowa z psychologiem dla dorosłych w kryzysie psychicznym (Fundacja ITAKA). Jest też czat i e-mail na stronie centrumwsparcia.pl. Bezpłatnie.</item>
+        <item>Gdy zagrożone jest życie lub zdrowie, Twoje albo innej osoby.</item>
+        <item>Podpowie, gdzie szukać pomocy psychologa lub psychiatry w Twojej okolicy. Bezpłatnie.</item>
+        <item>Dla osób poniżej 18 lat (Fundacja Dajemy Dzieciom Siłę). Bezpłatnie i anonimowo.</item>
+    </string-array>
+
+    <string-array name="helpline_hours">
+        <item>Całą dobę, 7 dni w tygodniu</item>
+        <item>Całą dobę, 7 dni w tygodniu</item>
+        <item>Całą dobę, 7 dni w tygodniu</item>
+        <item>Całą dobę, 7 dni w tygodniu</item>
+        <item>Całą dobę, 7 dni w tygodniu</item>
+    </string-array>
+</resources>

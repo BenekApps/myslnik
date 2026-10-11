@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A thought bubble with a dash ("myślnik") cut out of it. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:fillType="evenOdd"
+        android:pathData="M47,30 H61 A17,17 0 0 1 61,64 H47 A17,17 0 0 1 47,30 Z M44,45 H64 A2,2 0 0 1 64,49 H44 A2,2 0 0 1 44,45 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M34.5,71 a4.5,4.5 0 1,0 9,0 a4.5,4.5 0 1,0 -9,0 Z M31.4,77 a2.6,2.6 0 1,0 5.2,0 a2.6,2.6 0 1,0 -5.2,0 Z" />
+</vector>

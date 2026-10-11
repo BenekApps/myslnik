@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    All user-facing text. Polish is the default language.
+    Language rules (see the plan): simple, "Ty" form, short sentences, no
+    promises ("może pomóc", never "wyleczy"), no diagnosis names, examples
+    from everyday life, gender-neutral where Polish allows it.
+    Every text here must be reviewed by a certified CBT therapist before release.
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="pl">
+    <string name="app_name">Myślnik</string>
+
+    <!-- Common -->
+    <string name="sos">SOS</string>
+    <string name="sos_button_description">SOS: numery pomocy w kryzysie</string>
+    <string name="back">Wstecz</string>
+    <string name="close">Zamknij</string>
+    <string name="cancel">Anuluj</string>
+    <string name="ok">OK</string>
+    <string name="save">Zapisz</string>
+    <string name="edit">Edytuj</string>
+    <string name="delete">Usuń</string>
+    <string name="delete_everything">Usuń wszystko</string>
+    <string name="later">Później</string>
+    <string name="not_now">Nie teraz</string>
+    <string name="retry">Spróbuj ponownie</string>
+    <string name="draft">Szkic</string>
+    <string name="continue_draft">Dokończ zapis</string>
+    <string name="no_dialer">Nie można otworzyć telefonu. Zadzwoń ręcznie: %1$s</string>
+    <string name="call_number">Zadzwoń: %1$s</string>
+    <string name="call_number_named">%1$s · %2$s</string>
+    <string name="intensity_state">%1$d na 100</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Start</string>
+    <string name="nav_mood">Nastrój</string>
+    <string name="nav_history">Historia</string>
+    <string name="nav_settings">Ustawienia</string>
+
+    <!-- Crisis card: shown once after a very high emotion or very low mood rating -->
+    <string name="crisis_card_title">Jest Ci teraz bardzo ciężko?</string>
+    <string name="crisis_card_text">Nie musisz zostawać z tym w pojedynkę. Możesz od razu porozmawiać z kimś, kto pomaga w takich chwilach. Rozmowa jest bezpłatna.</string>
+    <string name="crisis_card_more">Wszystkie numery i ćwiczenie uspokajające</string>
+
+    <!-- Emotions -->
+    <string name="emotion_anxiety">lęk</string>
+    <string name="emotion_worry">niepokój</string>
+    <string name="emotion_sadness">smutek</string>
+    <string name="emotion_anger">złość</string>
+    <string name="emotion_irritation">irytacja</string>
+    <string name="emotion_shame">wstyd</string>
+    <string name="emotion_guilt">poczucie winy</string>
+    <string name="emotion_frustration">frustracja</string>
+    <string name="emotion_disappointment">rozczarowanie</string>
+    <string name="emotion_loneliness">samotność</string>
+    <string name="emotion_helplessness">bezradność</string>
+    <string name="emotion_hurt">przykrość</string>
+    <string name="emotion_jealousy">zazdrość</string>
+    <string name="emotion_tension">napięcie</string>
+    <string name="emotion_calm">spokój</string>
+    <string name="emotion_joy">radość</string>
+    <string name="emotion_relief">ulga</string>
+    <string name="emotion_hope">nadzieja</string>
+    <string name="emotion_gratitude">wdzięczność</string>
+    <string name="emotion_pride">duma</string>
+    <string name="emotion_custom_button">Inna emocja</string>
+    <string name="emotion_custom_label">Nazwa emocji</string>
+    <string name="emotion_custom_add">Dodaj emocję</string>
+
+    <!-- Thought record -->
+    <string name="tr_title">Zapis myśli</string>
+    <string name="tr_untitled">Zapis myśli bez opisu</string>
+    <string name="tr_draft_label">Szkic zapisu myśli</string>
+    <string name="tr_step_counter">Krok %1$d z %2$d</string>
+    <string name="tr_next">Dalej</string>
+    <string name="tr_back">Wstecz</string>
+    <string name="tr_finish">Zapisz</string>
+    <string name="tr_show_example">Pokaż przykład</string>
+    <string name="tr_hide_example">Ukryj przykład</string>
+    <string name="tr_hot_thought">Gorąca myśl</string>
+    <string name="tr_thought_label">Myśl</string>
+    <string name="tr_add_thought">Dodaj myśl</string>
+    <string name="tr_choose_hot_thought">Która myśl najbardziej nasila emocje? Zaznacz ją. To Twoja „gorąca myśl”. Sprawdzisz ją w kolejnych krokach.</string>
+    <string name="tr_remove_thought">Usuń myśl: %1$s</string>
+    <string name="tr_emotions_empty">Wybierz co najmniej jedną emocję. Potem ocenisz, jak jest silna.</string>
+    <string name="tr_emotions_rate">Jak silne są te emocje? (0–100)</string>
+    <string name="tr_rerate_title">Jak silne są teraz te emocje?</string>
+    <string name="tr_rerate_label">%1$s (wcześniej %2$d)</string>
+    <string name="tr_delete">Usuń ten zapis</string>
+    <string name="tr_delete_title">Usunąć ten zapis?</string>
+    <string name="tr_delete_text">Zapis zniknie z telefonu. Tego nie da się cofnąć.</string>
+
+    <string name="tr_step_situation_title">Co się stało?</string>
+    <string name="tr_step_situation_hint">Opisz krótko sytuację: co się stało, gdzie i kiedy. Trzymaj się faktów, tak jakby to nagrała kamera.</string>
+    <string name="tr_step_situation_example">„Wtorek, 8:30, praca. Kierowniczka przeszła obok mnie i się nie przywitała.”</string>
+    <string name="tr_step_emotions_title">Co czujesz?</string>
+    <string name="tr_step_emotions_hint">Wybierz emocje, które pojawiły się w tej sytuacji. Oceń, jak silna jest każda z nich: 0 to wcale, 100 to najsilniej, jak to możliwe.</string>
+    <string name="tr_step_emotions_example">Niepokój 70, wstyd 40.</string>
+    <string name="tr_step_thoughts_title">Co przemknęło Ci przez głowę?</string>
+    <string name="tr_step_thoughts_hint">Zapisz myśli, które pojawiły się w tej sytuacji, każdą osobno. Często są krótkie i szybkie, jakby pojawiały się same.</string>
+    <string name="tr_step_thoughts_example">„Jest na mnie zła.” „Zaraz usłyszę, że moja praca jest do niczego.”</string>
+    <string name="tr_step_distortions_title">Czy widzisz tu pułapkę myślenia?</string>
+    <string name="tr_step_distortions_hint">Takie pułapki zdarzają się każdemu. Zaznacz te, które pasują do gorącej myśli. Możesz zaznaczyć kilka albo żadnej.</string>
+    <string name="tr_step_distortions_example">Myśl „Jest na mnie zła” to czytanie w myślach: zakłada, że wiesz, co myśli ktoś inny.</string>
+    <string name="tr_step_evidence_for_title">Co przemawia za tą myślą?</string>
+    <string name="tr_step_evidence_for_hint">Zapisz fakty, które ją wspierają. Same fakty, nie odczucia ani domysły.</string>
+    <string name="tr_step_evidence_for_example">Nie przywitała się. Wczoraj poprawiała mój raport.</string>
+    <string name="tr_step_evidence_against_title">Co przemawia przeciw?</string>
+    <string name="tr_step_evidence_against_hint">Jakie fakty do niej nie pasują? Co powiedziałaby życzliwa osoba, która zna całą sytuację?</string>
+    <string name="tr_step_evidence_against_example">Rozmawiała przez telefon i patrzyła w ekran. W zeszłym tygodniu chwaliła moją prezentację. Poprawki w raporcie to zwykła część pracy.</string>
+    <string name="tr_step_alternative_title">Jak można na to spojrzeć inaczej?</string>
+    <string name="tr_step_alternative_hint">Napisz myśl, która bierze pod uwagę wszystkie fakty, za i przeciw. Nie musi być pozytywna, ma być uczciwa. Potem oceń jeszcze raz swoje emocje.</string>
+    <string name="tr_step_alternative_example">„Mogła być zajęta rozmową. Jedno nieprzywitanie nie znaczy, że jest na mnie zła. Jeśli coś będzie nie tak, pewnie mi powie.”</string>
+
+    <string name="tr_field_situation">Sytuacja</string>
+    <string name="tr_field_emotions">Emocje (przed → po)</string>
+    <string name="tr_field_thoughts">Myśli automatyczne</string>
+    <string name="tr_field_distortions">Pułapki myślenia</string>
+    <string name="tr_field_evidence_for">Za gorącą myślą</string>
+    <string name="tr_field_evidence_against">Przeciw gorącej myśli</string>
+    <string name="tr_field_alternative">Myśl alternatywna</string>
+
+    <!-- Cognitive distortions ("pułapki myślenia"), after Beck and Burns -->
+    <string name="distortion_all_or_nothing">Myślenie czarno-białe</string>
+    <string name="distortion_all_or_nothing_desc">Widzisz coś jako idealne albo beznadziejne, bez niczego pomiędzy.</string>
+    <string name="distortion_all_or_nothing_example">„Jeśli nie zdam na piątkę, to porażka.”</string>
+    <string name="distortion_overgeneralization">Nadmierne uogólnianie</string>
+    <string name="distortion_overgeneralization_desc">Jedno zdarzenie traktujesz jak regułę: „zawsze”, „nigdy”, „wszyscy”.</string>
+    <string name="distortion_overgeneralization_example">„Nikt mnie nigdy nie słucha.”</string>
+    <string name="distortion_mental_filter">Filtr negatywny</string>
+    <string name="distortion_mental_filter_desc">Skupiasz się na jednym złym szczególe i przestajesz widzieć resztę.</string>
+    <string name="distortion_mental_filter_example">Po rozmowie z wieloma miłymi uwagami pamiętasz tylko jedną krytyczną.</string>
+    <string name="distortion_disqualifying_positive">Pomijanie pozytywów</string>
+    <string name="distortion_disqualifying_positive_desc">Dobre rzeczy uznajesz za przypadek albo za coś, co się nie liczy.</string>
+    <string name="distortion_disqualifying_positive_example">„Pochwalili mnie, bo musieli być mili.”</string>
+    <string name="distortion_mind_reading">Czytanie w myślach</string>
+    <string name="distortion_mind_reading_desc">Zakładasz, że wiesz, co myślą inni, zwykle coś złego o Tobie.</string>
+    <string name="distortion_mind_reading_example">„Na pewno myślą, że się nie nadaję.”</string>
+    <string name="distortion_fortune_telling">Przepowiadanie przyszłości</string>
+    <string name="distortion_fortune_telling_desc">Przewidujesz, że stanie się coś złego, i traktujesz to jak pewnik.</string>
+    <string name="distortion_fortune_telling_example">„Na pewno się pogubię i wszyscy to zauważą.”</string>
+    <string name="distortion_catastrophizing">Katastrofizowanie</string>
+    <string name="distortion_catastrophizing_desc">Zakładasz najgorszy możliwy scenariusz albo to, że nie dasz rady go znieść.</string>
+    <string name="distortion_catastrophizing_example">„Jeśli stracę tę pracę, wszystko się zawali.”</string>
+    <string name="distortion_emotional_reasoning">Rozumowanie emocjonalne</string>
+    <string name="distortion_emotional_reasoning_desc">Uznajesz, że skoro coś czujesz, to musi być prawdą.</string>
+    <string name="distortion_emotional_reasoning_example">„Boję się, więc to musi być niebezpieczne.”</string>
+    <string name="distortion_should_statements">„Muszę” i „powinno się”</string>
+    <string name="distortion_should_statements_desc">Stawiasz sobie lub innym sztywne zasady. Gdy nie są spełnione, pojawia się poczucie winy albo złość.</string>
+    <string name="distortion_should_statements_example">„Muszę zawsze wszystkim pomagać.”</string>
+    <string name="distortion_labeling">Etykietowanie</string>
+    <string name="distortion_labeling_desc">Zamiast opisać zachowanie, przyklejasz sobie albo komuś etykietę.</string>
+    <string name="distortion_labeling_example">„Jestem do niczego.”</string>
+    <string name="distortion_personalization">Branie winy na siebie</string>
+    <string name="distortion_personalization_desc">Uznajesz się za przyczynę czegoś, na co masz mały wpływ albo nie masz go wcale.</string>
+    <string name="distortion_personalization_example">„Przyjaciel jest smutny. To pewnie przeze mnie.”</string>
+    <string name="distortion_blaming">Obwinianie innych</string>
+    <string name="distortion_blaming_desc">Za swoje trudności obwiniasz wyłącznie innych i przestajesz widzieć, na co masz wpływ.</string>
+    <string name="distortion_blaming_example">„To wszystko wina szefa, nic nie mogę zrobić.”</string>
+
+    <!-- Mood -->
+    <string name="mood_new_title">Nowy wpis nastroju</string>
+    <string name="mood_edit_title">Edycja wpisu nastroju</string>
+    <string name="mood_detail_title">Nastrój</string>
+    <string name="mood_question">Jak się teraz czujesz?</string>
+    <string name="mood_scale_hint">Wybierz liczbę od 0 do 10.</string>
+    <string name="mood_scale_low">0 – bardzo źle</string>
+    <string name="mood_scale_high">10 – bardzo dobrze</string>
+    <string name="mood_rating_description">Nastrój %1$d na 10</string>
+    <string name="mood_emotions_title">Emocje</string>
+    <string name="mood_note_title">Notatka</string>
+    <string name="mood_note_label">Co się dziś działo? (możesz pominąć)</string>
+    <string name="mood_choose_rating_first">Najpierw wybierz liczbę od 0 do 10.</string>
+    <string name="mood_add">Zapisz nastrój</string>
+    <string name="mood_chart_title">Wykres</string>
+    <string name="mood_chart_empty">Brak wpisów w tym okresie.</string>
+    <string name="mood_chart_summary">Średnio %1$s na 10 (wpisy: %2$d)</string>
+    <string name="mood_chart_description">Wykres średniego nastroju z %1$d dni. Najniżej %2$s, najwyżej %3$s na 10.</string>
+    <string name="mood_entries_title">Wpisy</string>
+    <string name="mood_entries_empty">Tu pojawią się Twoje wpisy nastroju z wybranego okresu.</string>
+    <string name="mood_rating_value">%1$d/10</string>
+    <string name="mood_row_title">Nastrój %1$d/10</string>
+    <string name="mood_delete_title">Usunąć ten wpis?</string>
+    <string name="mood_delete_text">Wpis zniknie z telefonu. Tego nie da się cofnąć.</string>
+
+    <!-- Periods and filters -->
+    <string name="period_7_days">7 dni</string>
+    <string name="period_30_days">30 dni</string>
+    <string name="period_90_days">90 dni</string>
+    <string name="period_all">Wszystko</string>
+    <string name="period_custom">Wybierz daty</string>
+    <string name="period_custom_value">%1$s – %2$s</string>
+    <string name="filter_all">Wszystko</string>
+    <string name="filter_thoughts">Zapisy myśli</string>
+    <string name="filter_mood">Nastrój</string>
+
+    <!-- History -->
+    <string name="history_empty">Nie masz jeszcze żadnych wpisów. Zacznij od zapisu myśli albo nastroju na ekranie Start.</string>
+    <string name="history_empty_filtered">Brak wpisów dla wybranych filtrów.</string>
+
+    <!-- Home -->
+    <string name="home_mood_question">Jak się dziś czujesz?</string>
+    <string name="home_mood_today">Dziś: %1$d/10</string>
+    <string name="home_mood_button">Zapisz nastrój</string>
+    <string name="home_mood_button_again">Dodaj kolejny wpis</string>
+    <string name="home_new_thought">Nowy zapis myśli</string>
+    <string name="home_draft">Masz niedokończony zapis myśli (%1$s).</string>
+    <string name="home_recent">Ostatnie wpisy</string>
+    <string name="home_recent_empty">Tu pojawią się Twoje ostatnie wpisy.</string>
+    <string name="home_backup_title">Zrób kopię zapasową</string>
+    <string name="home_backup_text">Twoje wpisy są tylko na tym telefonie. Kopia chroniona hasłem pomoże je odzyskać, jeśli zgubisz telefon.</string>
+    <string name="home_backup_now">Zrób kopię</string>
+    <string name="model_card_title">Jak działają myśli i emocje?</string>
+    <string name="model_card_text">Krótko o tym, na czym opiera się zapis myśli.</string>
+
+    <!-- SOS -->
+    <string name="sos_title">Pomoc w kryzysie</string>
+    <string name="sos_intro">Jeśli zagraża Ci niebezpieczeństwo albo myślisz o odebraniu sobie życia, zadzwoń pod 112. Rozmowa z kimś może pomóc. Te numery są bezpłatne.</string>
+    <string name="helplines_verified_label">Numery sprawdzone: %1$s</string>
+    <string name="grounding_title">Ćwiczenie 5-4-3-2-1</string>
+    <string name="grounding_card_text">Krótkie ćwiczenie, które pomaga wrócić uwagą do „tu i teraz”, gdy emocje są bardzo silne.</string>
+    <string name="grounding_start">Zacznij ćwiczenie</string>
+    <string name="grounding_step_see">Rozejrzyj się. Nazwij 5 rzeczy, które widzisz.</string>
+    <string name="grounding_step_touch">Nazwij 4 rzeczy, których możesz dotknąć. Poczuj ich fakturę.</string>
+    <string name="grounding_step_hear">Wsłuchaj się. Nazwij 3 dźwięki, które słyszysz.</string>
+    <string name="grounding_step_smell">Nazwij 2 zapachy, które czujesz. Jeśli żadnego nie czujesz, pomyśl o dwóch, które lubisz.</string>
+    <string name="grounding_step_taste">Nazwij 1 smak, który czujesz teraz w ustach.</string>
+    <string name="grounding_take_time">Nie spiesz się. Możesz mówić na głos albo w myślach.</string>
+    <string name="grounding_done">Dobrze. Zrób jeszcze kilka spokojnych oddechów. Jeśli nadal jest bardzo trudno, zadzwoń pod jeden z numerów pomocy.</string>
+    <string name="grounding_again">Jeszcze raz</string>
+    <string name="grounding_finish">Zakończ</string>
+
+    <!-- PDF export -->
+    <string name="export_title">PDF dla terapeuty</string>
+    <string name="export_intro">Utwórz PDF z wpisami, żeby pokazać je terapeucie albo zachować u siebie.</string>
+    <string name="export_period">Okres</string>
+    <string name="export_types">Co ma się znaleźć w PDF</string>
+    <string name="export_privacy_warning">PDF nie jest zaszyfrowany i zawiera Twoje osobiste notatki. Udostępniaj go tylko zaufanym osobom.</string>
+    <string name="export_create">Utwórz PDF</string>
+    <string name="export_working">Tworzę PDF…</string>
+    <string name="export_ready">PDF jest gotowy</string>
+    <string name="export_share">Udostępnij</string>
+    <string name="export_save">Zapisz w plikach</string>
+    <string name="export_share_title">Udostępnij PDF</string>
+    <string name="export_saved">PDF zapisany.</string>
+    <string name="export_error">Nie udało się utworzyć PDF. Spróbuj ponownie.</string>
+    <string name="pdf_title">Myślnik – wpisy</string>
+    <string name="pdf_range">Od %1$s do %2$s</string>
+    <string name="pdf_range_all">Wszystkie wpisy</string>
+    <string name="pdf_generated">Utworzono: %1$s</string>
+    <string name="pdf_privacy_note">Ten plik zawiera osobiste notatki z aplikacji Myślnik, narzędzia samopomocy. Nie jest dokumentacją medyczną.</string>
+    <string name="pdf_mood_heading">Nastrój</string>
+    <string name="pdf_thoughts_heading">Zapisy myśli</string>
+    <string name="pdf_no_entries">Brak wpisów w tym okresie.</string>
+    <string name="pdf_mood_summary">Średnia ocena: %1$s na 10 (wpisy: %2$d)</string>
+    <string name="pdf_hot_thought_marker">(gorąca myśl)</string>
+    <string name="pdf_footer">Myślnik · strona %1$d</string>
+
+    <!-- Lock -->
+    <string name="lock_title">Wpisz PIN</string>
+    <string name="pin_label">PIN</string>
+    <string name="lock_unlock">Odblokuj</string>
+    <string name="lock_use_biometric">Użyj odcisku palca</string>
+    <string name="lock_biometric_title">Odblokuj Myślnik</string>
+    <string name="lock_use_pin">Użyj PIN-u</string>
+    <string name="lock_wrong_pin">To nie jest prawidłowy PIN. Spróbuj jeszcze raz.</string>
+    <string name="lock_too_many">Za dużo prób. Odczekaj chwilę i spróbuj ponownie.</string>
+    <string name="lock_sos_hint">Pomoc w kryzysie działa bez odblokowania: przycisk SOS jest na górze ekranu.</string>
+    <string name="lock_forgot">Nie pamiętasz PIN-u?</string>
+    <string name="lock_forgot_title">Nie pamiętasz PIN-u?</string>
+    <string name="lock_forgot_text">PIN-u nie da się odzyskać ani obejść. Możesz usunąć wszystkie wpisy i zacząć od nowa. Jeśli masz kopię zapasową, przywrócisz z niej wpisy w ustawieniach.</string>
+    <string name="lock_forgot_reset">Usuń wpisy i zacznij od nowa</string>
+    <string name="lock_forgot_confirm_title">Na pewno?</string>
+    <string name="lock_forgot_confirm_text">Wszystkie zapisy myśli i wpisy nastroju zostaną usunięte z tego telefonu. Tego nie da się cofnąć.</string>
+    <string name="pin_setup_title">PIN</string>
+    <string name="pin_setup_text">PIN chroni Twoje wpisy, gdy ktoś inny weźmie Twój telefon. Aplikacja zablokuje się po minucie w tle.</string>
+    <string name="pin_new_label">Nowy PIN</string>
+    <string name="pin_repeat_label">Powtórz PIN</string>
+    <string name="pin_rules">Od %1$d do %2$d cyfr</string>
+    <string name="pin_invalid">PIN musi mieć od 4 do 8 cyfr.</string>
+    <string name="pin_mismatch">PIN-y się różnią. Wpisz je jeszcze raz.</string>
+    <string name="pin_set">Ustaw PIN</string>
+    <string name="pin_saved">PIN jest ustawiony.</string>
+    <string name="biometric_offer">Chcesz odblokowywać Myślnik odciskiem palca? PIN nadal będzie działać.</string>
+    <string name="biometric_enable">Tak, używaj odcisku palca</string>
+
+    <!-- Settings -->
+    <string name="settings_security">Bezpieczeństwo</string>
+    <string name="settings_lock">Blokada PIN-em</string>
+    <string name="settings_lock_text">Aplikacja blokuje się po minucie w tle.</string>
+    <string name="settings_change_pin">Zmień PIN</string>
+    <string name="settings_biometric">Odblokowanie odciskiem palca</string>
+    <string name="settings_secure_screen">Ukryj treść w ostatnich aplikacjach</string>
+    <string name="settings_secure_screen_text">Blokuje też zrzuty ekranu w aplikacji.</string>
+    <string name="settings_data">Dane</string>
+    <string name="settings_export_text">Wpisy z wybranego okresu w jednym pliku</string>
+    <string name="settings_delete_all">Usuń wszystkie wpisy</string>
+    <string name="settings_delete_all_title">Usunąć wszystkie wpisy?</string>
+    <string name="settings_delete_all_text">Wszystkie zapisy myśli, wpisy nastroju i szkice zostaną usunięte z tego telefonu. Ustawienia zostaną. Tego nie da się cofnąć.</string>
+    <string name="settings_deleted">Wszystkie wpisy zostały usunięte.</string>
+    <string name="settings_theme">Motyw</string>
+    <string name="theme_system">Jak w telefonie</string>
+    <string name="theme_light">Jasny</string>
+    <string name="theme_dark">Ciemny</string>
+    <string name="settings_info">Informacje</string>
+    <string name="settings_lock_off_title">Wyłączyć blokadę?</string>
+    <string name="settings_lock_off_text">Każdy, kto weźmie Twój telefon, zobaczy Twoje wpisy po otwarciu aplikacji.</string>
+    <string name="settings_lock_off_confirm">Wyłącz blokadę</string>
+
+    <!-- Backup -->
+    <string name="backup_title">Kopia zapasowa</string>
+    <string name="backup_intro">Kopia to jeden plik zaszyfrowany Twoim hasłem. Ty wybierasz, gdzie go zapisać: na telefonie, na Dysku Google albo w innym miejscu. Aplikacja niczego nie wysyła.</string>
+    <string name="backup_last">Ostatnia kopia: %1$s</string>
+    <string name="backup_never">Nie masz jeszcze kopii zapasowej.</string>
+    <string name="backup_password_warning">Zapamiętaj hasło do kopii. Jeśli je zapomnisz, nie da się odzyskać danych z kopii. Nikt nie zna tego hasła, także autor aplikacji.</string>
+    <string name="backup_create">Utwórz kopię</string>
+    <string name="backup_restore">Przywróć z kopii</string>
+    <string name="backup_working">Proszę czekać…</string>
+    <string name="backup_file_name" translatable="false">myslnik-kopia-%1$s.myslnik</string>
+    <string name="backup_created">Kopia zapisana.</string>
+    <string name="backup_create_error">Nie udało się zapisać kopii. Spróbuj ponownie.</string>
+    <string name="backup_wrong_password">Złe hasło albo uszkodzony plik.</string>
+    <string name="backup_not_a_backup">To nie jest plik kopii Myślnika.</string>
+    <string name="backup_newer_version">Ta kopia pochodzi z nowszej wersji aplikacji. Zaktualizuj Myślnik i spróbuj ponownie.</string>
+    <string name="backup_read_error">Nie udało się odczytać kopii.</string>
+    <string name="backup_restored">Wpisy przywrócone z kopii.</string>
+    <string name="backup_restore_confirm_title">Przywrócić tę kopię?</string>
+    <string name="backup_restore_confirm_text">Kopia z %1$s. Zapisy myśli: %2$d, wpisy nastroju: %3$d. Przywrócenie zastąpi wszystkie obecne wpisy na tym telefonie.</string>
+    <string name="backup_restore_confirm">Przywróć</string>
+    <string name="backup_password_title">Hasło do kopii</string>
+    <string name="backup_password_label">Hasło</string>
+    <string name="backup_password_repeat">Powtórz hasło</string>
+    <string name="backup_password_too_short">Hasło musi mieć co najmniej %1$d znaków.</string>
+    <string name="backup_password_mismatch">Hasła się różnią.</string>
+    <string name="backup_password_understood">Rozumiem, że bez tego hasła nie odzyskam danych.</string>
+    <string name="backup_choose_place">Wybierz miejsce zapisu</string>
+    <string name="backup_enter_password">Wpisz hasło do kopii</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_1_title">Cześć! To jest Myślnik</string>
+    <string-array name="onboarding_1_paragraphs">
+        <item>Myślnik to darmowy notatnik ćwiczeń terapii poznawczo-behawioralnej (CBT). Możesz z niego korzystać między sesjami terapii albo samodzielnie.</item>
+        <item>Znajdziesz tu zapis myśli krok po kroku, dziennik nastroju z wykresem i PDF, który możesz pokazać terapeucie.</item>
+        <item>Twoje wpisy są tylko na tym telefonie i są zaszyfrowane. Nie ma konta ani reklam.</item>
+    </string-array>
+    <string name="onboarding_2_title">Czym Myślnik nie jest</string>
+    <string-array name="onboarding_2_paragraphs">
+        <item>Myślnik nie jest terapią ani diagnozą. Nie zastąpi rozmowy ze specjalistą.</item>
+        <item>Nie jest też pomocą w nagłych wypadkach. Jeśli jest Ci bardzo ciężko albo grozi Ci niebezpieczeństwo, zadzwoń:</item>
+    </string-array>
+    <string name="onboarding_2_sos">Przycisk SOS z numerami pomocy jest na każdym ekranie.</string>
+    <string name="onboarding_3_title">Zabezpiecz swoje wpisy</string>
+    <string-array name="onboarding_3_paragraphs">
+        <item>Ustaw PIN, żeby nikt inny nie przeczytał Twoich wpisów. Możesz to zrobić też później w ustawieniach.</item>
+    </string-array>
+    <string name="onboarding_skip_lock">Pomiń, ustawię później</string>
+    <string name="onboarding_start">Zaczynamy</string>
+
+    <!-- Cognitive model -->
+    <string name="model_title">Jak działają myśli i emocje</string>
+    <string name="model_intro">Terapia poznawczo-behawioralna opiera się na prostej obserwacji: to, jak się czujesz, zależy nie tylko od tego, co się dzieje, ale też od tego, jak to rozumiesz.</string>
+    <string name="model_diagram_description">Schemat: sytuacja wywołuje myśli, a myśli wpływają na emocje, reakcje ciała i zachowanie.</string>
+    <string name="model_situation">Sytuacja</string>
+    <string name="model_thoughts">Myśli</string>
+    <string name="model_emotions">Emocje</string>
+    <string name="model_body">Ciało</string>
+    <string name="model_behaviour">Zachowanie</string>
+    <string-array name="model_paragraphs">
+        <item>Ta sama sytuacja może wywołać różne emocje, zależnie od myśli, które się pojawią. Takie myśli przychodzą szybko i same, dlatego nazywa się je myślami automatycznymi.</item>
+        <item>Myśli automatyczne nie zawsze są trafne. Gdy jest nam ciężko, łatwo wpadamy w pułapki myślenia, na przykład zakładamy najgorsze albo czytamy w cudzych myślach.</item>
+        <item>Zapis myśli pomaga zatrzymać się i sprawdzić myśl, zanim uznasz ją za fakt. Nie chodzi o myślenie „pozytywne”, tylko o bardziej wyważone, oparte na faktach.</item>
+    </string-array>
+    <string name="model_example_title">Przykład</string>
+    <string name="model_example">Znajoma nie odpisuje na wiadomość. Myśl „Pewnie ma mnie dość” może wywołać smutek i chęć wycofania się. Myśl „Pewnie jest zajęta” daje więcej spokoju. Sytuacja jest ta sama, różni się myśl.</string>
+
+    <!-- About, sources, privacy -->
+    <string name="about_title">O aplikacji</string>
+    <string name="about_version">Wersja %1$s</string>
+    <string-array name="about_paragraphs">
+        <item>Myślnik to darmowe narzędzie samopomocy z ćwiczeniami terapii poznawczo-behawioralnej (CBT). Nie jest terapią, diagnozą ani wyrobem medycznym.</item>
+        <item>Bez reklam, bez konta i bez blokowania funkcji. Aplikacja nie ma dostępu do internetu, więc nie może nigdzie wysłać Twoich wpisów.</item>
+    </string-array>
+    <string name="about_review_title">Recenzja treści</string>
+    <string name="about_review_text">Ćwiczenia opierają się na standardowych technikach CBT. Teksty w tej wersji czekają na recenzję certyfikowanego terapeuty CBT.</string>
+    <string name="about_license_title">Otwarty kod</string>
+    <string name="about_license_text">Kod aplikacji jest otwarty (licencja GPL-3.0). Każdy może sprawdzić, co robi aplikacja.</string>
+    <string name="about_source_code">Kod źródłowy</string>
+    <string name="about_report_issue">Zgłoś błąd lub uwagę</string>
+    <string name="source_code_url" translatable="false">https://github.com/BenekApps/myslnik</string>
+    <string name="sources_title">Źródła</string>
+    <string name="sources_intro">Ćwiczenia w aplikacji opierają się na tych źródłach:</string>
+    <string-array name="sources">
+        <item>Beck, J. S. (2021). Cognitive Behavior Therapy: Basics and Beyond (wyd. 3). Guilford Press. Model poznawczy i zapis myśli.</item>
+        <item>Greenberger, D., Padesky, C. A. (2015). Mind Over Mood (wyd. 2). Guilford Press. Polskie wydanie: „Umysł ponad nastrojem”, Wydawnictwo Uniwersytetu Jagiellońskiego. Zapis myśli krok po kroku.</item>
+        <item>Burns, D. D. (1980). Feeling Good: The New Mood Therapy. William Morrow. Lista pułapek myślenia.</item>
+        <item>Ćwiczenie 5-4-3-2-1: popularna technika uziemiania stosowana przy silnym lęku.</item>
+        <item>Numery pomocy: gov.pl, „Gdzie uzyskać pomoc psychologiczną i psychiatryczną”, oraz 116111.pl.</item>
+    </string-array>
+    <string name="privacy_title">Prywatność</string>
+    <string-array name="privacy_paragraphs">
+        <item>Myślnik nie zbiera żadnych danych. Nie ma konta, serwera, reklam ani analityki.</item>
+        <item>Twoje wpisy są zapisane tylko na tym telefonie, w zaszyfrowanej bazie danych. Klucz do niej jest przechowywany w bezpiecznym magazynie kluczy Androida i nie opuszcza telefonu.</item>
+        <item>Aplikacja nie ma uprawnienia do internetu. Dane opuszczają telefon tylko wtedy, gdy Ty o tym zdecydujesz: udostępnisz PDF albo zapiszesz kopię zapasową w wybranym miejscu.</item>
+        <item>Kopia zapasowa jest zaszyfrowana Twoim hasłem. PDF nie jest zaszyfrowany, więc udostępniaj go tylko zaufanym osobom.</item>
+        <item>Aplikacja nie czyta treści Twoich wpisów. Gdy ocenisz emocję bardzo wysoko albo nastrój bardzo nisko, pokaże numery pomocy. To sprawdzenie dzieje się tylko na telefonie.</item>
+        <item>Wszystkie wpisy możesz usunąć w ustawieniach. Odinstalowanie aplikacji też usuwa wszystkie dane.</item>
+    </string-array>
+
+    <!-- Database error -->
+    <string name="db_error_title">Nie udało się otworzyć wpisów</string>
+    <string name="db_error_text">Twoje wpisy są zaszyfrowane kluczem zapisanym w telefonie i tego klucza nie udało się odczytać. Spróbuj ponownie. Jeśli to nie pomoże, możesz zacząć od nowa i przywrócić wpisy z kopii zapasowej.</string>
+    <string name="db_error_reset">Zacznij od nowa</string>
+    <string name="db_error_reset_text">Zaszyfrowane wpisy na tym telefonie zostaną usunięte. Potem możesz przywrócić je z kopii zapasowej. Tego nie da się cofnąć.</string>
+</resources>

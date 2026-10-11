@@ -1,0 +1,25 @@
+*.iml
+.gradle
+/local.properties
+/.idea/
+.DS_Store
+/build
+/app/build
+/captures
+.externalNativeBuild
+.cxx
+/.kotlin
+
+# ---- Secrets: never commit ----
+*.jks
+*.keystore
+keystore.properties
+*service-account*.json
+.env
+
+# ---- Build outputs ----
+/app/release/
+*.apk
+*.aab
+*.zip
+*.tar.gz
