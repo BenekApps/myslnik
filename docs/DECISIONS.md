@@ -3,6 +3,16 @@
 Newest first. Each entry: what was decided and why. The product plan is the
 "Darmowa aplikacja CBT po polsku — plan" document (Claude Docs).
 
+## 2026-10-11 — Play Console: wellness, not medical
+
+Category "Zdrowie i fitness" and, in the health apps declaration, only "stress, relaxation,
+mental wellbeing" and "sleep management", none of the "Medicine" options (including "mental
+and behavioral health"). Myślnik is a self-help tool and says it is not therapy, diagnosis or
+a medical device (MDCG 2019-11); a medical category would contradict that and bring extra
+requirements. Data safety: no data collected or shared. Target audience 18+, without Google's
+optional "block users deemed minors" (it can block unverified adult testers). Store texts and
+graphics live in `distribution/listing/` (graphics are rendered from the launcher icon paths).
+
 ## 2026-10-11 — Test builds straight to Google Play internal testing
 
 Mat wants Claude to send builds to Play for faster testing. Besides release tags, the Android
