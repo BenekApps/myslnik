@@ -266,7 +266,7 @@ private fun HotThoughtCard(thought: String) {
     ) {
         Column(Modifier.padding(12.dp)) {
             Text(stringResource(R.string.tr_hot_thought), style = MaterialTheme.typography.labelLarge)
-            Text("„$thought”", style = MaterialTheme.typography.bodyLarge)
+            Text(stringResource(R.string.tr_hot_thought_quoted, thought), style = MaterialTheme.typography.bodyLarge)
         }
     }
 }
