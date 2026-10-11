@@ -33,6 +33,10 @@ experiments, worry time, problem solving · 1.3 psychoeducation cards, Ukrainian
 
 ## Later
 
+- "Wesprzyj projekt" in the app through Play billing (one-time tips that unlock nothing).
+  First check that the billing library does not bring the INTERNET permission back.
+- A direct Buy Me a Coffee link in the app only for builds outside Google Play (F-Droid).
+
 - Reminders for single planned activities (now only daily reminders).
 - Sleep diary: support for shift work (sleep across noon).
 - Yearly: target the new Android before 31 August; re-check help numbers.

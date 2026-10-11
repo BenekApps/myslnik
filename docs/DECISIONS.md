@@ -3,6 +3,17 @@
 Newest first. Each entry: what was decided and why. The product plan is the
 "Darmowa aplikacja CBT po polsku — plan" document (Claude Docs).
 
+## 2026-10-11 — Donation link (Buy Me a Coffee)
+
+The link https://buymeacoffee.com/benek.apps is on GitHub (README and `.github/FUNDING.yml`,
+which shows a "Sponsor" button), **not** in the app and **not** in the Play listing.
+Google Play's Payments policy (section 4) forbids leading users to payment methods other than
+Play billing from the app or its listing; the only donation exception is tax-exempt donations
+(charities), which a tip to the developer is not. A rejection would be costly for a health
+app on its first review. The app already links to the GitHub repository ("Kod źródłowy").
+A direct in-app link is fine for builds outside Play (F-Droid, GitHub APK) if they come later.
+An in-app "Wesprzyj projekt" would have to use Play billing (see TODO).
+
 ## 2026-10-11 — Version 1.3 (1.1, 1.2 and 1.3 at once)
 
 Mat decided to go straight to 1.3 instead of releasing 1.0 first. 1.3 contains everything

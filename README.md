@@ -63,6 +63,14 @@ following the language rules at the top of `strings.xml`. Every text change need
 by a certified CBT therapist before release. Every database schema change needs a migration
 and a migration test.
 
+## Wsparcie / Support
+
+Myślnik jest i zostanie darmowy, bez reklam i bez płatnych funkcji. Jeśli chcesz wesprzeć
+rozwój: [buymeacoffee.com/benek.apps](https://buymeacoffee.com/benek.apps).
+
+Myślnik is and stays free, with no ads and nothing locked. To support its development:
+[buymeacoffee.com/benek.apps](https://buymeacoffee.com/benek.apps).
+
 ## License
 
 [GPL-3.0](LICENSE)
