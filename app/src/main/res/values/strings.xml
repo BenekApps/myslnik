@@ -79,6 +79,7 @@
     <string name="tr_show_example">Pokaż przykład</string>
     <string name="tr_hide_example">Ukryj przykład</string>
     <string name="tr_hot_thought">Gorąca myśl</string>
+    <string name="tr_hot_thought_quoted">„%1$s”</string>
     <string name="tr_thought_label">Myśl</string>
     <string name="tr_add_thought">Dodaj myśl</string>
     <string name="tr_choose_hot_thought">Która myśl najbardziej nasila emocje? Zaznacz ją. To Twoja „gorąca myśl”. Sprawdzisz ją w kolejnych krokach.</string>

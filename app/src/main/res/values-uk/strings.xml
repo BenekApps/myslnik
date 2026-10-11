@@ -77,6 +77,7 @@
     <string name="tr_show_example">Показати приклад</string>
     <string name="tr_hide_example">Сховати приклад</string>
     <string name="tr_hot_thought">Гаряча думка</string>
+    <string name="tr_hot_thought_quoted">«%1$s»</string>
     <string name="tr_thought_label">Думка</string>
     <string name="tr_add_thought">Додати думку</string>
     <string name="tr_choose_hot_thought">Яка думка найбільше посилює емоції? Познач її. Це твоя «гаряча думка». Ти перевіриш її в наступних кроках.</string>
