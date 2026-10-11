@@ -12,8 +12,9 @@
       ones to the Ukrainian SOS screen.
 - [ ] After the review: reviewer's name (with consent) in "O aplikacji" (`about_review_text`).
 - [ ] Check "Myślnik" in Google Play and in the trademark registers (UPRP, EUIPO).
-- [ ] Upload keystore for Myślnik (alias `myslnik`) and GitHub secrets, see CLAUDE.md.
-- [ ] Play Console: create the app `com.benekapps.myslnik`; the first bundle is uploaded by hand.
+- [x] Upload keystore for Myślnik (alias `myslnik`) and GitHub secrets, see CLAUDE.md.
+- [x] Play Console: create the app `com.benekapps.myslnik`; the first bundle is uploaded by hand.
+- [x] Play service account for CI uploads to internal testing (`PLAY_SERVICE_ACCOUNT_JSON`).
 - [ ] Privacy policy online: enable GitHub Pages for `docs/` (or another host), link it in
       Play Console. Add a contact e-mail to the policy and the store listing.
 - [ ] Data safety form: no data collected or shared. Health apps declaration: Mental and
