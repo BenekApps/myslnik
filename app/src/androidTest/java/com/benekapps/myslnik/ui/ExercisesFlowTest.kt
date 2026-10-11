@@ -9,6 +9,7 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollTo
 import androidx.compose.ui.test.performTextInput
+import androidx.test.espresso.Espresso.closeSoftKeyboard
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.benekapps.myslnik.MainActivity
@@ -54,7 +55,7 @@ class ExercisesFlowTest {
     @Test
     fun sleepDiaryNightIsSavedWithEfficiency() {
         open(R.string.sleep_title)
-        rule.onNodeWithText(str(R.string.sleep_add)).performClick()
+        rule.onNodeWithText(str(R.string.sleep_add)).performScrollTo().performClick()
         waitForText(str(R.string.sleep_evening))
         // The default night: 23:00–06:45 in bed, 6 h 50 min asleep = 88 %.
         rule.onNodeWithText(str(R.string.save)).performScrollTo().performClick()
@@ -66,9 +67,10 @@ class ExercisesFlowTest {
     @Test
     fun activityIsPlannedAndRated() {
         open(R.string.activities_title)
-        rule.onNodeWithText(str(R.string.activities_add)).performClick()
+        rule.onNodeWithText(str(R.string.activities_add)).performScrollTo().performClick()
         waitForText(str(R.string.activities_what))
         rule.onNode(hasSetTextAction() and hasText(str(R.string.activities_what))).performTextInput("Spacer z psem")
+        closeSoftKeyboard()
         rule.onNodeWithText(str(R.string.save)).performScrollTo().performClick()
         waitForText("Spacer z psem")
         rule.onNodeWithContentDescription(str(R.string.activities_mark_done, "Spacer z psem")).performClick()
@@ -82,9 +84,12 @@ class ExercisesFlowTest {
     fun worryGoesToProblemSolving() {
         open(R.string.worry_title)
         rule.onNode(hasSetTextAction()).performTextInput("Rachunki za prąd")
-        rule.onNodeWithText(str(R.string.worry_postpone)).performClick()
-        // The list (and the enabled start button) come from the database.
-        waitForText("Rachunki za prąd")
+        closeSoftKeyboard()
+        rule.onNodeWithText(str(R.string.worry_postpone)).performScrollTo().performClick()
+        // The list (and the enabled start button) come from the database. Wait for the row,
+        // not the text: the typed text is also in the input field until it is cleared.
+        rule.waitUntil(10_000) { runBlocking { container.db.worries().getAll().isNotEmpty() } }
+        rule.waitForIdle()
         rule.onNodeWithText(str(R.string.worry_start)).performScrollTo().performClick()
         waitForText(str(R.string.worry_solve))
         rule.onNodeWithText(str(R.string.worry_solve)).performScrollTo().performClick()

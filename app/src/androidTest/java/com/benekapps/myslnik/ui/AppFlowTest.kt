@@ -19,6 +19,7 @@ import androidx.test.espresso.intent.Intents.intended
 import androidx.test.espresso.intent.Intents.intending
 import androidx.test.espresso.intent.matcher.IntentMatchers.hasAction
 import androidx.test.espresso.intent.matcher.IntentMatchers.hasData
+import androidx.test.espresso.Espresso.closeSoftKeyboard
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.benekapps.myslnik.MainActivity
@@ -73,20 +74,25 @@ class AppFlowTest {
 
     @Test
     fun thoughtRecordFromStartToSavedDetail() {
-        rule.onNodeWithText(str(R.string.home_new_thought)).performClick()
+        rule.onNodeWithText(str(R.string.home_new_thought)).performScrollTo().performClick()
         rule.onNode(hasSetTextAction()).performTextInput("Szefowa się nie przywitała")
+        closeSoftKeyboard()
         next()
-        rule.onNodeWithText(str(R.string.emotion_anxiety)).performClick()
+        rule.onNodeWithText(str(R.string.emotion_anxiety)).performScrollTo().performClick()
         next()
         rule.onNode(hasSetTextAction()).performTextInput("Jest na mnie zła")
+        closeSoftKeyboard()
         next()
         rule.onNodeWithText(str(R.string.distortion_mind_reading)).performScrollTo().performClick()
         next()
         rule.onNode(hasSetTextAction()).performTextInput("Nie przywitała się")
+        closeSoftKeyboard()
         next()
         rule.onNode(hasSetTextAction()).performTextInput("Rozmawiała przez telefon")
+        closeSoftKeyboard()
         next()
         rule.onNode(hasSetTextAction()).performTextInput("Mogła być zajęta")
+        closeSoftKeyboard()
         rule.onNodeWithText(str(R.string.tr_finish)).performClick()
 
         // Detail screen shows what was saved.
@@ -100,8 +106,9 @@ class AppFlowTest {
 
     @Test
     fun leavingTheWizardKeepsADraft() {
-        rule.onNodeWithText(str(R.string.home_new_thought)).performClick()
+        rule.onNodeWithText(str(R.string.home_new_thought)).performScrollTo().performClick()
         rule.onNode(hasSetTextAction()).performTextInput("Niedokończona sytuacja")
+        closeSoftKeyboard()
         rule.onNodeWithContentDescription(str(R.string.back)).performClick()
         rule.waitUntil(5_000) {
             rule.onAllNodesWithText(str(R.string.continue_draft)).fetchSemanticsNodes().isNotEmpty()
@@ -122,11 +129,13 @@ class AppFlowTest {
         rule.onNodeWithContentDescription(str(R.string.back)).performClick()
 
         rule.onNode(hasSetTextAction()).performTextInput("1111")
-        rule.onNodeWithText(str(R.string.lock_unlock)).performClick()
+        closeSoftKeyboard()
+        rule.onNodeWithText(str(R.string.lock_unlock)).performScrollTo().performClick()
         rule.waitUntil(5_000) { rule.onAllNodesWithText(str(R.string.lock_wrong_pin)).fetchSemanticsNodes().isNotEmpty() }
 
         rule.onNode(hasSetTextAction()).performTextInput("2580")
-        rule.onNodeWithText(str(R.string.lock_unlock)).performClick()
+        closeSoftKeyboard()
+        rule.onNodeWithText(str(R.string.lock_unlock)).performScrollTo().performClick()
         rule.waitUntil(5_000) { rule.onAllNodesWithText(str(R.string.lock_title)).fetchSemanticsNodes().isEmpty() }
         rule.onNodeWithText(str(R.string.home_new_thought)).assertExists()
     }
@@ -141,8 +150,9 @@ class AppFlowTest {
 
     @Test
     fun moodEntryAndPdfExport() {
-        rule.onNodeWithText(str(R.string.home_mood_button)).performClick()
+        rule.onNodeWithText(str(R.string.home_mood_button)).performScrollTo().performClick()
         rule.onNode(SemanticsMatcher.expectValue(SemanticsProperties.ContentDescription, listOf(str(R.string.mood_rating_description, 6))))
+            .performScrollTo()
             .performClick()
         rule.onNodeWithText(str(R.string.save)).performScrollTo().performClick()
         rule.waitUntil(5_000) { rule.onAllNodesWithText(str(R.string.home_mood_today, 6)).fetchSemanticsNodes().isNotEmpty() }
