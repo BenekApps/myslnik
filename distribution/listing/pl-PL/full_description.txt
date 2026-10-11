@@ -1,0 +1,30 @@
+Myślnik to darmowy notatnik ćwiczeń terapii poznawczo-behawioralnej (CBT) po polsku. Możesz z niego korzystać między sesjami terapii albo samodzielnie.
+
+CO ZNAJDZIESZ W APLIKACJI
+• Zapis myśli krok po kroku: sytuacja, emocje, myśl automatyczna, pułapki myślenia i bardziej wyważona myśl.
+• Dziennik nastroju z wykresem.
+• Plan aktywności: zaplanuj, co chcesz zrobić, i oceń przyjemność oraz poczucie sprawstwa.
+• Dzienniczek snu z wyliczoną efektywnością snu.
+• Drabina ekspozycji i eksperymenty behawioralne.
+• Czas na zamartwianie się i rozwiązywanie problemów krok po kroku.
+• Karty z wiedzą o tym, jak działają myśli, emocje i zachowanie.
+• Przypomnienia, które nie pokazują treści na zablokowanym ekranie.
+• PDF z wybranymi wpisami, który możesz pokazać terapeucie.
+
+TWOJE WPISY ZOSTAJĄ U CIEBIE
+• Wpisy są tylko na Twoim telefonie, w zaszyfrowanej bazie danych.
+• Aplikacja nie ma dostępu do internetu, więc nie może nigdzie ich wysłać.
+• Nie ma konta, reklam ani analityki.
+• Możesz ustawić PIN albo odcisk palca.
+• Kopię zapasową zabezpieczasz własnym hasłem.
+
+ZAWSZE POD RĘKĄ
+Przycisk SOS z numerami pomocy jest na każdym ekranie, także na ekranie blokady.
+
+CZYM MYŚLNIK NIE JEST
+Myślnik jest narzędziem samopomocy. Nie jest terapią, diagnozą ani wyrobem medycznym i nie zastąpi rozmowy ze specjalistą. Jeśli jest Ci bardzo ciężko albo grozi Ci niebezpieczeństwo, zadzwoń pod 112 lub skorzystaj z numerów w przycisku SOS.
+
+DARMOWY I OTWARTY
+Wszystkie funkcje są darmowe i nic nie jest zablokowane. Jeśli chcesz, możesz dobrowolnie wesprzeć projekt w aplikacji. Kod jest otwarty (licencja GPL-3.0), więc każdy może sprawdzić, co robi aplikacja.
+
+Aplikacja jest dostępna po polsku i po ukraińsku. Przeznaczona dla osób dorosłych.

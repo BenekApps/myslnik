@@ -17,9 +17,12 @@
 - [x] Play service account for CI uploads to internal testing (`PLAY_SERVICE_ACCOUNT_JSON`).
 - [ ] Privacy policy online: enable GitHub Pages for `docs/` (or another host), link it in
       Play Console. Add a contact e-mail to the policy and the store listing.
-- [ ] Data safety form: no data collected or shared. Health apps declaration: Mental and
-      Behavioral Health. Target audience: 18+.
-- [ ] Store listing (Polish), screenshots (turn off "Ukryj treść…" for them), 512 px icon,
+- [x] Play Console declarations for internal testing (2026-10-11): data safety "no data",
+      health features "stress/mental wellbeing" + "sleep" (no medical category), category
+      Zdrowie i fitness, target audience 18+, content rating questionnaire.
+- [ ] Before the public release: privacy policy on GitHub Pages with a contact e-mail (Play
+      currently links the GitHub file), re-check the declarations.
+- [ ] Store listing (Polish, draft in `distribution/listing/`, needs the CBT review), screenshots (turn off "Ukryj treść…" for them), 512 px icon,
       feature graphic. Ask someone who knows medical law to read the listing and the policy.
 - [ ] Play Console → Monetize → In-app products: create one-time products `support_small`,
       `support_medium`, `support_large` with names and prices (e.g. 5, 10, 20 zł). Possible only
