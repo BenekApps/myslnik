@@ -29,7 +29,8 @@ exercise. SOS stays in the top bar. To be confirmed by the CBT reviewer.
 outcome, what was learned and the belief again.
 
 **Worry time.** Worries are noted during the day and reviewed at a fixed time (default 18:00)
-with a 15-minute timer; each is let go or sent to problem solving (the problem wizard opens
+with a 15-minute timer shown in whole minutes (a ticking seconds counter can add tension);
+each is let go or sent to problem solving (the problem wizard opens
 with the worry text).
 
 **Problem solving.** Six-step wizard with the same draft rules as the thought record.

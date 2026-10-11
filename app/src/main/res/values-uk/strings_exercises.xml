@@ -187,7 +187,7 @@
     <string name="worry_start">Почати час для тривожних думок</string>
     <string name="worry_clear_closed">Видалити переглянуті (%1$d)</string>
     <string name="worry_time_title">Час для тривожних думок</string>
-    <string name="worry_timer">Залишилося %1$d:%2$02d</string>
+    <string name="worry_timer">Залишилося приблизно %1$d хв</string>
     <string name="worry_timer_done">Час минув. Можна завершити.</string>
     <string name="worry_time_hint_session">Переглянь кожну тривожну думку. Якщо маєш на щось вплив, переходь до розв’язання проблеми. Якщо ні, спробуй її відпустити. Коли час мине, завершуй, навіть якщо щось залишилося.</string>
     <string name="worry_question">Чи маєш ти на це вплив?</string>

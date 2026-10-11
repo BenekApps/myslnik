@@ -190,7 +190,7 @@
     <string name="worry_start">Zacznij czas na zamartwianie się</string>
     <string name="worry_clear_closed">Usuń przejrzane zmartwienia (%1$d)</string>
     <string name="worry_time_title">Czas na zamartwianie się</string>
-    <string name="worry_timer">Zostało %1$d:%2$02d</string>
+    <string name="worry_timer">Zostało około %1$d min</string>
     <string name="worry_timer_done">Czas minął. Możesz zakończyć.</string>
     <string name="worry_time_hint_session">Przejrzyj każde zmartwienie. Jeśli masz na coś wpływ, przejdź do rozwiązywania problemu. Jeśli nie, spróbuj je odpuścić. Gdy czas minie, zakończ, nawet jeśli coś zostało.</string>
     <string name="worry_question">Czy masz na to wpływ?</string>

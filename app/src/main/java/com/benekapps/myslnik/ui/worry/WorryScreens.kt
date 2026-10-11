@@ -176,11 +176,12 @@ fun WorryTimeScreen(
     viewModel: WorriesViewModel = appViewModel { c -> WorriesViewModel(c.db.worries(), c.settings, c.reminders) },
 ) {
     val open by viewModel.open.collectAsStateWithLifecycle()
-    var secondsLeft by rememberSaveable { mutableIntStateOf(WORRY_TIME_SECONDS) }
+    // Whole minutes only: a ticking seconds counter can add to the tension.
+    var minutesLeft by rememberSaveable { mutableIntStateOf(WORRY_TIME_MINUTES) }
     LaunchedEffect(Unit) {
-        while (secondsLeft > 0) {
-            delay(1_000)
-            secondsLeft--
+        while (minutesLeft > 0) {
+            delay(60_000)
+            minutesLeft--
         }
     }
     ScreenScaffold(title = stringResource(R.string.worry_time_title), onSos = onSos, onBack = onBack) { padding ->
@@ -191,13 +192,13 @@ fun WorryTimeScreen(
             ) {
                 Column(Modifier.padding(16.dp)) {
                     Text(
-                        if (secondsLeft > 0) {
-                            stringResource(R.string.worry_timer, secondsLeft / 60, secondsLeft % 60)
+                        if (minutesLeft > 0) {
+                            stringResource(R.string.worry_timer, minutesLeft)
                         } else {
                             stringResource(R.string.worry_timer_done)
                         },
                         style = MaterialTheme.typography.headlineSmall,
-                        modifier = Modifier.semantics { if (secondsLeft == 0) liveRegion = LiveRegionMode.Polite },
+                        modifier = Modifier.semantics { if (minutesLeft == 0) liveRegion = LiveRegionMode.Polite },
                     )
                     Text(stringResource(R.string.worry_time_hint_session), style = MaterialTheme.typography.bodyMedium, modifier = Modifier.padding(top = 8.dp))
                 }
@@ -237,4 +238,4 @@ fun WorryTimeScreen(
     }
 }
 
-private const val WORRY_TIME_SECONDS = 15 * 60
+private const val WORRY_TIME_MINUTES = 15
