@@ -43,6 +43,9 @@ class ExercisesFlowTest {
         rule.onNodeWithText(str(R.string.nav_exercises)).performClick()
     }
 
+    private fun waitForText(text: String) =
+        rule.waitUntil(10_000) { rule.onAllNodesWithText(text).fetchSemanticsNodes().isNotEmpty() }
+
     private fun open(title: Int) {
         rule.onNodeWithText(str(title)).performScrollTo().performClick()
         rule.waitForIdle()
@@ -52,6 +55,7 @@ class ExercisesFlowTest {
     fun sleepDiaryNightIsSavedWithEfficiency() {
         open(R.string.sleep_title)
         rule.onNodeWithText(str(R.string.sleep_add)).performClick()
+        waitForText(str(R.string.sleep_evening))
         // The default night: 23:00–06:45 in bed, 6 h 50 min asleep = 88 %.
         rule.onNodeWithText(str(R.string.save)).performScrollTo().performClick()
         rule.waitUntil(5_000) { rule.onAllNodesWithText(str(R.string.sleep_summary_efficiency, 88)).fetchSemanticsNodes().isNotEmpty() }
@@ -63,9 +67,10 @@ class ExercisesFlowTest {
     fun activityIsPlannedAndRated() {
         open(R.string.activities_title)
         rule.onNodeWithText(str(R.string.activities_add)).performClick()
+        waitForText(str(R.string.activities_what))
         rule.onNode(hasSetTextAction() and hasText(str(R.string.activities_what))).performTextInput("Spacer z psem")
         rule.onNodeWithText(str(R.string.save)).performScrollTo().performClick()
-        rule.waitUntil(5_000) { rule.onAllNodesWithText("Spacer z psem").fetchSemanticsNodes().isNotEmpty() }
+        waitForText("Spacer z psem")
         rule.onNodeWithContentDescription(str(R.string.activities_mark_done, "Spacer z psem")).performClick()
         rule.onNodeWithText(str(R.string.save)).performClick()
         rule.waitUntil(5_000) {
@@ -78,7 +83,10 @@ class ExercisesFlowTest {
         open(R.string.worry_title)
         rule.onNode(hasSetTextAction()).performTextInput("Rachunki za prąd")
         rule.onNodeWithText(str(R.string.worry_postpone)).performClick()
+        // The list (and the enabled start button) come from the database.
+        waitForText("Rachunki za prąd")
         rule.onNodeWithText(str(R.string.worry_start)).performScrollTo().performClick()
+        waitForText(str(R.string.worry_solve))
         rule.onNodeWithText(str(R.string.worry_solve)).performScrollTo().performClick()
         // The problem wizard opens with the worry as the problem.
         rule.waitUntil(5_000) { rule.onAllNodesWithText(str(R.string.problem_step_define_title)).fetchSemanticsNodes().isNotEmpty() }
