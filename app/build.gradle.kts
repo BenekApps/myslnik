@@ -16,8 +16,14 @@ android {
         minSdk = 26
         // Google Play requires API 36 for new versions from 31.08.2026.
         targetSdk = 36
-        versionCode = 2
-        versionName = "1.3.0"
+        // Bump both for each release. Builds uploaded to Google Play by CI get
+        // versionCode * 100000 + the workflow run number, so every upload (release tag or
+        // manual test build) is higher than the one before. Test builds also get a
+        // versionName suffix such as " (test 57)".
+        val baseVersionCode = 2
+        val playRunNumber = System.getenv("PLAY_RUN_NUMBER")?.toInt()
+        versionCode = playRunNumber?.let { baseVersionCode * 100_000 + it } ?: baseVersionCode
+        versionName = "1.3.0" + (System.getenv("VERSION_NAME_SUFFIX") ?: "")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 

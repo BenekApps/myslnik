@@ -52,6 +52,11 @@ plan" (https://claude.ai/artifact/QmgJComfVWJzw6XRcJrmH3); decisions taken since
 - Release: bump `versionCode` and `versionName` in `app/build.gradle.kts`, update What's new,
   commit, tag `vX.Y.Z` (must equal versionName), push the tag → signed bundle + R8 mapping go
   to Google Play **internal testing**. Mat promotes by hand.
+- Test build without a release: run the "Android" workflow by hand (`workflow_dispatch`, any
+  branch) with `play_test_build: true` → same upload to internal testing, versionName
+  "X.Y.Z (test N)". Mat allows this without asking. Uploads happen only after UI tests pass.
+- Play versionCode = `baseVersionCode * 100000 + run number` (CI only); locally it is
+  `baseVersionCode`.
 - Secrets Mat sets once (`gh secret set NAME`): `ANDROID_KEYSTORE_BASE64`,
   `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_PASSWORD` (optional), `PLAY_SERVICE_ACCOUNT_JSON`.
   Key alias: `myslnik`. The first bundle for a new app must be uploaded in Play Console by hand,

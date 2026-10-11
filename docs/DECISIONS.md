@@ -3,6 +3,16 @@
 Newest first. Each entry: what was decided and why. The product plan is the
 "Darmowa aplikacja CBT po polsku — plan" document (Claude Docs).
 
+## 2026-10-11 — Test builds straight to Google Play internal testing
+
+Mat wants Claude to send builds to Play for faster testing. Besides release tags, the Android
+workflow can be run by hand on any branch with `play_test_build`; it uploads to the internal
+testing track only (never closed, open or production). Play needs a strictly higher versionCode
+for every upload, so CI builds use `baseVersionCode * 100000 + run number`: test builds of a
+version sort before its release tag, and the next release (base + 1) is above both. Test
+builds show " (test N)" in the version name. The upload is a separate job that waits for lint,
+unit and UI tests, so a failing build never reaches testers.
+
 ## 2026-10-11 — "Wesprzyj projekt" through Google Play
 
 Mat asked for in-app support through Google Play. Three one-time products
