@@ -44,7 +44,7 @@ import com.benekapps.myslnik.ui.components.SectionTitle
 import com.benekapps.myslnik.ui.components.dial
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
-import com.benekapps.myslnik.ui.components.PolishLocale
+import com.benekapps.myslnik.domain.appLocale
 
 /** Help numbers. Works without internet and without unlocking the app. */
 @Composable
@@ -54,7 +54,7 @@ fun SosScreen(onBack: () -> Unit, onGrounding: () -> Unit) {
     val helplines = remember(resources) { Helplines.load(resources) }
     val verifiedOn = remember(resources) {
         val date = LocalDate.parse(resources.getString(R.string.helplines_verified_on))
-        DateTimeFormatter.ofPattern("d MMMM yyyy", PolishLocale).format(date)
+        DateTimeFormatter.ofPattern("d MMMM yyyy", resources.appLocale()).format(date)
     }
     ScreenScaffold(title = stringResource(R.string.sos_title), onSos = null, onBack = onBack) { padding ->
         ScrollingContent(padding) {

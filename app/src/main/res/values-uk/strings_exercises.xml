@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ukrainian translation of values/strings_exercises.xml. Needs native and CBT review. -->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="uk">
+    <!-- Common -->
+    <string name="nav_exercises">Вправи</string>
+    <string name="nav_knowledge">Знання</string>
+    <string name="delete_cannot_undo">Це не можна скасувати.</string>
+    <string name="duration_hm">%1$d год %2$d хв</string>
+    <string name="minutes_value">%1$d хв</string>
+    <string name="scale_state">%1$d з %2$d</string>
+    <string name="stepper_less">Менше: %1$s</string>
+    <string name="stepper_more">Більше: %1$s</string>
+    <string name="time_change">Змінити час</string>
+    <string name="day_previous">Попередній день</string>
+    <string name="day_next">Наступний день</string>
+    <string name="day_go_today">Повернутися до сьогодні</string>
+    <string name="day_today_value">Сьогодні, %1$s</string>
+    <string name="filter_sleep">Сон</string>
+    <string name="filter_experiments">Експерименти</string>
+    <string name="filter_problems">Проблеми</string>
+    <string name="home_today_plan">Сьогодні в плані (виконано: %1$d з %2$d)</string>
+
+    <!-- Exercises hub -->
+    <string name="exercises_group_thoughts">Думки та емоції</string>
+    <string name="exercises_group_action">Дія</string>
+    <string name="exercises_group_daily">Щоденне</string>
+    <string name="exercise_thought_desc">Перевір думку, яка викликає сильні емоції.</string>
+    <string name="exercise_mood_desc">Оціни настрій і подивися, як він змінюється з часом.</string>
+    <string name="exercise_experiments_desc">Перевір на практиці, чи справджується передбачення.</string>
+    <string name="exercise_activities_desc">Заплануй невеликі справи й подивися, що покращує настрій.</string>
+    <string name="exercise_exposure_desc">Крок за кроком наближайся до того, чого уникаєш.</string>
+    <string name="exercise_problems_desc">Розклади проблему на частини й обери рішення.</string>
+    <string name="exercise_worry_desc">Відкладай тривожні думки на визначений час.</string>
+    <string name="exercise_sleep_desc">Записуй сон і перевіряй ефективність сну.</string>
+
+    <!-- Behavioural activation -->
+    <string name="activities_title">План активностей</string>
+    <string name="activities_intro">Коли настрій низький, легко перестати робити те, що колись приносило радість чи задоволення. Заплануй невеликі справи. Після кожної оціни задоволення і відчуття впливу — тобто наскільки ти відчуваєш, що щось вдалося.</string>
+    <string name="activities_add">Додати активність</string>
+    <string name="activities_empty">На цей день ще нічого немає. Почни з однієї маленької справи.</string>
+    <string name="activities_mark_done">Виконано: %1$s</string>
+    <string name="activities_pleasure_value">задоволення %1$d/10</string>
+    <string name="activities_mastery_value">вплив %1$d/10</string>
+    <string name="activities_week_title">Останні 7 днів</string>
+    <string name="activities_week_done">Виконаних активностей: %1$d</string>
+    <string name="activities_average">У середньому: задоволення %1$s/10, вплив %2$s/10</string>
+    <string name="activities_rate_title">Як було?</string>
+    <string name="activities_rate_hint">Оціни від 0 до 10. Навіть невелике задоволення чи невелике відчуття впливу мають значення.</string>
+    <string name="activities_pleasure">Задоволення</string>
+    <string name="activities_mastery">Відчуття впливу</string>
+    <string name="activities_new">Нова активність</string>
+    <string name="activities_edit">Активність</string>
+    <string name="activities_what">Що хочеш зробити?</string>
+    <string name="activities_ideas">Ідеї</string>
+    <string name="activities_when">Коли</string>
+    <string name="activities_at_time">У конкретний час</string>
+    <string name="activities_time">Час</string>
+    <string name="activities_note">Нотатка (можна пропустити)</string>
+    <string name="activities_done">Виконано</string>
+    <string name="activities_delete_title">Видалити цю активність?</string>
+    <string-array name="activity_ideas">
+        <item>Коротка прогулянка</item>
+        <item>Дзвінок близькій людині</item>
+        <item>Душ і свіжий одяг</item>
+        <item>Улюблена музика</item>
+        <item>Приготувати просту страву</item>
+        <item>Лад в одній шухляді</item>
+        <item>Розтяжка 10 хвилин</item>
+        <item>Кілька сторінок книжки</item>
+        <item>Вийти на сонце</item>
+        <item>Невелика справа, яку треба владнати</item>
+        <item>Щось для іншої людини</item>
+        <item>Хобі 15 хвилин</item>
+    </string-array>
+
+    <!-- Sleep diary -->
+    <string name="sleep_title">Щоденник сну</string>
+    <string name="sleep_intro">Заповнюй уранці, поки ніч ще свіжа в пам’яті. Достатньо приблизного часу. Через кілька ночей побачиш, скільки ти спиш і яка ефективність сну.</string>
+    <string name="sleep_add">Заповнити щоденник</string>
+    <string name="sleep_summary_title">Останні ночі: %1$d</string>
+    <string name="sleep_summary_sleep">Середній час сну: %1$s</string>
+    <string name="sleep_summary_efficiency">Середня ефективність сну: %1$d%%</string>
+    <string name="sleep_efficiency_explained">Ефективність сну — це частка часу в ліжку, яку ти спиш. Наприклад, 7 годин сну за 8 годин у ліжку — це приблизно 88 відсотків.</string>
+    <string name="sleep_nights">Ночі</string>
+    <string name="sleep_empty">Тут з’являться записані ночі.</string>
+    <string name="sleep_night_of">Ніч: %1$s</string>
+    <string name="sleep_row">Сон %1$s · ефективність %2$d%% · якість %3$d/5</string>
+    <string name="sleep_entry_title">Ніч у щоденнику</string>
+    <string name="sleep_entry_hint">Обери день, увечері якого лягаєш спати. Вкажи час приблизно.</string>
+    <string name="sleep_evening">Вечір</string>
+    <string name="sleep_in_bed">Лягання в ліжко</string>
+    <string name="sleep_tried">Спроба заснути (вимкнене світло)</string>
+    <string name="sleep_latency">Засинання тривало</string>
+    <string name="sleep_night">Ніч</string>
+    <string name="sleep_awakenings">Пробудження вночі</string>
+    <string name="sleep_awake">Неспання вночі загалом</string>
+    <string name="sleep_morning">Ранок</string>
+    <string name="sleep_final_wake">Останнє пробудження</string>
+    <string name="sleep_out_of_bed">Підйом з ліжка</string>
+    <string name="sleep_quality">Якість сну</string>
+    <string-array name="sleep_quality_labels">
+        <item>1 — дуже погана</item>
+        <item>2 — погана</item>
+        <item>3 — середня</item>
+        <item>4 — добра</item>
+        <item>5 — дуже добра</item>
+    </string-array>
+    <string name="sleep_note">Нотатка, напр. кава, алкоголь, денний сон (можна пропустити)</string>
+    <string name="sleep_error_order">Перевір порядок часу: лягання, спроба заснути, останнє пробудження, підйом.</string>
+    <string name="sleep_error_awake">Засинання й неспання разом тривали довше за всю ніч. Перевір хвилини.</string>
+    <string name="sleep_time_in_bed">Час у ліжку: %1$s</string>
+    <string name="sleep_total">Час сну: %1$s</string>
+    <string name="sleep_efficiency">Ефективність сну: %1$d%%</string>
+    <string name="sleep_delete_title">Видалити цю ніч?</string>
+
+    <!-- Exposure -->
+    <string name="exposure_title">Драбина експозиції</string>
+    <string name="exposure_intro">Уникання ненадовго зменшує тривогу, але з часом її закріплює. Драбина — це перелік ситуацій від найлегшої до найважчої. Ти починаєш знизу й піднімаєшся у власному темпі. Найкраще робити це з терапевтом.</string>
+    <string name="exposure_new_ladder">Нова драбина</string>
+    <string name="exposure_ladder_label">Чого вона стосується?</string>
+    <string name="exposure_ladder_hint">Наприклад: їзда автобусом, телефонні розмови, вихід з дому.</string>
+    <string name="exposure_empty">У тебе ще немає жодної драбини.</string>
+    <string name="exposure_steps_count">Кроків: %1$d</string>
+    <string name="exposure_ladder_intro">Додай кілька ситуацій і оціни, яку тривогу передбачаєш (0–100). Драбина розставить їх від найлегшої.</string>
+    <string name="exposure_add_step">Додати крок</string>
+    <string name="exposure_no_steps">Додай перший крок — наприклад, щось, що викликає тривогу приблизно 20–30.</string>
+    <string name="exposure_steps_title">Кроки від найлегшого</string>
+    <string name="exposure_attempts_count">Спроб: %1$d</string>
+    <string name="exposure_last_attempt">востаннє %1$d → %2$d</string>
+    <string name="exposure_expected_legend">Число ліворуч — передбачувана тривога від 0 до 100.</string>
+    <string name="exposure_rename">Змінити назву</string>
+    <string name="exposure_delete_ladder">Видалити цю драбину?</string>
+    <string name="exposure_delete_ladder_text">Зникнуть також усі її кроки й спроби. Це не можна скасувати.</string>
+    <string name="exposure_step_dialog_title">Крок</string>
+    <string name="exposure_step_label">Ситуація</string>
+    <string name="exposure_expected">Передбачувана тривога</string>
+    <string name="exposure_step_title">Крок драбини</string>
+    <string name="exposure_expected_value">Передбачувана тривога: %1$d/100</string>
+    <string name="exposure_step_hint">Залишайся в ситуації, доки тривога не почне спадати, без дій, які швидко її гасять. Запиши тривогу безпосередньо до і після. Коли після кількох спроб вона помітно нижча, можна йти вище.</string>
+    <string name="exposure_add_attempt">Записати спробу</string>
+    <string name="exposure_attempts_title">Спроби</string>
+    <string name="exposure_attempt_values">тривога до: %1$d → після: %2$d</string>
+    <string name="exposure_before">Тривога безпосередньо до</string>
+    <string name="exposure_after">Тривога безпосередньо після</string>
+    <string name="exposure_attempt_note">Що ти помічаєш? (можна пропустити)</string>
+    <string name="exposure_delete_attempt">Видалити спробу</string>
+    <string name="exposure_delete_step">Видалити цей крок?</string>
+
+    <!-- Behavioural experiments -->
+    <string name="experiments_title">Поведінкові експерименти</string>
+    <string name="experiments_title_single">Експеримент</string>
+    <string name="experiments_intro">Експеримент — це спосіб перевірити думку на ділі, а не лише в голові. Запиши, що передбачаєш, зроби невеликий тест і порівняй з тим, що сталося.</string>
+    <string name="experiments_new">Новий експеримент</string>
+    <string name="experiments_empty">У тебе ще немає жодного експерименту.</string>
+    <string name="experiments_planned">Заплановано</string>
+    <string name="experiments_done">Виконано</string>
+    <string name="experiments_belief_change">віра в думку %1$d%% → %2$d%%</string>
+    <string name="experiments_delete_title">Видалити цей експеримент?</string>
+    <string name="experiment_part_plan">План</string>
+    <string name="experiment_part_result">Після експерименту</string>
+    <string name="experiment_belief_hint">Яку думку хочеш перевірити? Запиши її так, як вона звучить у твоїй голові.</string>
+    <string name="experiment_belief">Думка для перевірки</string>
+    <string name="experiment_belief_before">Наскільки сильно ти в неї віриш?</string>
+    <string name="experiment_plan_hint">Що конкретно ти зробиш, де й коли?</string>
+    <string name="experiment_plan">Експеримент</string>
+    <string name="experiment_prediction_hint">Що, згідно з цією думкою, станеться? Опиши так, щоб це можна було перевірити.</string>
+    <string name="experiment_prediction">Передбачення</string>
+    <string name="experiment_obstacles_hint">Що може завадити і як ти з цим впораєшся?</string>
+    <string name="experiment_obstacles">Перешкоди та способи</string>
+    <string name="experiment_result_hint">Заповни після експерименту. Опиши факти, а не лише відчуття.</string>
+    <string name="experiment_outcome">Що сталося?</string>
+    <string name="experiment_learned">Що ти з цього дізнаєшся?</string>
+    <string name="experiment_rate_after">Ще раз оціни, наскільки сильно віриш у цю думку</string>
+    <string name="experiment_belief_after">Віра в думку зараз</string>
+
+    <!-- Worry time -->
+    <string name="worry_title">Час для тривожних думок</string>
+    <string name="worry_intro">Постійне хвилювання протягом дня виснажує і рідко щось вирішує. Спробуй відкладати тривожні думки на один сталий час. Коли з’явиться тривожна думка, коротко запиши її й повернися до того, що робиш.</string>
+    <string name="worry_time_label">Твій час для тривожних думок</string>
+    <string name="worry_time_hint">Приблизно 15 хвилин, краще не перед самим сном. Нагадування можна ввімкнути в налаштуваннях.</string>
+    <string name="worry_postpone_title">Відклади тривожну думку</string>
+    <string name="worry_label">Що тебе турбує?</string>
+    <string name="worry_postpone">Відкласти на потім</string>
+    <string name="worry_list_title">Відкладені тривожні думки (%1$d)</string>
+    <string name="worry_empty">У тебе немає відкладених тривожних думок.</string>
+    <string name="worry_delete">Видалити: %1$s</string>
+    <string name="worry_start">Почати час для тривожних думок</string>
+    <string name="worry_clear_closed">Видалити переглянуті (%1$d)</string>
+    <string name="worry_time_title">Час для тривожних думок</string>
+    <string name="worry_timer">Залишилося %1$d:%2$02d</string>
+    <string name="worry_timer_done">Час минув. Можна завершити.</string>
+    <string name="worry_time_hint_session">Переглянь кожну тривожну думку. Якщо маєш на щось вплив, переходь до розв’язання проблеми. Якщо ні, спробуй її відпустити. Коли час мине, завершуй, навіть якщо щось залишилося.</string>
+    <string name="worry_question">Чи маєш ти на це вплив?</string>
+    <string name="worry_let_go">Відпускаю</string>
+    <string name="worry_solve">Можу щось зробити</string>
+    <string name="worry_all_done">Усе переглянуто.</string>
+    <string name="worry_finish">Завершити</string>
+
+    <!-- Problem solving -->
+    <string name="problems_title">Розв’язання проблем</string>
+    <string name="problems_title_single">Проблема</string>
+    <string name="problems_intro">Коли проблема здається завеликою, допомагає розкласти її на кроки: назвати її, зібрати ідеї, порівняти їх і обрати одну для перевірки.</string>
+    <string name="problems_new">Нова проблема</string>
+    <string name="problems_empty">У тебе ще немає проблем для розв’язання.</string>
+    <string name="problems_untitled">Проблема без опису</string>
+    <string name="problems_draft">Чернетка</string>
+    <string name="problems_delete">Видалити цю проблему</string>
+    <string name="problems_delete_title">Видалити цю проблему?</string>
+    <string name="problem_step_define_title">Що це за проблема?</string>
+    <string name="problem_step_define_hint">Опиши її конкретно: що відбувається, коли і що ти хочеш змінити. Якщо проблема велика, обери одну її частину.</string>
+    <string name="problem_step_solutions_title">Які є можливі рішення?</string>
+    <string name="problem_step_solutions_hint">Запиши все, що спадає на думку, навіть дивні ідеї. Поки що нічого не оцінюй.</string>
+    <string name="problem_step_pros_cons_title">Плюси й мінуси</string>
+    <string name="problem_step_pros_cons_hint">Біля кожної ідеї запиши, що говорить на її користь, а що проти. Врахуй вартість, час і те, як ти себе з цим почуватимеш.</string>
+    <string name="problem_step_choose_title">Яке рішення обираєш?</string>
+    <string name="problem_step_choose_hint">Обери одне для перевірки. Воно не мусить бути ідеальним.</string>
+    <string name="problem_step_plan_title">Як ти це зробиш?</string>
+    <string name="problem_step_plan_hint">Розпиши маленькі кроки: що, коли, що тобі потрібно і хто може допомогти.</string>
+    <string name="problem_step_review_title">Як вийшло?</string>
+    <string name="problem_step_review_hint">Заповни після спроби. Якщо не спрацювало, можна повернутися й обрати інше рішення.</string>
+    <string name="problem_field_problem">Проблема</string>
+    <string name="problem_field_solutions">Можливі рішення</string>
+    <string name="problem_field_chosen">Обране рішення</string>
+    <string name="problem_field_plan">План дій</string>
+    <string name="problem_field_review">Як вийшло</string>
+    <string name="problem_solution_label">Ідея</string>
+    <string name="problem_add_solution">Додати ідею</string>
+    <string name="problem_remove_solution">Видалити ідею: %1$s</string>
+    <string name="problem_no_solutions">Спочатку додай ідеї на попередньому кроці.</string>
+    <string name="problem_pros">Плюси</string>
+    <string name="problem_cons">Мінуси</string>
+    <string name="problem_pros_value">Плюси: %1$s</string>
+    <string name="problem_cons_value">Мінуси: %1$s</string>
+
+    <!-- Knowledge -->
+    <string name="knowledge_intro">Короткі картки про те, як працюють думки, емоції та поведінка. Кожна веде до відповідної вправи.</string>
+    <string name="knowledge_try">Спробувати вправу</string>
+    <string name="knowledge_open_sos">Номери допомоги</string>
+    <string name="knowledge_disclaimer">Ці картки — загальні знання про когнітивно-поведінкову терапію. Вони не замінять розмови з фахівцем.</string>
+
+    <!-- Reminders -->
+    <string name="reminders_channel">Нагадування</string>
+    <string name="reminder_public_text">Нагадування</string>
+    <string name="reminder_exercise_text">Маєш хвилинку на коротку вправу чи запис настрою?</string>
+    <string name="reminder_sleep_text">Доброго ранку. Заповни щоденник сну, поки ніч свіжа в пам’яті.</string>
+    <string name="reminder_worry_text">Час для тривожних думок. Переглянь відкладені думки приблизно 15 хвилин.</string>
+    <string name="settings_reminders">Нагадування</string>
+    <string name="settings_reminders_hint">На заблокованому екрані видно лише слово «Нагадування».</string>
+    <string name="settings_reminder_exercise">Щоденна вправа</string>
+    <string name="settings_reminder_sleep">Щоденник сну (вранці)</string>
+    <string name="settings_reminder_worry">Час для тривожних думок</string>
+    <string name="settings_reminder_time">Час</string>
+    <string name="settings_notifications_denied">Без дозволу на сповіщення нагадування не з’являтимуться. Його можна надати в налаштуваннях телефону.</string>
+
+    <!-- Language -->
+    <string name="settings_language">Мова</string>
+    <string name="language_system">Як у телефоні</string>
+
+    <!-- PDF -->
+    <string name="pdf_activities_summary">Виконано: %1$d з %2$d запланованих активностей.</string>
+    <string name="pdf_done">виконано</string>
+    <string name="pdf_not_done">не виконано</string>
+    <string name="pdf_sleep_summary">Ночей: %1$d. Середній час сну: %2$s. Середня ефективність сну: %3$d%%.</string>
+    <string name="pdf_sleep_line">У ліжку %1$s–%2$s · сон %3$s · ефективність %4$d%% · засинання %5$d хв · пробудження: %6$d (%7$d хв) · якість %8$d/5</string>
+</resources>

@@ -12,7 +12,8 @@ internetu. Autor aplikacji nie ma dostępu do Twoich wpisów.
 
 ## Gdzie są Twoje wpisy
 
-Zapisy myśli, wpisy nastroju i notatki są zapisane tylko na Twoim telefonie, w bazie danych
+Zapisy myśli, wpisy nastroju, plan aktywności, dzienniczek snu, ćwiczenia ekspozycji,
+eksperymenty, zmartwienia, rozwiązywane problemy i notatki są zapisane tylko na Twoim telefonie, w bazie danych
 zaszyfrowanej kluczem, który przechowuje magazyn kluczy Androida (Android Keystore). Klucz nie
 opuszcza telefonu. Aplikacja wyłącza automatyczną kopię zapasową Androida i przenoszenie danych
 na nowy telefon, bo bez klucza takiej kopii nie da się odczytać.
@@ -35,6 +36,11 @@ prywatności tej usługi.
 Gdy ocenisz emocję na 90–100 albo nastrój na 0–1, aplikacja pokaże numery pomocy. To
 sprawdzenie dzieje się tylko na telefonie i dotyczy wyłącznie liczb. Aplikacja nie czyta treści
 Twoich wpisów. Przycisk „Zadzwoń” otwiera aplikację telefonu z wpisanym numerem.
+
+## Przypomnienia
+
+Jeśli je włączysz, przypomnienia są planowane na telefonie (Android WorkManager), bez
+internetu. Na zablokowanym ekranie widać tylko „Myślnik – Przypomnienie”, bez treści.
 
 ## Usuwanie danych
 

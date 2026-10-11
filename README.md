@@ -8,18 +8,21 @@ A free Android app with CBT exercises in Polish. Self-help and homework between 
 sessions; not therapy, not a diagnosis, not a medical device. No account, no ads, no network
 access: entries stay on the phone, encrypted.
 
-## Version 1.0
+## Version 1.3
 
 - Thought record (Beck, 7 steps, one per screen, hints and examples, draft saved after every step)
 - Mood check-in (0–10, emotions, note) with a 7 and 30 day chart
+- Behavioural activation: activity plan rated for pleasure and sense of achievement
+- Sleep diary with sleep efficiency
+- Exposure ladder (anxiety 0–100 before and after), behavioural experiments,
+  worry time, problem solving
+- Psychoeducation cards, each linked to an exercise
+- Daily reminders (private on the lock screen)
 - SOS on every screen, also on the lock screen: help numbers with a call button, 5-4-3-2-1 grounding
-- PDF export for the therapist (period and entry types)
+- PDF export for the therapist (period and any module)
 - PIN or fingerprint lock, SQLCipher-encrypted database with its key in the Android Keystore
 - Password-protected backup file saved wherever the user chooses
-- Short explanation of the cognitive model, sources, privacy
-
-Roadmap: 1.1 behavioural activation, sleep diary, reminders · 1.2 exposure ladder, behavioural
-experiments, worry time, problem solving · 1.3 psychoeducation cards, Ukrainian.
+- Polish and Ukrainian, switchable in the app
 
 ## Build
 
@@ -44,8 +47,10 @@ app/src/main/java/com/benekapps/myslnik/
   domain/      emotions, cognitive distortions, help numbers, crisis thresholds, date ranges
   export/      PDF for the therapist (android.graphics.pdf.PdfDocument)
   lock/        app lock timing
+  reminders/   daily reminders (WorkManager) and notifications
   ui/          Jetpack Compose screens
-app/src/main/res/values/strings.xml    all user-facing text (Polish), reviewed by a CBT therapist
+app/src/main/res/values/strings*.xml   all user-facing text (Polish), reviewed by a CBT therapist
+app/src/main/res/values-uk/            Ukrainian translation (kept complete by TranslationsTest)
 app/src/main/res/values/helplines.xml  help numbers with their verification date
 docs/DECISIONS.md                      why things are the way they are
 TODO.md                                what is next

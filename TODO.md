@@ -1,9 +1,15 @@
 # TODO
 
-## Before the first release (1.0)
+## Before the first release (1.3)
 
-- [ ] Find the CBT reviewer and give them every text: `app/src/main/res/values/strings.xml`
-      (hints, examples, distortions, crisis card, onboarding) and `helplines.xml`.
+- [ ] Find the CBT reviewer and give them every text: `app/src/main/res/values/strings.xml`,
+      `strings_exercises.xml`, `strings_cards.xml` and `helplines.xml`. Ask specifically about:
+      no crisis card for exposure ratings, the exposure hint (stay until anxiety drops), the
+      sleep advice card.
+- [ ] Ukrainian: native speaker review of `values-uk/*` (ideally someone who knows CBT terms).
+- [ ] Verify Ukrainian-language help lines in Poland (800 108 108, HelpUkraine.GrupaWsparcia.pl,
+      116 111 Ukrainian hours, 800 12 12 12) directly with the organisations; add verified
+      ones to the Ukrainian SOS screen.
 - [ ] After the review: reviewer's name (with consent) in "O aplikacji" (`about_review_text`).
 - [ ] Check "Myślnik" in Google Play and in the trademark registers (UPRP, EUIPO).
 - [ ] Upload keystore for Myślnik (alias `myslnik`) and GitHub secrets, see CLAUDE.md.
@@ -18,17 +24,15 @@
 - [ ] TalkBack, 200% font and Accessibility Scanner on a real phone.
 - [ ] Usability test with 5–8 people (thought record, find SOS, PDF export). People in
       therapy only through their therapist. Ethics committee first if it is part of a thesis.
+- [ ] Store listing in Ukrainian too (`distribution/whatsnew/whatsnew-uk`).
 
-## 1.1
+## Done in code (2026-10-11)
 
-- [ ] Behavioural activation: activity plan, pleasure and mastery 0–10.
-- [ ] Sleep diary with sleep efficiency (unit tests).
-- [ ] Exercise reminders with WorkManager (no exact alarms). Needs POST_NOTIFICATIONS.
-- [ ] Database version 2 with a migration and a migration test.
+1.1 behavioural activation, sleep diary, reminders · 1.2 exposure ladder, behavioural
+experiments, worry time, problem solving · 1.3 psychoeducation cards, Ukrainian.
 
 ## Later
 
-- 1.2: exposure ladder (anxiety 0–100 before/after), behavioural experiments, worry time,
-  problem solving.
-- 1.3: psychoeducation cards; Ukrainian (add `uk` to `localeFilters`).
+- Reminders for single planned activities (now only daily reminders).
+- Sleep diary: support for shift work (sleep across noon).
 - Yearly: target the new Android before 31 August; re-check help numbers.

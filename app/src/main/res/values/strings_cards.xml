@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Psychoeducation cards (1.3). General knowledge only: no diagnoses, no
+    promises. Every card must be reviewed by a certified CBT therapist.
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="pl">
+    <string name="card_cbt_title">Czym jest terapia poznawczo-behawioralna</string>
+    <string name="card_cbt_summary">Krótko o tym, jak pracuje się w CBT.</string>
+    <string-array name="card_cbt_paragraphs">
+        <item>Terapia poznawczo-behawioralna (CBT) to jedna z najlepiej przebadanych form psychoterapii. Skupia się na tym, co dzieje się teraz: na myślach, emocjach, reakcjach ciała i zachowaniu.</item>
+        <item>W CBT pacjent i terapeuta pracują razem jak zespół. Ustalają cel, uczą się, co podtrzymuje trudności, i sprawdzają nowe sposoby radzenia sobie.</item>
+        <item>Ważną częścią są ćwiczenia między sesjami. To w codziennym życiu sprawdza się nowe sposoby myślenia i działania. Myślnik ma w tym pomagać.</item>
+        <item>Ćwiczenia z tej aplikacji możesz robić też samodzielnie. Jeśli trudności są duże albo trwają długo, warto poszukać terapeuty.</item>
+    </string-array>
+
+    <string name="card_thoughts_title">Myśli automatyczne</string>
+    <string name="card_thoughts_summary">Szybkie myśli, które wpływają na to, jak się czujesz.</string>
+    <string-array name="card_thoughts_paragraphs">
+        <item>Myśli automatyczne to krótkie, szybkie myśli, które pojawiają się same w reakcji na sytuację. Często nawet ich nie zauważamy, ale czujemy emocje, które wywołują.</item>
+        <item>Brzmią jak fakty: „Nie dam rady”, „Oni mnie nie lubią”. Tymczasem to tylko jedna z możliwych interpretacji.</item>
+        <item>Gdy jest nam ciężko, myśli częściej wpadają w pułapki: zakładamy najgorsze, uogólniamy, czytamy w cudzych myślach.</item>
+        <item>Pierwszy krok to zauważyć myśl i zapisać ją. Drugi to sprawdzić ją jak hipotezę: co przemawia za nią, a co przeciw? Do tego służy zapis myśli.</item>
+    </string-array>
+
+    <string name="card_emotions_title">Emocje i ciało</string>
+    <string name="card_emotions_summary">Po co są emocje i jak je nazywać.</string>
+    <string-array name="card_emotions_paragraphs">
+        <item>Emocje to sygnały. Lęk ostrzega przed zagrożeniem, smutek pomaga przeżyć stratę, złość chroni granice. Same w sobie nie są ani dobre, ani złe.</item>
+        <item>Emocje czujemy też w ciele: napięcie mięśni, szybsze bicie serca, ścisk w żołądku, zmęczenie.</item>
+        <item>Nazwanie emocji i ocena jej siły może pomóc złapać dystans. Łatwiej wtedy zauważyć, że emocja się zmienia i nie trwa wiecznie.</item>
+        <item>Regularny zapis nastroju pokazuje, co wpływa na samopoczucie: sen, ruch, kontakt z ludźmi, konkretne sytuacje.</item>
+    </string-array>
+
+    <string name="card_anxiety_title">Jak działa lęk</string>
+    <string name="card_anxiety_summary">Dlaczego lęk bywa tak silny i dlaczego mija.</string>
+    <string-array name="card_anxiety_paragraphs">
+        <item>Lęk to naturalna reakcja na zagrożenie. Ciało przygotowuje się do walki albo ucieczki: serce bije szybciej, oddech przyspiesza, mięśnie się napinają.</item>
+        <item>Ten system czasem włącza się, gdy realnego zagrożenia nie ma. Objawy z ciała są wtedy bardzo nieprzyjemne, ale same w sobie nie są niebezpieczne.</item>
+        <item>Lęk ma swój przebieg: rośnie, osiąga szczyt i opada, nawet jeśli nic nie robimy. Często opada szybciej, niż się spodziewamy.</item>
+        <item>Myśli w lęku zwykle przeceniają zagrożenie i nie doceniają tego, jak sobie poradzimy. Warto je sprawdzać, na przykład w zapisie myśli albo eksperymencie.</item>
+    </string-array>
+
+    <string name="card_avoidance_title">Unikanie i ekspozycja</string>
+    <string name="card_avoidance_summary">Dlaczego unikanie podtrzymuje lęk.</string>
+    <string-array name="card_avoidance_paragraphs">
+        <item>Gdy coś budzi lęk, naturalnie tego unikamy. Na chwilę przynosi to ulgę.</item>
+        <item>Problem w tym, że unikanie nie pozwala sprawdzić, czy przewidywana katastrofa naprawdę by się wydarzyła. Lęk zostaje, a lista rzeczy, których unikamy, często rośnie.</item>
+        <item>Ekspozycja to stopniowe zbliżanie się do tego, czego się boimy, w bezpieczny i zaplanowany sposób. Zaczyna się od łatwiejszych sytuacji i idzie dalej, gdy te stają się prostsze.</item>
+        <item>Do ekspozycji potrzeba odwagi i cierpliwości. Najlepiej planować ją razem z terapeutą, zwłaszcza przy silnym lęku.</item>
+    </string-array>
+
+    <string name="card_activation_title">Działanie a nastrój</string>
+    <string name="card_activation_summary">Dlaczego czasem warto zacząć od działania.</string>
+    <string-array name="card_activation_paragraphs">
+        <item>Gdy nastrój jest niski, robimy mniej: mniej spotkań, mniej przyjemności, mniej spraw załatwionych. Wtedy nastrój często spada jeszcze bardziej.</item>
+        <item>Aktywacja behawioralna odwraca ten krąg. Zamiast czekać na motywację, planuje się małe działania, a motywacja często przychodzi w trakcie.</item>
+        <item>Liczą się dwie rzeczy: przyjemność oraz poczucie sprawstwa, czyli wrażenie, że coś się udało. Obie warto oceniać po każdej aktywności.</item>
+        <item>Zacznij od małych, konkretnych kroków. Dziesięciominutowy spacer to dobry początek.</item>
+    </string-array>
+
+    <string name="card_experiments_title">Eksperymenty behawioralne</string>
+    <string name="card_experiments_summary">Jak sprawdzić myśl w praktyce.</string>
+    <string-array name="card_experiments_paragraphs">
+        <item>Niektóre myśli najlepiej sprawdzić nie na papierze, ale w działaniu. Do tego służy eksperyment behawioralny.</item>
+        <item>Najpierw zapisujesz myśl i to, co według niej się stanie. Potem planujesz mały test i go wykonujesz.</item>
+        <item>Na koniec porównujesz przewidywanie z tym, co się wydarzyło, i zastanawiasz się, czego to Cię uczy.</item>
+        <item>Wynik nie musi być idealny. Każdy eksperyment daje nowe informacje, nawet jeśli coś poszło inaczej, niż planowano.</item>
+    </string-array>
+
+    <string name="card_worry_title">Zamartwianie się</string>
+    <string name="card_worry_summary">Kiedy myślenie o problemach nie pomaga.</string>
+    <string-array name="card_worry_paragraphs">
+        <item>Zamartwianie się to krążenie myśli wokół tego, co może pójść źle. Często wydaje się, że pomaga się przygotować, ale zwykle tylko męczy.</item>
+        <item>Pomaga odróżnić zmartwienia, na które masz wpływ, od tych, na które go nie masz. Na pierwsze można odpowiedzieć działaniem, drugie warto spróbować odpuścić.</item>
+        <item>Jednym ze sposobów jest wyznaczony czas na zamartwianie się. W ciągu dnia zapisujesz zmartwienie i odkładasz je na później. O stałej porze przeglądasz listę przez około 15 minut.</item>
+        <item>Często okazuje się, że część zmartwień do tego czasu straciła znaczenie.</item>
+    </string-array>
+
+    <string name="card_problems_title">Rozwiązywanie problemów</string>
+    <string name="card_problems_summary">Krok po kroku zamiast w kółko.</string>
+    <string-array name="card_problems_paragraphs">
+        <item>Gdy problem wydaje się za duży, łatwo utknąć w myśleniu o nim, zamiast działać.</item>
+        <item>Pomaga stały schemat: nazwać problem konkretnie, zebrać wszystkie pomysły bez oceniania, porównać ich plusy i minusy, wybrać jeden i zaplanować małe kroki.</item>
+        <item>Po spróbowaniu warto sprawdzić, jak poszło. Jeśli rozwiązanie nie zadziałało, to też informacja. Można wrócić i wybrać inne.</item>
+    </string-array>
+
+    <string name="card_sleep_title">Sen: co może pomóc</string>
+    <string name="card_sleep_summary">Nawyki, które mogą wspierać sen.</string>
+    <string-array name="card_sleep_paragraphs">
+        <item>Sen bardzo wpływa na nastrój i radzenie sobie z emocjami. Problemy ze snem są częste i zwykle da się nad nimi pracować.</item>
+        <item>Pomaga stała pora wstawania, także w weekend. Łóżko warto zostawić do snu, a nie do pracy czy przewijania telefonu.</item>
+        <item>Jeśli nie możesz zasnąć przez dłuższy czas, często lepiej wstać, zająć się czymś spokojnym przy przygaszonym świetle i wrócić do łóżka, gdy pojawi się senność.</item>
+        <item>Kawa po południu, alkohol, długie drzemki i ekran tuż przed snem mogą utrudniać sen.</item>
+        <item>Dzienniczek snu pokazuje, ile naprawdę śpisz. Jeśli kłopoty ze snem trwają tygodniami, porozmawiaj z lekarzem lub terapeutą. Istnieje skuteczna terapia bezsenności oparta na CBT.</item>
+    </string-array>
+
+    <string name="card_kindness_title">Życzliwość dla siebie</string>
+    <string name="card_kindness_summary">Jak mówić do siebie w trudnych chwilach.</string>
+    <string-array name="card_kindness_paragraphs">
+        <item>W trudnych chwilach wiele osób mówi do siebie surowo: „Znowu zawaliłem”, „Jestem beznadziejna”. Taki krytyk w głowie rzadko motywuje. Częściej dokłada cierpienia.</item>
+        <item>Spróbuj zapytać: co powiedziałbym albo powiedziałabym przyjacielowi w takiej sytuacji? Zwykle są to słowa bardziej wyrozumiałe i bliższe prawdy.</item>
+        <item>Życzliwość dla siebie nie oznacza udawania, że wszystko jest dobrze. Chodzi o to, by traktować siebie z takim samym szacunkiem jak innych.</item>
+    </string-array>
+
+    <string name="card_help_title">Kiedy szukać pomocy</string>
+    <string name="card_help_summary">Sygnały, że warto porozmawiać ze specjalistą.</string>
+    <string-array name="card_help_paragraphs">
+        <item>Ćwiczenia z aplikacji mogą pomóc, ale nie zastąpią rozmowy ze specjalistą.</item>
+        <item>Warto poszukać pomocy, gdy trudności trwają kilka tygodni, przeszkadzają w pracy, nauce lub relacjach, gdy trudno spać lub jeść albo gdy pojawia się poczucie beznadziei.</item>
+        <item>Jeśli myślisz o zrobieniu sobie krzywdy albo o odebraniu sobie życia, porozmawiaj z kimś od razu. Numery pomocy znajdziesz pod przyciskiem SOS. Gdy zagrożone jest życie, dzwoń pod 112.</item>
+        <item>Pomocy możesz szukać u lekarza rodzinnego, w poradni zdrowia psychicznego, w centrum zdrowia psychicznego albo u psychoterapeuty. Telefoniczna Informacja Pacjenta (800 190 590) podpowie, gdzie zacząć.</item>
+    </string-array>
+</resources>

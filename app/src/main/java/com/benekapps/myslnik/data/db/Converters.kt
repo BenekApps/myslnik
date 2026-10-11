@@ -14,5 +14,11 @@ class Converters {
     fun emotionListToJson(value: List<EmotionRating>): String = JsonCodec.emotionsToJson(value).toString()
 
     @TypeConverter
+    fun solutionListToJson(value: List<SolutionOption>): String = JsonCodec.solutionsToJson(value).toString()
+
+    @TypeConverter
+    fun jsonToSolutionList(value: String): List<SolutionOption> = JsonCodec.jsonToSolutions(JSONArray(value))
+
+    @TypeConverter
     fun jsonToEmotionList(value: String): List<EmotionRating> = JsonCodec.jsonToEmotions(JSONArray(value))
 }

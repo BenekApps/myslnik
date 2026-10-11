@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Texts for the 1.1–1.3 modules. Same language rules as strings.xml.
+    Every text must be reviewed by a certified CBT therapist before release.
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="pl">
+    <!-- Common -->
+    <string name="nav_exercises">Ćwiczenia</string>
+    <string name="nav_knowledge">Wiedza</string>
+    <string name="delete_cannot_undo">Tego nie da się cofnąć.</string>
+    <string name="duration_hm">%1$d h %2$d min</string>
+    <string name="minutes_value">%1$d min</string>
+    <string name="scale_state">%1$d z %2$d</string>
+    <string name="stepper_less">Mniej: %1$s</string>
+    <string name="stepper_more">Więcej: %1$s</string>
+    <string name="time_change">Zmień godzinę</string>
+    <string name="day_previous">Poprzedni dzień</string>
+    <string name="day_next">Następny dzień</string>
+    <string name="day_go_today">Wróć do dziś</string>
+    <string name="day_today_value">Dziś, %1$s</string>
+    <string name="filter_sleep">Sen</string>
+    <string name="filter_experiments">Eksperymenty</string>
+    <string name="filter_problems">Problemy</string>
+    <string name="home_today_plan">Dziś w planie (zrobione: %1$d z %2$d)</string>
+
+    <!-- Exercises hub -->
+    <string name="exercises_group_thoughts">Myśli i emocje</string>
+    <string name="exercises_group_action">Działanie</string>
+    <string name="exercises_group_daily">Codzienność</string>
+    <string name="exercise_thought_desc">Sprawdź myśl, która wywołuje silne emocje.</string>
+    <string name="exercise_mood_desc">Oceń nastrój i zobacz, jak zmienia się w czasie.</string>
+    <string name="exercise_experiments_desc">Sprawdź w praktyce, czy przewidywanie się sprawdza.</string>
+    <string name="exercise_activities_desc">Zaplanuj małe rzeczy i zobacz, co poprawia nastrój.</string>
+    <string name="exercise_exposure_desc">Krok po kroku zbliżaj się do tego, czego unikasz.</string>
+    <string name="exercise_problems_desc">Rozłóż problem na części i wybierz rozwiązanie.</string>
+    <string name="exercise_worry_desc">Odkładaj zmartwienia na wyznaczoną porę.</string>
+    <string name="exercise_sleep_desc">Zapisuj sen i sprawdzaj efektywność snu.</string>
+
+    <!-- Behavioural activation -->
+    <string name="activities_title">Plan aktywności</string>
+    <string name="activities_intro">Gdy nastrój jest niski, łatwo przestać robić to, co kiedyś dawało radość lub satysfakcję. Zaplanuj małe rzeczy. Po każdej oceń przyjemność i poczucie sprawstwa, czyli to, jak bardzo czujesz, że coś Ci się udało.</string>
+    <string name="activities_add">Dodaj aktywność</string>
+    <string name="activities_empty">Na ten dzień nic jeszcze nie ma. Zacznij od jednej małej rzeczy.</string>
+    <string name="activities_mark_done">Zrobione: %1$s</string>
+    <string name="activities_pleasure_value">przyjemność %1$d/10</string>
+    <string name="activities_mastery_value">sprawstwo %1$d/10</string>
+    <string name="activities_week_title">Ostatnie 7 dni</string>
+    <string name="activities_week_done">Zrobione aktywności: %1$d</string>
+    <string name="activities_average">Średnio: przyjemność %1$s/10, sprawstwo %2$s/10</string>
+    <string name="activities_rate_title">Jak było?</string>
+    <string name="activities_rate_hint">Oceń od 0 do 10. Nawet mała przyjemność albo małe poczucie sprawstwa się liczą.</string>
+    <string name="activities_pleasure">Przyjemność</string>
+    <string name="activities_mastery">Poczucie sprawstwa</string>
+    <string name="activities_new">Nowa aktywność</string>
+    <string name="activities_edit">Aktywność</string>
+    <string name="activities_what">Co chcesz zrobić?</string>
+    <string name="activities_ideas">Pomysły</string>
+    <string name="activities_when">Kiedy</string>
+    <string name="activities_at_time">O konkretnej godzinie</string>
+    <string name="activities_time">Godzina</string>
+    <string name="activities_note">Notatka (możesz pominąć)</string>
+    <string name="activities_done">Zrobione</string>
+    <string name="activities_delete_title">Usunąć tę aktywność?</string>
+    <string-array name="activity_ideas">
+        <item>Krótki spacer</item>
+        <item>Telefon do bliskiej osoby</item>
+        <item>Prysznic i świeże ubranie</item>
+        <item>Ulubiona muzyka</item>
+        <item>Ugotowanie prostego posiłku</item>
+        <item>Porządek w jednej szufladzie</item>
+        <item>Rozciąganie przez 10 minut</item>
+        <item>Kilka stron książki</item>
+        <item>Wyjście na słońce</item>
+        <item>Mała sprawa do załatwienia</item>
+        <item>Coś dla innej osoby</item>
+        <item>Hobby przez 15 minut</item>
+    </string-array>
+
+    <!-- Sleep diary -->
+    <string name="sleep_title">Dzienniczek snu</string>
+    <string name="sleep_intro">Wypełniaj rano, gdy noc jest jeszcze świeża w pamięci. Wystarczą przybliżone godziny. Po kilku nocach zobaczysz, ile śpisz i jaka jest efektywność snu.</string>
+    <string name="sleep_add">Uzupełnij dzienniczek</string>
+    <string name="sleep_summary_title">Ostatnie noce: %1$d</string>
+    <string name="sleep_summary_sleep">Średni czas snu: %1$s</string>
+    <string name="sleep_summary_efficiency">Średnia efektywność snu: %1$d%%</string>
+    <string name="sleep_efficiency_explained">Efektywność snu to część czasu w łóżku, którą przesypiasz. Na przykład 7 godzin snu przy 8 godzinach w łóżku to około 88 procent.</string>
+    <string name="sleep_nights">Noce</string>
+    <string name="sleep_empty">Tu pojawią się zapisane noce.</string>
+    <string name="sleep_night_of">Noc: %1$s</string>
+    <string name="sleep_row">Sen %1$s · efektywność %2$d%% · jakość %3$d/5</string>
+    <string name="sleep_entry_title">Noc w dzienniczku</string>
+    <string name="sleep_entry_hint">Wybierz dzień, wieczorem którego kładziesz się spać. Podaj godziny w przybliżeniu.</string>
+    <string name="sleep_evening">Wieczór</string>
+    <string name="sleep_in_bed">Położenie się do łóżka</string>
+    <string name="sleep_tried">Próba zaśnięcia (zgaszone światło)</string>
+    <string name="sleep_latency">Zasypianie trwało</string>
+    <string name="sleep_night">Noc</string>
+    <string name="sleep_awakenings">Przebudzenia w nocy</string>
+    <string name="sleep_awake">Czuwanie w nocy razem</string>
+    <string name="sleep_morning">Rano</string>
+    <string name="sleep_final_wake">Ostatnie przebudzenie</string>
+    <string name="sleep_out_of_bed">Wstanie z łóżka</string>
+    <string name="sleep_quality">Jakość snu</string>
+    <string-array name="sleep_quality_labels">
+        <item>1 – bardzo zła</item>
+        <item>2 – zła</item>
+        <item>3 – przeciętna</item>
+        <item>4 – dobra</item>
+        <item>5 – bardzo dobra</item>
+    </string-array>
+    <string name="sleep_note">Notatka, np. kawa, alkohol, drzemka (możesz pominąć)</string>
+    <string name="sleep_error_order">Sprawdź kolejność godzin: położenie się, próba zaśnięcia, ostatnie przebudzenie, wstanie.</string>
+    <string name="sleep_error_awake">Zasypianie i czuwanie trwały razem dłużej niż cała noc. Sprawdź minuty.</string>
+    <string name="sleep_time_in_bed">Czas w łóżku: %1$s</string>
+    <string name="sleep_total">Czas snu: %1$s</string>
+    <string name="sleep_efficiency">Efektywność snu: %1$d%%</string>
+    <string name="sleep_delete_title">Usunąć tę noc?</string>
+
+    <!-- Exposure -->
+    <string name="exposure_title">Drabina ekspozycji</string>
+    <string name="exposure_intro">Unikanie zmniejsza lęk na chwilę, ale na dłuższą metę go utrwala. Drabina to lista sytuacji od najłatwiejszej do najtrudniejszej. Zaczynasz od dołu i idziesz w górę we własnym tempie. Najlepiej robić to z terapeutą.</string>
+    <string name="exposure_new_ladder">Nowa drabina</string>
+    <string name="exposure_ladder_label">Czego dotyczy?</string>
+    <string name="exposure_ladder_hint">Na przykład: jazda autobusem, rozmowy przez telefon, wychodzenie z domu.</string>
+    <string name="exposure_empty">Nie masz jeszcze żadnej drabiny.</string>
+    <string name="exposure_steps_count">Kroki: %1$d</string>
+    <string name="exposure_ladder_intro">Dodaj kilka sytuacji i oceń, jak duży lęk przewidujesz (0–100). Drabina ułoży je od najłatwiejszej.</string>
+    <string name="exposure_add_step">Dodaj krok</string>
+    <string name="exposure_no_steps">Dodaj pierwszy krok, na przykład coś, co budzi lęk około 20–30.</string>
+    <string name="exposure_steps_title">Kroki od najłatwiejszego</string>
+    <string name="exposure_attempts_count">Próby: %1$d</string>
+    <string name="exposure_last_attempt">ostatnio %1$d → %2$d</string>
+    <string name="exposure_expected_legend">Liczba po lewej to przewidywany lęk od 0 do 100.</string>
+    <string name="exposure_rename">Zmień nazwę</string>
+    <string name="exposure_delete_ladder">Usunąć tę drabinę?</string>
+    <string name="exposure_delete_ladder_text">Znikną też wszystkie jej kroki i próby. Tego nie da się cofnąć.</string>
+    <string name="exposure_step_dialog_title">Krok</string>
+    <string name="exposure_step_label">Sytuacja</string>
+    <string name="exposure_expected">Przewidywany lęk</string>
+    <string name="exposure_step_title">Krok drabiny</string>
+    <string name="exposure_expected_value">Przewidywany lęk: %1$d/100</string>
+    <string name="exposure_step_hint">Zostań w sytuacji, aż lęk zacznie spadać, bez zachowań, które go szybko gaszą. Zapisz lęk tuż przed i tuż po. Gdy po kilku próbach jest wyraźnie niższy, możesz przejść wyżej.</string>
+    <string name="exposure_add_attempt">Zapisz próbę</string>
+    <string name="exposure_attempts_title">Próby</string>
+    <string name="exposure_attempt_values">lęk przed: %1$d → po: %2$d</string>
+    <string name="exposure_before">Lęk tuż przed</string>
+    <string name="exposure_after">Lęk tuż po</string>
+    <string name="exposure_attempt_note">Co zauważasz? (możesz pominąć)</string>
+    <string name="exposure_delete_attempt">Usuń próbę</string>
+    <string name="exposure_delete_step">Usunąć ten krok?</string>
+
+    <!-- Behavioural experiments -->
+    <string name="experiments_title">Eksperymenty behawioralne</string>
+    <string name="experiments_title_single">Eksperyment</string>
+    <string name="experiments_intro">Eksperyment to sposób, żeby sprawdzić myśl w działaniu, a nie tylko w głowie. Zapisz, co przewidujesz, zrób mały test i porównaj z tym, co się wydarzyło.</string>
+    <string name="experiments_new">Nowy eksperyment</string>
+    <string name="experiments_empty">Nie masz jeszcze żadnego eksperymentu.</string>
+    <string name="experiments_planned">Zaplanowany</string>
+    <string name="experiments_done">Zrobiony</string>
+    <string name="experiments_belief_change">wiara w myśl %1$d%% → %2$d%%</string>
+    <string name="experiments_delete_title">Usunąć ten eksperyment?</string>
+    <string name="experiment_part_plan">Plan</string>
+    <string name="experiment_part_result">Po eksperymencie</string>
+    <string name="experiment_belief_hint">Jaką myśl chcesz sprawdzić? Zapisz ją tak, jak brzmi w Twojej głowie.</string>
+    <string name="experiment_belief">Myśl do sprawdzenia</string>
+    <string name="experiment_belief_before">Jak mocno w nią wierzysz?</string>
+    <string name="experiment_plan_hint">Co konkretnie zrobisz, gdzie i kiedy?</string>
+    <string name="experiment_plan">Eksperyment</string>
+    <string name="experiment_prediction_hint">Co według tej myśli się stanie? Opisz tak, żeby dało się to sprawdzić.</string>
+    <string name="experiment_prediction">Przewidywanie</string>
+    <string name="experiment_obstacles_hint">Co może przeszkodzić i jak sobie z tym poradzisz?</string>
+    <string name="experiment_obstacles">Przeszkody i sposoby</string>
+    <string name="experiment_result_hint">Uzupełnij po zrobieniu eksperymentu. Opisz fakty, nie tylko odczucia.</string>
+    <string name="experiment_outcome">Co się wydarzyło?</string>
+    <string name="experiment_learned">Czego się dowiadujesz?</string>
+    <string name="experiment_rate_after">Oceń jeszcze raz, jak mocno wierzysz w tę myśl</string>
+    <string name="experiment_belief_after">Wiara w myśl teraz</string>
+
+    <!-- Worry time -->
+    <string name="worry_title">Czas na zamartwianie się</string>
+    <string name="worry_intro">Zamartwianie się przez cały dzień męczy i rzadko coś rozwiązuje. Spróbuj odkładać zmartwienia na jedną, stałą porę. Gdy pojawi się zmartwienie, zapisz je krótko i wróć do tego, co robisz.</string>
+    <string name="worry_time_label">Twój czas na zamartwianie się</string>
+    <string name="worry_time_hint">Około 15 minut, najlepiej nie tuż przed snem. Przypomnienie włączysz w ustawieniach.</string>
+    <string name="worry_postpone_title">Odłóż zmartwienie</string>
+    <string name="worry_label">Co Cię martwi?</string>
+    <string name="worry_postpone">Odłóż na później</string>
+    <string name="worry_list_title">Odłożone zmartwienia (%1$d)</string>
+    <string name="worry_empty">Nie masz odłożonych zmartwień.</string>
+    <string name="worry_delete">Usuń: %1$s</string>
+    <string name="worry_start">Zacznij czas na zamartwianie się</string>
+    <string name="worry_clear_closed">Usuń przejrzane zmartwienia (%1$d)</string>
+    <string name="worry_time_title">Czas na zamartwianie się</string>
+    <string name="worry_timer">Zostało %1$d:%2$02d</string>
+    <string name="worry_timer_done">Czas minął. Możesz zakończyć.</string>
+    <string name="worry_time_hint_session">Przejrzyj każde zmartwienie. Jeśli masz na coś wpływ, przejdź do rozwiązywania problemu. Jeśli nie, spróbuj je odpuścić. Gdy czas minie, zakończ, nawet jeśli coś zostało.</string>
+    <string name="worry_question">Czy masz na to wpływ?</string>
+    <string name="worry_let_go">Odpuszczam</string>
+    <string name="worry_solve">Mogę coś zrobić</string>
+    <string name="worry_all_done">Wszystko przejrzane.</string>
+    <string name="worry_finish">Zakończ</string>
+
+    <!-- Problem solving -->
+    <string name="problems_title">Rozwiązywanie problemów</string>
+    <string name="problems_title_single">Problem</string>
+    <string name="problems_intro">Gdy problem wydaje się za duży, pomaga rozłożenie go na kroki: nazwać go, zebrać pomysły, porównać je i wybrać jeden do sprawdzenia.</string>
+    <string name="problems_new">Nowy problem</string>
+    <string name="problems_empty">Nie masz jeszcze żadnych problemów do rozwiązania.</string>
+    <string name="problems_untitled">Problem bez opisu</string>
+    <string name="problems_draft">Szkic</string>
+    <string name="problems_delete">Usuń ten problem</string>
+    <string name="problems_delete_title">Usunąć ten problem?</string>
+    <string name="problem_step_define_title">Jaki to problem?</string>
+    <string name="problem_step_define_hint">Opisz go konkretnie: co się dzieje, kiedy i co chcesz zmienić. Jeśli problem jest duży, wybierz jedną jego część.</string>
+    <string name="problem_step_solutions_title">Jakie są możliwe rozwiązania?</string>
+    <string name="problem_step_solutions_hint">Zapisz wszystko, co przychodzi Ci do głowy, nawet dziwne pomysły. Na razie niczego nie oceniaj.</string>
+    <string name="problem_step_pros_cons_title">Plusy i minusy</string>
+    <string name="problem_step_pros_cons_hint">Przy każdym pomyśle zapisz, co przemawia za nim, a co przeciw. Weź pod uwagę koszt, czas i to, jak się z tym poczujesz.</string>
+    <string name="problem_step_choose_title">Które rozwiązanie wybierasz?</string>
+    <string name="problem_step_choose_hint">Wybierz jedno do sprawdzenia. Nie musi być idealne.</string>
+    <string name="problem_step_plan_title">Jak to zrobisz?</string>
+    <string name="problem_step_plan_hint">Rozpisz małe kroki: co, kiedy, czego potrzebujesz i kto może pomóc.</string>
+    <string name="problem_step_review_title">Jak poszło?</string>
+    <string name="problem_step_review_hint">Uzupełnij po spróbowaniu. Jeśli nie zadziałało, możesz wrócić i wybrać inne rozwiązanie.</string>
+    <string name="problem_field_problem">Problem</string>
+    <string name="problem_field_solutions">Możliwe rozwiązania</string>
+    <string name="problem_field_chosen">Wybrane rozwiązanie</string>
+    <string name="problem_field_plan">Plan działania</string>
+    <string name="problem_field_review">Jak poszło</string>
+    <string name="problem_solution_label">Pomysł</string>
+    <string name="problem_add_solution">Dodaj pomysł</string>
+    <string name="problem_remove_solution">Usuń pomysł: %1$s</string>
+    <string name="problem_no_solutions">Najpierw dodaj pomysły w poprzednim kroku.</string>
+    <string name="problem_pros">Plusy</string>
+    <string name="problem_cons">Minusy</string>
+    <string name="problem_pros_value">Plusy: %1$s</string>
+    <string name="problem_cons_value">Minusy: %1$s</string>
+
+    <!-- Knowledge -->
+    <string name="knowledge_intro">Krótkie karty o tym, jak działają myśli, emocje i zachowanie. Każda prowadzi do pasującego ćwiczenia.</string>
+    <string name="knowledge_try">Wypróbuj ćwiczenie</string>
+    <string name="knowledge_open_sos">Numery pomocy</string>
+    <string name="knowledge_disclaimer">Te karty to ogólna wiedza o terapii poznawczo-behawioralnej. Nie zastąpią rozmowy ze specjalistą.</string>
+
+    <!-- Reminders -->
+    <string name="reminders_channel">Przypomnienia</string>
+    <string name="reminder_public_text">Przypomnienie</string>
+    <string name="reminder_exercise_text">Masz chwilę na krótkie ćwiczenie albo zapis nastroju?</string>
+    <string name="reminder_sleep_text">Dzień dobry. Uzupełnij dzienniczek snu, póki noc jest świeża w pamięci.</string>
+    <string name="reminder_worry_text">Czas na zamartwianie się. Przejrzyj odłożone zmartwienia przez około 15 minut.</string>
+    <string name="settings_reminders">Przypomnienia</string>
+    <string name="settings_reminders_hint">Na zablokowanym ekranie widać tylko słowo „Przypomnienie”.</string>
+    <string name="settings_reminder_exercise">Codzienne ćwiczenie</string>
+    <string name="settings_reminder_sleep">Dzienniczek snu (rano)</string>
+    <string name="settings_reminder_worry">Czas na zamartwianie się</string>
+    <string name="settings_reminder_time">Godzina</string>
+    <string name="settings_notifications_denied">Bez zgody na powiadomienia przypomnienia się nie pojawią. Możesz ją dać w ustawieniach telefonu.</string>
+
+    <!-- Language -->
+    <string name="settings_language">Język</string>
+    <string name="language_system">Jak w telefonie</string>
+
+    <!-- PDF -->
+    <string name="pdf_activities_summary">Zrobione: %1$d z %2$d zaplanowanych aktywności.</string>
+    <string name="pdf_done">zrobione</string>
+    <string name="pdf_not_done">niezrobione</string>
+    <string name="pdf_sleep_summary">Noce: %1$d. Średni czas snu: %2$s. Średnia efektywność snu: %3$d%%.</string>
+    <string name="pdf_sleep_line">W łóżku %1$s–%2$s · sen %3$s · efektywność %4$d%% · zasypianie %5$d min · przebudzenia: %6$d (%7$d min) · jakość %8$d/5</string>
+</resources>

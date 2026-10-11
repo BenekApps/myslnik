@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Ukrainian translation of values/strings.xml.
+    Needs review by a native speaker and a CBT therapist before release.
+    Style: simple, informal "ти", short sentences, no promises, gender-neutral where possible.
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="uk">
+    <string name="app_name">Myślnik</string>
+    <!-- Locale for dates and numbers; follows the language of these texts. -->
+    <string name="content_locale">uk-UA</string>
+
+    <!-- Common -->
+    <string name="sos">SOS</string>
+    <string name="sos_button_description">SOS: номери допомоги в кризі</string>
+    <string name="back">Назад</string>
+    <string name="close">Закрити</string>
+    <string name="cancel">Скасувати</string>
+    <string name="ok">OK</string>
+    <string name="save">Зберегти</string>
+    <string name="edit">Редагувати</string>
+    <string name="delete">Видалити</string>
+    <string name="delete_everything">Видалити все</string>
+    <string name="later">Пізніше</string>
+    <string name="not_now">Не зараз</string>
+    <string name="retry">Спробувати ще раз</string>
+    <string name="draft">Чернетка</string>
+    <string name="continue_draft">Завершити запис</string>
+    <string name="no_dialer">Не вдалося відкрити телефон. Набери номер вручну: %1$s</string>
+    <string name="call_number">Зателефонувати: %1$s</string>
+    <string name="call_number_named">%1$s · %2$s</string>
+    <string name="intensity_state">%1$d зі 100</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Головна</string>
+    <string name="nav_mood">Настрій</string>
+    <string name="nav_history">Історія</string>
+    <string name="nav_settings">Налаштування</string>
+
+    <!-- Crisis card -->
+    <string name="crisis_card_title">Тобі зараз дуже важко?</string>
+    <string name="crisis_card_text">Не потрібно залишатися з цим наодинці. Можна одразу поговорити з кимось, хто допомагає в такі моменти. Розмова безкоштовна, але може бути польською мовою.</string>
+    <string name="crisis_card_more">Усі номери та заспокійлива вправа</string>
+
+    <!-- Emotions -->
+    <string name="emotion_anxiety">тривога</string>
+    <string name="emotion_worry">занепокоєння</string>
+    <string name="emotion_sadness">смуток</string>
+    <string name="emotion_anger">злість</string>
+    <string name="emotion_irritation">роздратування</string>
+    <string name="emotion_shame">сором</string>
+    <string name="emotion_guilt">почуття провини</string>
+    <string name="emotion_frustration">фрустрація</string>
+    <string name="emotion_disappointment">розчарування</string>
+    <string name="emotion_loneliness">самотність</string>
+    <string name="emotion_helplessness">безпорадність</string>
+    <string name="emotion_hurt">прикрість</string>
+    <string name="emotion_jealousy">ревнощі</string>
+    <string name="emotion_tension">напруження</string>
+    <string name="emotion_calm">спокій</string>
+    <string name="emotion_joy">радість</string>
+    <string name="emotion_relief">полегшення</string>
+    <string name="emotion_hope">надія</string>
+    <string name="emotion_gratitude">вдячність</string>
+    <string name="emotion_pride">гордість</string>
+    <string name="emotion_custom_button">Інша емоція</string>
+    <string name="emotion_custom_label">Назва емоції</string>
+    <string name="emotion_custom_add">Додати емоцію</string>
+
+    <!-- Thought record -->
+    <string name="tr_title">Запис думок</string>
+    <string name="tr_untitled">Запис думок без опису</string>
+    <string name="tr_draft_label">Чернетка запису думок</string>
+    <string name="tr_step_counter">Крок %1$d з %2$d</string>
+    <string name="tr_next">Далі</string>
+    <string name="tr_back">Назад</string>
+    <string name="tr_finish">Зберегти</string>
+    <string name="tr_show_example">Показати приклад</string>
+    <string name="tr_hide_example">Сховати приклад</string>
+    <string name="tr_hot_thought">Гаряча думка</string>
+    <string name="tr_thought_label">Думка</string>
+    <string name="tr_add_thought">Додати думку</string>
+    <string name="tr_choose_hot_thought">Яка думка найбільше посилює емоції? Познач її. Це твоя «гаряча думка». Ти перевіриш її в наступних кроках.</string>
+    <string name="tr_remove_thought">Видалити думку: %1$s</string>
+    <string name="tr_emotions_empty">Обери хоча б одну емоцію. Потім оціниш, наскільки вона сильна.</string>
+    <string name="tr_emotions_rate">Наскільки сильні ці емоції? (0–100)</string>
+    <string name="tr_rerate_title">Наскільки сильні ці емоції зараз?</string>
+    <string name="tr_rerate_label">%1$s (раніше %2$d)</string>
+    <string name="tr_delete">Видалити цей запис</string>
+    <string name="tr_delete_title">Видалити цей запис?</string>
+    <string name="tr_delete_text">Запис зникне з телефону. Це не можна скасувати.</string>
+
+    <string name="tr_step_situation_title">Що сталося?</string>
+    <string name="tr_step_situation_hint">Коротко опиши ситуацію: що сталося, де і коли. Тримайся фактів, ніби це записала камера.</string>
+    <string name="tr_step_situation_example">«Вівторок, 8:30, робота. Керівниця пройшла повз мене і не привіталася.»</string>
+    <string name="tr_step_emotions_title">Що ти відчуваєш?</string>
+    <string name="tr_step_emotions_hint">Обери емоції, які з’явилися в цій ситуації. Оціни, наскільки сильна кожна з них: 0 — зовсім ні, 100 — найсильніше, як тільки можливо.</string>
+    <string name="tr_step_emotions_example">Тривога 70, сором 40.</string>
+    <string name="tr_step_thoughts_title">Що промайнуло в голові?</string>
+    <string name="tr_step_thoughts_hint">Запиши думки, які з’явилися в цій ситуації, кожну окремо. Часто вони короткі й швидкі, ніби з’являються самі.</string>
+    <string name="tr_step_thoughts_example">«Вона на мене сердиться.» «Зараз почую, що моя робота нікуди не годиться.»</string>
+    <string name="tr_step_distortions_title">Чи бачиш тут пастку мислення?</string>
+    <string name="tr_step_distortions_hint">Такі пастки трапляються з кожним. Познач ті, що підходять до гарячої думки. Можна позначити кілька або жодної.</string>
+    <string name="tr_step_distortions_example">Думка «Вона на мене сердиться» — це читання думок: вона припускає, що ти знаєш, що думає інша людина.</string>
+    <string name="tr_step_evidence_for_title">Що говорить на користь цієї думки?</string>
+    <string name="tr_step_evidence_for_hint">Запиши факти, які її підтримують. Тільки факти, не відчуття і не здогадки.</string>
+    <string name="tr_step_evidence_for_example">Вона не привіталася. Вчора виправляла мій звіт.</string>
+    <string name="tr_step_evidence_against_title">Що говорить проти?</string>
+    <string name="tr_step_evidence_against_hint">Які факти до неї не пасують? Що сказала б доброзичлива людина, яка знає всю ситуацію?</string>
+    <string name="tr_step_evidence_against_example">Вона розмовляла по телефону і дивилася в екран. Минулого тижня хвалила мою презентацію. Правки у звіті — звичайна частина роботи.</string>
+    <string name="tr_step_alternative_title">Як інакше можна на це подивитися?</string>
+    <string name="tr_step_alternative_hint">Напиши думку, яка враховує всі факти — і за, і проти. Вона не мусить бути позитивною, вона має бути чесною. Потім ще раз оціни свої емоції.</string>
+    <string name="tr_step_alternative_example">«Вона могла бути зайнята розмовою. Одне непривітання не означає, що вона на мене сердиться. Якщо щось не так, вона, мабуть, скаже.»</string>
+
+    <string name="tr_field_situation">Ситуація</string>
+    <string name="tr_field_emotions">Емоції (до → після)</string>
+    <string name="tr_field_thoughts">Автоматичні думки</string>
+    <string name="tr_field_distortions">Пастки мислення</string>
+    <string name="tr_field_evidence_for">На користь гарячої думки</string>
+    <string name="tr_field_evidence_against">Проти гарячої думки</string>
+    <string name="tr_field_alternative">Альтернативна думка</string>
+
+    <!-- Cognitive distortions -->
+    <string name="distortion_all_or_nothing">Чорно-біле мислення</string>
+    <string name="distortion_all_or_nothing_desc">Ти бачиш щось як ідеальне або безнадійне, без нічого посередині.</string>
+    <string name="distortion_all_or_nothing_example">«Якщо не здам на відмінно, це провал.»</string>
+    <string name="distortion_overgeneralization">Надмірне узагальнення</string>
+    <string name="distortion_overgeneralization_desc">Одну подію ти сприймаєш як правило: «завжди», «ніколи», «всі».</string>
+    <string name="distortion_overgeneralization_example">«Мене ніхто ніколи не слухає.»</string>
+    <string name="distortion_mental_filter">Негативний фільтр</string>
+    <string name="distortion_mental_filter_desc">Ти зосереджуєшся на одній поганій деталі й перестаєш бачити решту.</string>
+    <string name="distortion_mental_filter_example">Після розмови з багатьма приємними словами пам’ятаєш лише одне критичне.</string>
+    <string name="distortion_disqualifying_positive">Знецінення позитивного</string>
+    <string name="distortion_disqualifying_positive_desc">Хороше ти вважаєш випадковістю або чимось, що не рахується.</string>
+    <string name="distortion_disqualifying_positive_example">«Мене похвалили, бо мусили бути ввічливими.»</string>
+    <string name="distortion_mind_reading">Читання думок</string>
+    <string name="distortion_mind_reading_desc">Ти припускаєш, що знаєш, що думають інші, зазвичай щось погане про тебе.</string>
+    <string name="distortion_mind_reading_example">«Вони напевно думають, що я не підходжу.»</string>
+    <string name="distortion_fortune_telling">Передбачення майбутнього</string>
+    <string name="distortion_fortune_telling_desc">Ти передбачаєш, що станеться щось погане, і сприймаєш це як певність.</string>
+    <string name="distortion_fortune_telling_example">«Я точно заплутаюся, і всі це помітять.»</string>
+    <string name="distortion_catastrophizing">Катастрофізація</string>
+    <string name="distortion_catastrophizing_desc">Ти припускаєш найгірший сценарій або те, що не витримаєш його.</string>
+    <string name="distortion_catastrophizing_example">«Якщо втрачу цю роботу, все розвалиться.»</string>
+    <string name="distortion_emotional_reasoning">Емоційне обґрунтування</string>
+    <string name="distortion_emotional_reasoning_desc">Ти вважаєш, що коли щось відчуваєш, то це мусить бути правдою.</string>
+    <string name="distortion_emotional_reasoning_example">«Мені страшно, отже, це небезпечно.»</string>
+    <string name="distortion_should_statements">«Мушу» і «треба»</string>
+    <string name="distortion_should_statements_desc">Ти ставиш собі або іншим жорсткі правила. Коли вони не виконуються, з’являється почуття провини або злість.</string>
+    <string name="distortion_should_statements_example">«Я мушу завжди всім допомагати.»</string>
+    <string name="distortion_labeling">Навішування ярликів</string>
+    <string name="distortion_labeling_desc">Замість описати поведінку ти чіпляєш собі або комусь ярлик.</string>
+    <string name="distortion_labeling_example">«Я ні на що не годжуся.»</string>
+    <string name="distortion_personalization">Брати провину на себе</string>
+    <string name="distortion_personalization_desc">Ти вважаєш себе причиною чогось, на що маєш мало впливу або не маєш його зовсім.</string>
+    <string name="distortion_personalization_example">«Друг сумний. Це, мабуть, через мене.»</string>
+    <string name="distortion_blaming">Звинувачення інших</string>
+    <string name="distortion_blaming_desc">У своїх труднощах ти звинувачуєш лише інших і перестаєш бачити, на що маєш вплив.</string>
+    <string name="distortion_blaming_example">«Це все вина начальника, я нічого не можу зробити.»</string>
+
+    <!-- Mood -->
+    <string name="mood_new_title">Новий запис настрою</string>
+    <string name="mood_edit_title">Редагування запису настрою</string>
+    <string name="mood_detail_title">Настрій</string>
+    <string name="mood_question">Як ти зараз почуваєшся?</string>
+    <string name="mood_scale_hint">Обери число від 0 до 10.</string>
+    <string name="mood_scale_low">0 — дуже погано</string>
+    <string name="mood_scale_high">10 — дуже добре</string>
+    <string name="mood_rating_description">Настрій %1$d з 10</string>
+    <string name="mood_emotions_title">Емоції</string>
+    <string name="mood_note_title">Нотатка</string>
+    <string name="mood_note_label">Що сьогодні відбувалося? (можна пропустити)</string>
+    <string name="mood_choose_rating_first">Спочатку обери число від 0 до 10.</string>
+    <string name="mood_add">Записати настрій</string>
+    <string name="mood_chart_title">Графік</string>
+    <string name="mood_chart_empty">У цей період записів немає.</string>
+    <string name="mood_chart_summary">У середньому %1$s з 10 (записів: %2$d)</string>
+    <string name="mood_chart_description">Графік середнього настрою за %1$d днів. Найнижче %2$s, найвище %3$s з 10.</string>
+    <string name="mood_entries_title">Записи</string>
+    <string name="mood_entries_empty">Тут з’являться твої записи настрою за обраний період.</string>
+    <string name="mood_rating_value">%1$d/10</string>
+    <string name="mood_row_title">Настрій %1$d/10</string>
+    <string name="mood_delete_title">Видалити цей запис?</string>
+    <string name="mood_delete_text">Запис зникне з телефону. Це не можна скасувати.</string>
+
+    <!-- Periods and filters -->
+    <string name="period_7_days">7 днів</string>
+    <string name="period_30_days">30 днів</string>
+    <string name="period_90_days">90 днів</string>
+    <string name="period_all">Усе</string>
+    <string name="period_custom">Обрати дати</string>
+    <string name="period_custom_value">%1$s – %2$s</string>
+    <string name="filter_all">Усе</string>
+    <string name="filter_thoughts">Записи думок</string>
+    <string name="filter_mood">Настрій</string>
+
+    <!-- History -->
+    <string name="history_empty">У тебе ще немає записів. Почни із запису думок або настрою на головному екрані.</string>
+    <string name="history_empty_filtered">Немає записів для обраних фільтрів.</string>
+
+    <!-- Home -->
+    <string name="home_mood_question">Як ти сьогодні почуваєшся?</string>
+    <string name="home_mood_today">Сьогодні: %1$d/10</string>
+    <string name="home_mood_button">Записати настрій</string>
+    <string name="home_mood_button_again">Додати ще один запис</string>
+    <string name="home_new_thought">Новий запис думок</string>
+    <string name="home_draft">У тебе є незавершений запис думок (%1$s).</string>
+    <string name="home_recent">Останні записи</string>
+    <string name="home_recent_empty">Тут з’являться твої останні записи.</string>
+    <string name="home_backup_title">Зроби резервну копію</string>
+    <string name="home_backup_text">Твої записи є лише на цьому телефоні. Копія, захищена паролем, допоможе їх відновити, якщо телефон загубиться.</string>
+    <string name="home_backup_now">Зробити копію</string>
+    <string name="model_card_title">Як працюють думки та емоції?</string>
+    <string name="model_card_text">Коротко про те, на чому ґрунтується запис думок.</string>
+
+    <!-- SOS -->
+    <string name="sos_title">Допомога в кризі</string>
+    <string name="sos_intro">Якщо тобі загрожує небезпека або ти думаєш про те, щоб позбавити себе життя, телефонуй 112. Розмова з кимось може допомогти. Ці номери безкоштовні. Це польські служби, тож розмова може бути польською мовою.</string>
+    <string name="helplines_verified_label">Номери перевірено: %1$s</string>
+    <string name="grounding_title">Вправа 5-4-3-2-1</string>
+    <string name="grounding_card_text">Коротка вправа, яка допомагає повернути увагу до «тут і зараз», коли емоції дуже сильні.</string>
+    <string name="grounding_start">Почати вправу</string>
+    <string name="grounding_step_see">Озирнися. Назви 5 речей, які бачиш.</string>
+    <string name="grounding_step_touch">Назви 4 речі, яких можеш торкнутися. Відчуй їхню фактуру.</string>
+    <string name="grounding_step_hear">Прислухайся. Назви 3 звуки, які чуєш.</string>
+    <string name="grounding_step_smell">Назви 2 запахи, які відчуваєш. Якщо не відчуваєш жодного, подумай про два, які тобі подобаються.</string>
+    <string name="grounding_step_taste">Назви 1 смак, який зараз відчуваєш у роті.</string>
+    <string name="grounding_take_time">Не поспішай. Можна говорити вголос або подумки.</string>
+    <string name="grounding_done">Добре. Зроби ще кілька спокійних вдихів. Якщо все ще дуже важко, зателефонуй за одним із номерів допомоги.</string>
+    <string name="grounding_again">Ще раз</string>
+    <string name="grounding_finish">Завершити</string>
+
+    <!-- PDF export -->
+    <string name="export_title">PDF для терапевта</string>
+    <string name="export_intro">Створи PDF із записами, щоб показати їх терапевту або зберегти для себе.</string>
+    <string name="export_period">Період</string>
+    <string name="export_types">Що має бути в PDF</string>
+    <string name="export_privacy_warning">PDF не зашифрований і містить твої особисті нотатки. Ділися ним лише з людьми, яким довіряєш.</string>
+    <string name="export_create">Створити PDF</string>
+    <string name="export_working">Створюю PDF…</string>
+    <string name="export_ready">PDF готовий</string>
+    <string name="export_share">Поділитися</string>
+    <string name="export_save">Зберегти у файлах</string>
+    <string name="export_share_title">Поділитися PDF</string>
+    <string name="export_saved">PDF збережено.</string>
+    <string name="export_error">Не вдалося створити PDF. Спробуй ще раз.</string>
+    <string name="pdf_title">Myślnik — записи</string>
+    <string name="pdf_range">З %1$s по %2$s</string>
+    <string name="pdf_range_all">Усі записи</string>
+    <string name="pdf_generated">Створено: %1$s</string>
+    <string name="pdf_privacy_note">Цей файл містить особисті нотатки із застосунку Myślnik — інструменту самодопомоги. Це не медична документація.</string>
+    <string name="pdf_mood_heading">Настрій</string>
+    <string name="pdf_thoughts_heading">Записи думок</string>
+    <string name="pdf_no_entries">У цей період записів немає.</string>
+    <string name="pdf_mood_summary">Середня оцінка: %1$s з 10 (записів: %2$d)</string>
+    <string name="pdf_hot_thought_marker">(гаряча думка)</string>
+    <string name="pdf_footer">Myślnik · сторінка %1$d</string>
+
+    <!-- Lock -->
+    <string name="lock_title">Введи PIN</string>
+    <string name="pin_label">PIN</string>
+    <string name="lock_unlock">Розблокувати</string>
+    <string name="lock_use_biometric">Використати відбиток пальця</string>
+    <string name="lock_biometric_title">Розблокувати Myślnik</string>
+    <string name="lock_use_pin">Використати PIN</string>
+    <string name="lock_wrong_pin">Це неправильний PIN. Спробуй ще раз.</string>
+    <string name="lock_too_many">Забагато спроб. Зачекай трохи й спробуй знову.</string>
+    <string name="lock_sos_hint">Допомога в кризі працює без розблокування: кнопка SOS угорі екрана.</string>
+    <string name="lock_forgot">Не пам’ятаєш PIN?</string>
+    <string name="lock_forgot_title">Не пам’ятаєш PIN?</string>
+    <string name="lock_forgot_text">PIN неможливо відновити чи обійти. Можна видалити всі записи й почати спочатку. Якщо є резервна копія, записи можна відновити з неї в налаштуваннях.</string>
+    <string name="lock_forgot_reset">Видалити записи й почати спочатку</string>
+    <string name="lock_forgot_confirm_title">Точно?</string>
+    <string name="lock_forgot_confirm_text">Усі записи думок і настрою буде видалено з цього телефону. Це не можна скасувати.</string>
+    <string name="pin_setup_title">PIN</string>
+    <string name="pin_setup_text">PIN захищає твої записи, коли хтось інший візьме твій телефон. Застосунок блокується через хвилину у фоні.</string>
+    <string name="pin_new_label">Новий PIN</string>
+    <string name="pin_repeat_label">Повтори PIN</string>
+    <string name="pin_rules">Від %1$d до %2$d цифр</string>
+    <string name="pin_invalid">PIN має містити від 4 до 8 цифр.</string>
+    <string name="pin_mismatch">PIN-коди різні. Введи їх ще раз.</string>
+    <string name="pin_set">Встановити PIN</string>
+    <string name="pin_saved">PIN встановлено.</string>
+    <string name="biometric_offer">Хочеш розблоковувати Myślnik відбитком пальця? PIN і далі працюватиме.</string>
+    <string name="biometric_enable">Так, використовувати відбиток</string>
+
+    <!-- Settings -->
+    <string name="settings_security">Безпека</string>
+    <string name="settings_lock">Блокування PIN-кодом</string>
+    <string name="settings_lock_text">Застосунок блокується через хвилину у фоні.</string>
+    <string name="settings_change_pin">Змінити PIN</string>
+    <string name="settings_biometric">Розблокування відбитком пальця</string>
+    <string name="settings_secure_screen">Ховати вміст у недавніх застосунках</string>
+    <string name="settings_secure_screen_text">Також блокує знімки екрана в застосунку.</string>
+    <string name="settings_data">Дані</string>
+    <string name="settings_export_text">Записи за обраний період в одному файлі</string>
+    <string name="settings_delete_all">Видалити всі записи</string>
+    <string name="settings_delete_all_title">Видалити всі записи?</string>
+    <string name="settings_delete_all_text">Усі записи, зокрема чернетки, буде видалено з цього телефону. Налаштування залишаться. Це не можна скасувати.</string>
+    <string name="settings_deleted">Усі записи видалено.</string>
+    <string name="settings_theme">Тема</string>
+    <string name="theme_system">Як у телефоні</string>
+    <string name="theme_light">Світла</string>
+    <string name="theme_dark">Темна</string>
+    <string name="settings_info">Інформація</string>
+    <string name="settings_lock_off_title">Вимкнути блокування?</string>
+    <string name="settings_lock_off_text">Кожен, хто візьме твій телефон, побачить твої записи, відкривши застосунок.</string>
+    <string name="settings_lock_off_confirm">Вимкнути блокування</string>
+
+    <!-- Backup -->
+    <string name="backup_title">Резервна копія</string>
+    <string name="backup_intro">Копія — це один файл, зашифрований твоїм паролем. Ти обираєш, де його зберегти: на телефоні, на Google Диску чи деінде. Застосунок нічого не надсилає.</string>
+    <string name="backup_last">Остання копія: %1$s</string>
+    <string name="backup_never">У тебе ще немає резервної копії.</string>
+    <string name="backup_password_warning">Запам’ятай пароль до копії. Якщо його забути, дані з копії відновити не вдасться. Ніхто не знає цього пароля, зокрема автор застосунку.</string>
+    <string name="backup_create">Створити копію</string>
+    <string name="backup_restore">Відновити з копії</string>
+    <string name="backup_working">Зачекай…</string>
+    <string name="backup_created">Копію збережено.</string>
+    <string name="backup_create_error">Не вдалося зберегти копію. Спробуй ще раз.</string>
+    <string name="backup_wrong_password">Неправильний пароль або пошкоджений файл.</string>
+    <string name="backup_not_a_backup">Це не файл копії Myślnik.</string>
+    <string name="backup_newer_version">Ця копія з новішої версії застосунку. Онови Myślnik і спробуй ще раз.</string>
+    <string name="backup_read_error">Не вдалося прочитати копію.</string>
+    <string name="backup_restored">Записи відновлено з копії.</string>
+    <string name="backup_restore_confirm_title">Відновити цю копію?</string>
+    <string name="backup_restore_confirm_text">Копія від %1$s. Записів думок: %2$d, записів настрою: %3$d. Відновлення замінить усі поточні записи на цьому телефоні.</string>
+    <string name="backup_restore_confirm">Відновити</string>
+    <string name="backup_password_title">Пароль до копії</string>
+    <string name="backup_password_label">Пароль</string>
+    <string name="backup_password_repeat">Повтори пароль</string>
+    <string name="backup_password_too_short">Пароль має містити щонайменше %1$d символів.</string>
+    <string name="backup_password_mismatch">Паролі різні.</string>
+    <string name="backup_password_understood">Розумію, що без цього пароля дані не відновити.</string>
+    <string name="backup_choose_place">Обрати місце збереження</string>
+    <string name="backup_enter_password">Введи пароль до копії</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_1_title">Привіт! Це Myślnik</string>
+    <string-array name="onboarding_1_paragraphs">
+        <item>Myślnik — безкоштовний записник вправ когнітивно-поведінкової терапії (КПТ). Ним можна користуватися між сесіями терапії або самостійно.</item>
+        <item>Тут є запис думок крок за кроком, щоденник настрою з графіком, вправи на дію, сон і тривогу, а також PDF, який можна показати терапевту.</item>
+        <item>Твої записи є лише на цьому телефоні й зашифровані. Без облікового запису та реклами.</item>
+    </string-array>
+    <string name="onboarding_2_title">Чим Myślnik не є</string>
+    <string-array name="onboarding_2_paragraphs">
+        <item>Myślnik — це не терапія і не діагноз. Він не замінить розмови з фахівцем.</item>
+        <item>Це також не екстрена допомога. Якщо тобі дуже важко або тобі загрожує небезпека, телефонуй:</item>
+    </string-array>
+    <string name="onboarding_2_sos">Кнопка SOS із номерами допомоги є на кожному екрані.</string>
+    <string name="onboarding_3_title">Захисти свої записи</string>
+    <string-array name="onboarding_3_paragraphs">
+        <item>Встанови PIN, щоб ніхто інший не прочитав твоїх записів. Це можна зробити й пізніше в налаштуваннях.</item>
+    </string-array>
+    <string name="onboarding_skip_lock">Пропустити, встановлю пізніше</string>
+    <string name="onboarding_start">Почнімо</string>
+
+    <!-- Cognitive model -->
+    <string name="model_title">Як працюють думки та емоції</string>
+    <string name="model_intro">Когнітивно-поведінкова терапія спирається на просте спостереження: те, як ти почуваєшся, залежить не лише від того, що відбувається, а й від того, як ти це розумієш.</string>
+    <string name="model_diagram_description">Схема: ситуація викликає думки, а думки впливають на емоції, реакції тіла й поведінку.</string>
+    <string name="model_situation">Ситуація</string>
+    <string name="model_thoughts">Думки</string>
+    <string name="model_emotions">Емоції</string>
+    <string name="model_body">Тіло</string>
+    <string name="model_behaviour">Поведінка</string>
+    <string-array name="model_paragraphs">
+        <item>Та сама ситуація може викликати різні емоції — залежно від думок, які з’являться. Такі думки приходять швидко й самі, тому їх називають автоматичними.</item>
+        <item>Автоматичні думки не завжди влучні. Коли нам важко, ми легко потрапляємо в пастки мислення: наприклад, припускаємо найгірше або читаємо чужі думки.</item>
+        <item>Запис думок допомагає зупинитися й перевірити думку, перш ніж вважати її фактом. Ідеться не про «позитивне» мислення, а про більш зважене, засноване на фактах.</item>
+    </string-array>
+    <string name="model_example_title">Приклад</string>
+    <string name="model_example">Знайома не відповідає на повідомлення. Думка «Мабуть, я їй набридаю» може викликати смуток і бажання віддалитися. Думка «Мабуть, вона зайнята» дає більше спокою. Ситуація та сама — різниться думка.</string>
+
+    <!-- About, sources, privacy -->
+    <string name="about_title">Про застосунок</string>
+    <string name="about_version">Версія %1$s</string>
+    <string-array name="about_paragraphs">
+        <item>Myślnik — безкоштовний інструмент самодопомоги з вправами когнітивно-поведінкової терапії (КПТ). Це не терапія, не діагноз і не медичний виріб.</item>
+        <item>Без реклами, без облікового запису й без платних функцій. Застосунок не має доступу до інтернету, тож не може нікуди надіслати твої записи.</item>
+    </string-array>
+    <string name="about_review_title">Перевірка змісту</string>
+    <string name="about_review_text">Вправи ґрунтуються на стандартних техніках КПТ. Тексти цієї версії чекають на перевірку сертифікованим КПТ-терапевтом, а український переклад — на перевірку носієм мови.</string>
+    <string name="about_license_title">Відкритий код</string>
+    <string name="about_license_text">Код застосунку відкритий (ліцензія GPL-3.0). Кожен може перевірити, що робить застосунок.</string>
+    <string name="about_source_code">Вихідний код</string>
+    <string name="about_report_issue">Повідомити про помилку чи зауваження</string>
+    <string name="sources_title">Джерела</string>
+    <string name="sources_intro">Вправи в застосунку ґрунтуються на таких джерелах:</string>
+    <string-array name="sources">
+        <item>Beck, J. S. (2021). Cognitive Behavior Therapy: Basics and Beyond (3-тє вид.). Guilford Press. Когнітивна модель і запис думок.</item>
+        <item>Greenberger, D., Padesky, C. A. (2015). Mind Over Mood (2-ге вид.). Guilford Press. Запис думок крок за кроком.</item>
+        <item>Burns, D. D. (1980). Feeling Good: The New Mood Therapy. William Morrow. Перелік пасток мислення.</item>
+        <item>Вправа 5-4-3-2-1: поширена техніка заземлення при сильній тривозі.</item>
+        <item>Номери допомоги: gov.pl, «Gdzie uzyskać pomoc psychologiczną i psychiatryczną», а також 116111.pl.</item>
+    </string-array>
+    <string name="privacy_title">Приватність</string>
+    <string-array name="privacy_paragraphs">
+        <item>Myślnik не збирає жодних даних. Немає облікового запису, сервера, реклами чи аналітики.</item>
+        <item>Твої записи зберігаються лише на цьому телефоні, у зашифрованій базі даних. Ключ до неї зберігається в захищеному сховищі ключів Android і не залишає телефон.</item>
+        <item>Застосунок не має дозволу на доступ до інтернету. Дані залишають телефон лише тоді, коли ти так вирішиш: поділишся PDF або збережеш резервну копію в обраному місці.</item>
+        <item>Резервна копія зашифрована твоїм паролем. PDF не зашифрований, тож ділися ним лише з людьми, яким довіряєш.</item>
+        <item>Застосунок не читає змісту твоїх записів. Коли ти оцінюєш емоцію дуже високо або настрій дуже низько, він показує номери допомоги. Ця перевірка відбувається лише на телефоні.</item>
+        <item>Нагадування плануються на телефоні, без інтернету. На заблокованому екрані видно лише слово «Нагадування».</item>
+        <item>Усі записи можна видалити в налаштуваннях. Видалення застосунку також видаляє всі дані.</item>
+    </string-array>
+
+    <!-- Database error -->
+    <string name="db_error_title">Не вдалося відкрити записи</string>
+    <string name="db_error_text">Твої записи зашифровані ключем, збереженим у телефоні, і цей ключ не вдалося прочитати. Спробуй ще раз. Якщо не допоможе, можна почати спочатку й відновити записи з резервної копії.</string>
+    <string name="db_error_reset">Почати спочатку</string>
+    <string name="db_error_reset_text">Зашифровані записи на цьому телефоні буде видалено. Потім їх можна відновити з резервної копії. Це не можна скасувати.</string>
+</resources>

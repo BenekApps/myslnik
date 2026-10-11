@@ -1,5 +1,8 @@
 package com.benekapps.myslnik.ui.settings
 
+import android.Manifest
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -42,6 +45,14 @@ import com.benekapps.myslnik.ui.components.SectionTitle
 import com.benekapps.myslnik.ui.components.formatDate
 import com.benekapps.myslnik.ui.components.rememberSnackbarHostState
 import com.benekapps.myslnik.ui.lock.Biometrics
+import com.benekapps.myslnik.domain.AppLanguage
+import com.benekapps.myslnik.reminders.Notifications
+import com.benekapps.myslnik.reminders.ReminderScheduler
+import com.benekapps.myslnik.reminders.ReminderType
+import com.benekapps.myslnik.reminders.reminder
+import com.benekapps.myslnik.ui.components.HintText
+import com.benekapps.myslnik.ui.components.TimeField
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
@@ -50,6 +61,7 @@ import kotlinx.coroutines.launch
 class SettingsViewModel(
     private val settings: SettingsRepository,
     private val entries: EntriesRepository,
+    private val reminders: ReminderScheduler,
 ) : ViewModel() {
     val state: StateFlow<AppSettings?> = settings.settings
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
@@ -58,6 +70,23 @@ class SettingsViewModel(
     fun setBiometric(enabled: Boolean) = viewModelScope.launch { settings.setBiometricEnabled(enabled) }
     fun setSecureScreen(enabled: Boolean) = viewModelScope.launch { settings.setSecureScreen(enabled) }
     fun setTheme(mode: ThemeMode) = viewModelScope.launch { settings.setThemeMode(mode) }
+
+    fun setReminder(type: ReminderType, enabled: Boolean) = viewModelScope.launch {
+        settings.setReminder(type, enabled)
+        val (_, time) = settings.settings.first().reminder(type)
+        if (enabled) reminders.schedule(type, time) else reminders.cancel(type)
+    }
+
+    fun setReminderTime(type: ReminderType, minuteOfDay: Int) = viewModelScope.launch {
+        settings.setReminderTime(type, minuteOfDay)
+        if (settings.settings.first().reminder(type).first) reminders.schedule(type, minuteOfDay)
+    }
+
+    /** Stored for background work too; AppCompat then recreates the screen in the new language. */
+    fun setLanguage(language: AppLanguage) = viewModelScope.launch {
+        settings.setLanguage(language.tag)
+        AppLanguage.apply(language)
+    }
 
     fun deleteAllEntries(onDone: () -> Unit) = viewModelScope.launch {
         entries.deleteAll()
@@ -75,7 +104,7 @@ fun SettingsScreen(
     onSources: () -> Unit,
     onPrivacy: () -> Unit,
     onSos: () -> Unit,
-    viewModel: SettingsViewModel = appViewModel { c -> SettingsViewModel(c.settings, c.entries) },
+    viewModel: SettingsViewModel = appViewModel { c -> SettingsViewModel(c.settings, c.entries, c.reminders) },
 ) {
     val settings by viewModel.state.collectAsStateWithLifecycle()
     val s = settings ?: return
@@ -111,6 +140,66 @@ fun SettingsScreen(
                 checked = s.secureScreen,
                 onChange = { viewModel.setSecureScreen(it) },
             )
+
+            SectionTitle(stringResource(R.string.settings_reminders))
+            HintText(stringResource(R.string.settings_reminders_hint))
+            val notificationsDenied = stringResource(R.string.settings_notifications_denied)
+            var pendingReminder by rememberSaveable { mutableStateOf<ReminderType?>(null) }
+            val permission = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
+                val type = pendingReminder
+                pendingReminder = null
+                if (granted && type != null) {
+                    viewModel.setReminder(type, true)
+                } else {
+                    scope.launch { snackbar.showSnackbar(notificationsDenied) }
+                }
+            }
+            listOf(
+                ReminderType.EXERCISE to R.string.settings_reminder_exercise,
+                ReminderType.SLEEP_DIARY to R.string.settings_reminder_sleep,
+                ReminderType.WORRY_TIME to R.string.settings_reminder_worry,
+            ).forEach { (type, label) ->
+                val (enabled, time) = s.reminder(type)
+                SwitchRow(
+                    title = stringResource(label),
+                    checked = enabled,
+                    onChange = { on ->
+                        // canNotify() is only false on Android 13+, where the permission exists.
+                        if (on && !Notifications.canNotify(context)) {
+                            pendingReminder = type
+                            permission.launch(Manifest.permission.POST_NOTIFICATIONS)
+                        } else {
+                            viewModel.setReminder(type, on)
+                        }
+                    },
+                )
+                if (enabled) {
+                    TimeField(stringResource(R.string.settings_reminder_time), time, { viewModel.setReminderTime(type, it) })
+                }
+            }
+
+            SectionTitle(stringResource(R.string.settings_language))
+            val currentLanguage = remember(s.language) { AppLanguage.current() }
+            listOf(
+                AppLanguage.SYSTEM to stringResource(R.string.language_system),
+                AppLanguage.POLISH to "Polski",
+                AppLanguage.UKRAINIAN to "Українська",
+            ).forEach { (language, label) ->
+                Row(
+                    Modifier
+                        .fillMaxWidth()
+                        .heightIn(min = 48.dp)
+                        .selectable(
+                            selected = currentLanguage == language,
+                            role = Role.RadioButton,
+                            onClick = { if (currentLanguage != language) viewModel.setLanguage(language) },
+                        ),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    RadioButton(selected = currentLanguage == language, onClick = null)
+                    Text(label, style = MaterialTheme.typography.bodyLarge, modifier = Modifier.padding(start = 12.dp))
+                }
+            }
 
             SectionTitle(stringResource(R.string.settings_data))
             ClickRow(

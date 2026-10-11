@@ -10,7 +10,9 @@ plan" (https://claude.ai/artifact/QmgJComfVWJzw6XRcJrmH3); decisions taken since
 - Production quality. Optimize and improve proactively (performance, size, quality), not only
   what is asked.
 - With every new build, give Mat a short Google Play "Co nowego" text and put it in
-  `distribution/whatsnew/whatsnew-pl-PL` (max 500 characters, uploaded with the release).
+  `distribution/whatsnew/whatsnew-pl-PL` and `whatsnew-uk` (max 500 characters each,
+  uploaded with the release).
+- Every new user-facing text goes into both `values/` and `values-uk/`.
 - Decisions go to `docs/DECISIONS.md`, tasks to `TODO.md`, user-facing text to resources,
   never into code.
 - Never ask for secrets in chat or put them in the repo. They live in GitHub Actions secrets.
@@ -57,7 +59,10 @@ plan" (https://claude.ai/artifact/QmgJComfVWJzw6XRcJrmH3); decisions taken since
 
 ## State (2026-10-11)
 
-- 1.0 feature-complete in code, not released: thought record, mood + chart, SOS + grounding,
-  PDF export, PIN/fingerprint lock, encryption, password backup, onboarding, info screens.
-- 37 unit tests and 14 instrumented tests pass locally.
-- Texts are drafts waiting for the CBT review.
+- 1.3.0 (versionCode 2) feature-complete in code, not released. 1.0 was skipped: 1.3 contains
+  1.0 (thought record, mood, SOS, PDF, lock, encryption, backup), 1.1 (activities, sleep
+  diary, reminders), 1.2 (exposure, experiments, worry time, problem solving) and 1.3
+  (knowledge cards, Ukrainian).
+- Texts: Polish in `values/strings*.xml`, Ukrainian in `values-uk/` (TranslationsTest keeps
+  them in sync). All are drafts waiting for the CBT review; Ukrainian also for a native speaker.
+- 51 unit tests and 24 instrumented tests pass locally.

@@ -55,6 +55,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
 import com.benekapps.myslnik.R
+import com.benekapps.myslnik.domain.AppLocale
 import com.benekapps.myslnik.domain.Emotions
 import com.benekapps.myslnik.domain.Helplines
 import java.time.Instant
@@ -63,18 +64,25 @@ import java.time.format.DateTimeFormatter
 import java.util.Locale
 import kotlin.math.roundToInt
 
-val PolishLocale: Locale = Locale.forLanguageTag("pl-PL")
-private val dateTimeFormat = DateTimeFormatter.ofPattern("EEEE, d MMMM, HH:mm", PolishLocale)
-private val dateFormat = DateTimeFormatter.ofPattern("d MMMM yyyy", PolishLocale)
-private val shortDateFormat = DateTimeFormatter.ofPattern("d.MM", PolishLocale)
+// Formats follow the language of the texts on screen (AppLocale, set by
+// MainActivity, which is recreated when the language changes).
 
-fun formatDateTime(time: Long): String =
-    dateTimeFormat.format(Instant.ofEpochMilli(time).atZone(ZoneId.systemDefault()))
+fun formatDateTime(time: Long, locale: Locale = AppLocale.current): String =
+    DateTimeFormatter.ofPattern("EEEE, d MMMM, HH:mm", locale).format(Instant.ofEpochMilli(time).atZone(ZoneId.systemDefault()))
 
-fun formatDate(time: Long): String =
-    dateFormat.format(Instant.ofEpochMilli(time).atZone(ZoneId.systemDefault()))
+fun formatDate(time: Long, locale: Locale = AppLocale.current): String =
+    DateTimeFormatter.ofPattern("d MMMM yyyy", locale).format(Instant.ofEpochMilli(time).atZone(ZoneId.systemDefault()))
 
-fun formatShortDate(date: java.time.LocalDate): String = shortDateFormat.format(date)
+fun formatDay(date: java.time.LocalDate, locale: Locale = AppLocale.current): String =
+    DateTimeFormatter.ofPattern("EEEE, d MMMM", locale).format(date)
+
+fun formatShortDate(date: java.time.LocalDate, locale: Locale = AppLocale.current): String =
+    DateTimeFormatter.ofPattern("d.MM", locale).format(date)
+
+/** Minutes from midnight as "07:05". */
+fun formatClock(minuteOfDay: Int): String = "%02d:%02d".format(minuteOfDay / 60 % 24, minuteOfDay % 60)
+
+fun formatDecimal(value: Double, locale: Locale = AppLocale.current): String = String.format(locale, "%.1f", value)
 
 /** Opens the dialer with the number filled in. Needs no permission and works offline. */
 fun dial(context: Context, number: String) {

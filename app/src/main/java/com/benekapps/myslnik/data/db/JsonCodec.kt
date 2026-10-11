@@ -21,6 +21,15 @@ object JsonCodec {
         }
     }
 
+    fun solutionsToJson(values: List<SolutionOption>): JSONArray = JSONArray().apply {
+        values.forEach { put(JSONObject().put("text", it.text).put("pros", it.pros).put("cons", it.cons)) }
+    }
+
+    fun jsonToSolutions(array: JSONArray): List<SolutionOption> = List(array.length()) { i ->
+        val o = array.getJSONObject(i)
+        SolutionOption(o.getString("text"), o.optString("pros"), o.optString("cons"))
+    }
+
     fun jsonToEmotions(array: JSONArray): List<EmotionRating> = List(array.length()) { i ->
         val o = array.getJSONObject(i)
         EmotionRating(

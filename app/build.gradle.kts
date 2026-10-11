@@ -16,8 +16,8 @@ android {
         minSdk = 26
         // Google Play requires API 36 for new versions from 31.08.2026.
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = 2
+        versionName = "1.3.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -59,9 +59,18 @@ android {
     }
 
     androidResources {
-        // The app is Polish only for now (Ukrainian is planned for 1.3).
-        // Drops unused library translations from the APK.
-        localeFilters += listOf("pl")
+        // Polish (default) and Ukrainian. Drops unused library translations
+        // and lists both languages in Android's per-app language settings.
+        localeFilters += listOf("pl", "uk")
+        generateLocaleConfig = true
+    }
+
+    bundle {
+        language {
+            // The in-app language switch needs both languages on every device;
+            // Play would otherwise install only the phone's language.
+            enableSplit = false
+        }
     }
 
     packaging {
@@ -73,9 +82,9 @@ android {
     lint {
         abortOnError = true
         checkDependencies = false
-        // Strings are Polish in the default values/ folder. targetSdk 36 is
-        // deliberate (Play requirement 2026); version checks need the network.
-        disable += listOf("MissingTranslation", "OldTargetApi", "NewerVersionAvailable")
+        // targetSdk 36 is deliberate (Play requirement 2026); version checks
+        // need the network. MissingTranslation stays on: Ukrainian must be complete.
+        disable += listOf("OldTargetApi", "NewerVersionAvailable")
     }
 
     testOptions {
@@ -109,6 +118,10 @@ dependencies {
     implementation(libs.androidx.biometric)
     // biometric 1.1.0 pulls in an old androidx.fragment; use a current one.
     implementation(libs.androidx.fragment.ktx)
+    // In-app language switch (Polish / Ukrainian) on every Android version.
+    implementation(libs.androidx.appcompat)
+    // Reminders without exact alarms.
+    implementation(libs.androidx.work.runtime.ktx)
     constraints {
         // room-testing (migration tests) needs kotlinx-serialization 1.8+.
         // Test dependencies are aligned to the app's, so raise it here.
@@ -127,6 +140,7 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.espresso.intents)
     androidTestImplementation(libs.androidx.room.testing)
+    androidTestImplementation(libs.androidx.work.testing)
     androidTestImplementation(libs.kotlinx.coroutines.test)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)

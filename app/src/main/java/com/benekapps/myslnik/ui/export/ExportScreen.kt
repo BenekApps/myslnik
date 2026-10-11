@@ -2,6 +2,7 @@ package com.benekapps.myslnik.ui.export
 
 import android.content.Context
 import android.content.Intent
+import android.content.res.Resources
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -38,6 +39,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
@@ -47,6 +49,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewModelScope
 import com.benekapps.myslnik.R
 import com.benekapps.myslnik.data.EntriesRepository
+import com.benekapps.myslnik.data.db.AppDatabase
 import com.benekapps.myslnik.domain.Period
 import com.benekapps.myslnik.domain.TimeRange
 import com.benekapps.myslnik.export.PdfExporter
@@ -65,14 +68,24 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.File
+import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
+
+enum class ExportType(@param:androidx.annotation.StringRes val label: Int) {
+    THOUGHTS(R.string.filter_thoughts),
+    MOOD(R.string.filter_mood),
+    ACTIVITIES(R.string.activities_title),
+    SLEEP(R.string.sleep_title),
+    EXPOSURE(R.string.exposure_title),
+    EXPERIMENTS(R.string.experiments_title),
+    PROBLEMS(R.string.problems_title),
+}
 
 data class ExportUiState(
     val period: Period = Period.MONTH,
     val customRange: TimeRange? = null,
-    val includeThoughts: Boolean = true,
-    val includeMood: Boolean = true,
+    val types: Set<ExportType> = setOf(ExportType.THOUGHTS, ExportType.MOOD),
     val working: Boolean = false,
     val file: File? = null,
     val message: Int? = null,
@@ -80,6 +93,7 @@ data class ExportUiState(
 
 class ExportViewModel(
     private val repo: EntriesRepository,
+    private val db: AppDatabase,
     private val exporter: PdfExporter,
     private val exportDir: File,
     private val now: () -> Long = System::currentTimeMillis,
@@ -90,29 +104,44 @@ class ExportViewModel(
     fun setPeriod(period: Period, custom: TimeRange? = null) =
         _state.update { it.copy(period = period, customRange = custom ?: it.customRange, file = null) }
 
-    fun setIncludeThoughts(value: Boolean) = _state.update { it.copy(includeThoughts = value, file = null) }
-    fun setIncludeMood(value: Boolean) = _state.update { it.copy(includeMood = value, file = null) }
+    fun toggle(type: ExportType) = _state.update {
+        it.copy(types = if (type in it.types) it.types - type else it.types + type, file = null)
+    }
+
     fun messageShown() = _state.update { it.copy(message = null) }
 
-    fun generate() {
+    /** [res] comes from the screen, so the PDF is in the app's current language. */
+    fun generate(res: Resources) {
         val s = _state.value
-        if (!s.includeThoughts && !s.includeMood) return
+        if (s.types.isEmpty()) return
         _state.update { it.copy(working = true, file = null) }
         viewModelScope.launch {
             val result = runCatching {
                 val time = now()
                 val zone = ZoneId.systemDefault()
                 val range = s.period.range(time, zone, s.customRange)
+                val (fromDay, toDay) = if (range == TimeRange.ALL) {
+                    Long.MIN_VALUE to Long.MAX_VALUE
+                } else {
+                    Instant.ofEpochMilli(range.from).atZone(zone).toLocalDate().toEpochDay() to
+                        Instant.ofEpochMilli(range.to).atZone(zone).toLocalDate().toEpochDay()
+                }
+                fun has(t: ExportType) = t in s.types
                 val content = PdfExporter.Content(
                     range = range,
-                    thoughtRecords = if (s.includeThoughts) repo.completedThoughtRecordsBetween(range.from, range.to) else null,
-                    moodEntries = if (s.includeMood) repo.moodEntriesBetween(range.from, range.to) else null,
+                    thoughtRecords = if (has(ExportType.THOUGHTS)) repo.completedThoughtRecordsBetween(range.from, range.to) else null,
+                    moodEntries = if (has(ExportType.MOOD)) repo.moodEntriesBetween(range.from, range.to) else null,
+                    activities = if (has(ExportType.ACTIVITIES)) db.activities().between(fromDay, toDay) else null,
+                    sleepEntries = if (has(ExportType.SLEEP)) db.sleep().between(fromDay, toDay) else null,
+                    exposure = if (has(ExportType.EXPOSURE)) exposureRows(range) else null,
+                    experiments = if (has(ExportType.EXPERIMENTS)) db.experiments().between(range.from, range.to) else null,
+                    problems = if (has(ExportType.PROBLEMS)) db.problems().completedBetween(range.from, range.to) else null,
                 )
                 withContext(Dispatchers.IO) {
                     exportDir.mkdirs()
                     exportDir.listFiles()?.forEach { it.delete() }
                     val file = File(exportDir, "myslnik-${LocalDate.now(zone)}.pdf")
-                    file.outputStream().use { exporter.write(it, content, time, zone) }
+                    file.outputStream().use { exporter.write(it, content, time, res, zone) }
                     file
                 }
             }
@@ -123,6 +152,17 @@ class ExportViewModel(
                     message = if (result.isFailure) R.string.export_error else null,
                 )
             }
+        }
+    }
+
+    private suspend fun exposureRows(range: TimeRange): List<PdfExporter.ExposureRow> {
+        val exposure = db.exposure()
+        val ladders = exposure.getAllLadders().associateBy { it.id }
+        val steps = exposure.getAllSteps().associateBy { it.id }
+        return exposure.attemptsBetween(range.from, range.to).mapNotNull { a ->
+            val step = steps[a.stepId] ?: return@mapNotNull null
+            val ladder = ladders[step.ladderId] ?: return@mapNotNull null
+            PdfExporter.ExposureRow(ladder.title, step.description, a)
         }
     }
 
@@ -157,7 +197,7 @@ fun ExportScreen(
     onBack: () -> Unit,
     onSos: () -> Unit,
     viewModel: ExportViewModel = appViewModel { c ->
-        ExportViewModel(c.entries, c.pdfExporter, c.exportDir)
+        ExportViewModel(c.entries, c.db, c.pdfExporter, c.exportDir)
     },
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -208,8 +248,9 @@ fun ExportScreen(
                 )
             }
             SectionTitle(stringResource(R.string.export_types))
-            CheckRow(stringResource(R.string.filter_thoughts), state.includeThoughts, viewModel::setIncludeThoughts)
-            CheckRow(stringResource(R.string.filter_mood), state.includeMood, viewModel::setIncludeMood)
+            ExportType.entries.forEach { type ->
+                CheckRow(stringResource(type.label), type in state.types) { viewModel.toggle(type) }
+            }
 
             Card(
                 colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerHigh),
@@ -224,9 +265,10 @@ fun ExportScreen(
                 )
             }
 
+            val resources = LocalResources.current
             Button(
-                onClick = viewModel::generate,
-                enabled = !state.working && (state.includeThoughts || state.includeMood),
+                onClick = { viewModel.generate(resources) },
+                enabled = !state.working && state.types.isNotEmpty(),
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(top = 16.dp),

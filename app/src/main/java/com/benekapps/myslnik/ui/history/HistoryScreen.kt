@@ -10,9 +10,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Create
+import androidx.compose.material.icons.filled.Build
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Face
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Share
+import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.DatePickerDialog
 import androidx.compose.material3.DateRangePicker
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -40,22 +43,30 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewModelScope
 import com.benekapps.myslnik.R
 import com.benekapps.myslnik.data.EntriesRepository
+import com.benekapps.myslnik.data.db.AppDatabase
+import com.benekapps.myslnik.data.db.BehavioralExperiment
 import com.benekapps.myslnik.data.db.MoodEntry
+import com.benekapps.myslnik.data.db.ProblemSolving
+import com.benekapps.myslnik.data.db.SleepEntry
 import com.benekapps.myslnik.data.db.ThoughtRecord
 import com.benekapps.myslnik.data.db.hotThought
 import com.benekapps.myslnik.domain.Emotions
 import com.benekapps.myslnik.domain.Period
+import com.benekapps.myslnik.domain.SleepMath
 import com.benekapps.myslnik.domain.TimeRange
 import com.benekapps.myslnik.ui.appViewModel
 import com.benekapps.myslnik.ui.components.ScreenScaffold
 import com.benekapps.myslnik.ui.components.ScrollingContent
 import com.benekapps.myslnik.ui.components.formatDate
 import com.benekapps.myslnik.ui.components.formatDateTime
+import com.benekapps.myslnik.ui.components.formatDay
+import com.benekapps.myslnik.ui.sleep.durationText
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import java.time.Instant
+import java.time.LocalDate
 import java.time.ZoneId
 import java.time.ZoneOffset
 
@@ -72,28 +83,75 @@ sealed interface HistoryItem {
         override val id get() = entry.id
         override val time get() = entry.createdAt
     }
+
+    /** Sorted by the night itself (22:00 that evening), not by when it was written. */
+    data class Sleep(val entry: SleepEntry) : HistoryItem {
+        override val id get() = entry.id
+        override val time get() = LocalDate.ofEpochDay(entry.night).atTime(22, 0).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli()
+    }
+
+    data class Experiment(val experiment: BehavioralExperiment) : HistoryItem {
+        override val id get() = experiment.id
+        override val time get() = experiment.createdAt
+    }
+
+    data class Problem(val problem: ProblemSolving) : HistoryItem {
+        override val id get() = problem.id
+        override val time get() = problem.createdAt
+    }
 }
 
-enum class EntryFilter { ALL, THOUGHTS, MOOD }
+enum class EntryFilter(val label: Int) {
+    ALL(R.string.filter_all),
+    THOUGHTS(R.string.filter_thoughts),
+    MOOD(R.string.filter_mood),
+    SLEEP(R.string.filter_sleep),
+    EXPERIMENTS(R.string.filter_experiments),
+    PROBLEMS(R.string.filter_problems),
+    ;
 
-fun combineHistory(thoughts: List<ThoughtRecord>, moods: List<MoodEntry>): List<HistoryItem> =
-    (thoughts.map { HistoryItem.Thought(it) } + moods.map { HistoryItem.Mood(it) })
-        .sortedByDescending { it.time }
+    fun matches(item: HistoryItem) = when (this) {
+        ALL -> true
+        THOUGHTS -> item is HistoryItem.Thought
+        MOOD -> item is HistoryItem.Mood
+        SLEEP -> item is HistoryItem.Sleep
+        EXPERIMENTS -> item is HistoryItem.Experiment
+        PROBLEMS -> item is HistoryItem.Problem
+    }
+}
 
-class HistoryViewModel(repo: EntriesRepository) : ViewModel() {
+fun combineHistory(
+    thoughts: List<ThoughtRecord>,
+    moods: List<MoodEntry>,
+    sleep: List<SleepEntry> = emptyList(),
+    experiments: List<BehavioralExperiment> = emptyList(),
+    problems: List<ProblemSolving> = emptyList(),
+): List<HistoryItem> =
+    (
+        thoughts.map { HistoryItem.Thought(it) } + moods.map { HistoryItem.Mood(it) } +
+            sleep.map { HistoryItem.Sleep(it) } + experiments.map { HistoryItem.Experiment(it) } +
+            problems.map { HistoryItem.Problem(it) }
+        ).sortedByDescending { it.time }
+
+class HistoryViewModel(repo: EntriesRepository, db: AppDatabase) : ViewModel() {
     val items: StateFlow<List<HistoryItem>?> =
-        combine(repo.observeThoughtRecords(), repo.observeMoodEntries(), ::combineHistory)
-            .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
+        combine(
+            repo.observeThoughtRecords(),
+            repo.observeMoodEntries(),
+            db.sleep().observeAll(),
+            db.experiments().observeAll(),
+            db.problems().observeAll(),
+            ::combineHistory,
+        ).stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
 }
 
 @OptIn(ExperimentalLayoutApi::class, ExperimentalMaterial3Api::class)
 @Composable
 fun HistoryScreen(
-    onOpenThought: (ThoughtRecord) -> Unit,
-    onOpenMood: (Long) -> Unit,
+    onOpenItem: (HistoryItem) -> Unit,
     onExport: () -> Unit,
     onSos: () -> Unit,
-    viewModel: HistoryViewModel = appViewModel { c -> HistoryViewModel(c.entries) },
+    viewModel: HistoryViewModel = appViewModel { c -> HistoryViewModel(c.entries, c.db) },
 ) {
     val items by viewModel.items.collectAsStateWithLifecycle()
     var filter by rememberSaveable { mutableStateOf(EntryFilter.ALL) }
@@ -107,11 +165,7 @@ fun HistoryScreen(
     val customRange = if (customFrom != null && customTo != null) TimeRange(customFrom!!, customTo!!) else null
     val range = period.range(now, zone, customRange)
     val visible = items.orEmpty().filter { item ->
-        item.time in range && when (filter) {
-            EntryFilter.ALL -> true
-            EntryFilter.THOUGHTS -> item is HistoryItem.Thought
-            EntryFilter.MOOD -> item is HistoryItem.Mood
-        }
+        item.time in range && filter.matches(item)
     }
 
     ScreenScaffold(
@@ -125,12 +179,8 @@ fun HistoryScreen(
     ) { padding ->
         ScrollingContent(padding) {
             FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                listOf(
-                    EntryFilter.ALL to R.string.filter_all,
-                    EntryFilter.THOUGHTS to R.string.filter_thoughts,
-                    EntryFilter.MOOD to R.string.filter_mood,
-                ).forEach { (value, label) ->
-                    FilterChip(selected = filter == value, onClick = { filter = value }, label = { Text(stringResource(label)) })
+                EntryFilter.entries.forEach { value ->
+                    FilterChip(selected = filter == value, onClick = { filter = value }, label = { Text(stringResource(value.label)) })
                 }
             }
             FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -164,15 +214,7 @@ fun HistoryScreen(
                 )
             }
             visible.forEach { item ->
-                HistoryRow(
-                    item,
-                    onClick = {
-                        when (item) {
-                            is HistoryItem.Thought -> onOpenThought(item.record)
-                            is HistoryItem.Mood -> onOpenMood(item.entry.id)
-                        }
-                    },
-                )
+                HistoryRow(item, onClick = { onOpenItem(item) })
                 HorizontalDivider()
             }
         }
@@ -221,7 +263,13 @@ fun HistoryRow(item: HistoryItem, onClick: () -> Unit) {
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Icon(
-            if (item is HistoryItem.Thought) Icons.Filled.Create else Icons.Filled.Face,
+            when (item) {
+                is HistoryItem.Thought -> Icons.Filled.Edit
+                is HistoryItem.Mood -> Icons.Filled.Face
+                is HistoryItem.Sleep -> Icons.Filled.Star
+                is HistoryItem.Experiment -> Icons.Filled.Search
+                is HistoryItem.Problem -> Icons.Filled.Build
+            },
             contentDescription = null,
             tint = MaterialTheme.colorScheme.primary,
             modifier = Modifier.size(24.dp),
@@ -248,6 +296,41 @@ fun HistoryRow(item: HistoryItem, onClick: () -> Unit) {
                         "$type · ${formatDateTime(r.createdAt)}",
                         style = MaterialTheme.typography.bodySmall,
                         color = if (r.isDraft) MaterialTheme.colorScheme.tertiary else MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+                is HistoryItem.Sleep -> {
+                    val e = item.entry
+                    Text(
+                        stringResource(R.string.sleep_night_of, formatDay(LocalDate.ofEpochDay(e.night))),
+                        style = MaterialTheme.typography.bodyLarge,
+                    )
+                    Text(
+                        stringResource(R.string.sleep_row, durationText(SleepMath.totalSleep(e)), SleepMath.efficiency(e) ?: 0, e.quality),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+                is HistoryItem.Experiment -> {
+                    val e = item.experiment
+                    Text(e.belief, style = MaterialTheme.typography.bodyLarge, maxLines = 2, overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis)
+                    Text(
+                        "${stringResource(R.string.experiments_title_single)} · ${formatDateTime(e.createdAt)}",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+                is HistoryItem.Problem -> {
+                    val p = item.problem
+                    Text(
+                        p.problem.ifBlank { stringResource(R.string.problems_untitled) },
+                        style = MaterialTheme.typography.bodyLarge,
+                        maxLines = 2,
+                        overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
+                    )
+                    Text(
+                        "${stringResource(if (p.isDraft) R.string.problems_draft else R.string.problems_title_single)} · ${formatDateTime(p.createdAt)}",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = if (p.isDraft) MaterialTheme.colorScheme.tertiary else MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                 }
                 is HistoryItem.Mood -> {

@@ -54,7 +54,7 @@ import com.benekapps.myslnik.domain.dailyAverages
 import com.benekapps.myslnik.ui.appViewModel
 import com.benekapps.myslnik.ui.components.ConfirmDialog
 import com.benekapps.myslnik.ui.components.LabeledText
-import com.benekapps.myslnik.ui.components.PolishLocale
+import com.benekapps.myslnik.ui.components.formatDecimal
 import com.benekapps.myslnik.ui.components.ScreenScaffold
 import com.benekapps.myslnik.ui.components.ScrollingContent
 import com.benekapps.myslnik.ui.components.SectionTitle
@@ -76,6 +76,7 @@ class MoodViewModel(repo: EntriesRepository) : ViewModel() {
 
 @Composable
 fun MoodScreen(
+    onBack: () -> Unit,
     onNewEntry: () -> Unit,
     onOpenEntry: (Long) -> Unit,
     onSos: () -> Unit,
@@ -88,7 +89,7 @@ fun MoodScreen(
     val range = TimeRange.lastDays(days, now, zone)
     val inRange = entries.orEmpty().filter { it.createdAt in range }
 
-    ScreenScaffold(title = stringResource(R.string.nav_mood), onSos = onSos) { padding ->
+    ScreenScaffold(title = stringResource(R.string.nav_mood), onSos = onSos, onBack = onBack) { padding ->
         ScrollingContent(padding) {
             Button(onClick = onNewEntry, modifier = Modifier.fillMaxWidth()) {
                 Icon(Icons.Filled.Add, contentDescription = null)
@@ -110,7 +111,7 @@ fun MoodScreen(
                         Text(
                             stringResource(
                                 R.string.mood_chart_summary,
-                                String.format(PolishLocale, "%.1f", inRange.map { it.rating }.average()),
+                                formatDecimal(inRange.map { it.rating }.average()),
                                 inRange.size,
                             ),
                             style = MaterialTheme.typography.bodyMedium,
@@ -190,8 +191,8 @@ fun MoodChart(points: List<Pair<LocalDate, Double?>>, modifier: Modifier = Modif
         stringResource(
             R.string.mood_chart_description,
             points.size,
-            String.format(PolishLocale, "%.1f", values.min()),
-            String.format(PolishLocale, "%.1f", values.max()),
+            formatDecimal(values.min()),
+            formatDecimal(values.max()),
         )
     }
     val textMeasurer = rememberTextMeasurer()

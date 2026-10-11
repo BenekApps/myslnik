@@ -1,6 +1,7 @@
 package com.benekapps.myslnik.data.db
 
 import android.content.Context
+import androidx.room.AutoMigration
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -11,11 +12,30 @@ import net.zetetic.database.sqlcipher.SupportOpenHelperFactory
  * The only database. Every schema change needs a migration and a test in
  * androidTest/.../MigrationTest: losing entries is the worst possible bug.
  */
-@Database(entities = [ThoughtRecord::class, MoodEntry::class], version = 1, exportSchema = true)
+@Database(
+    entities = [
+        ThoughtRecord::class, MoodEntry::class,
+        PlannedActivity::class, SleepEntry::class,
+        ExposureLadder::class, ExposureStep::class, ExposureAttempt::class,
+        BehavioralExperiment::class, Worry::class, ProblemSolving::class,
+    ],
+    version = 2,
+    exportSchema = true,
+    autoMigrations = [
+        // 1.3: new tables only (activities, sleep, exposure, experiments, worries, problems).
+        AutoMigration(from = 1, to = 2),
+    ],
+)
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun thoughtRecords(): ThoughtRecordDao
     abstract fun moodEntries(): MoodEntryDao
+    abstract fun activities(): ActivityDao
+    abstract fun sleep(): SleepDao
+    abstract fun exposure(): ExposureDao
+    abstract fun experiments(): ExperimentDao
+    abstract fun worries(): WorryDao
+    abstract fun problems(): ProblemDao
 
     companion object {
         const val NAME = "myslnik.db"

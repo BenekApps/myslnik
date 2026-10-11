@@ -68,14 +68,44 @@ class RoomEntriesRepository(private val db: AppDatabase) : EntriesRepository {
         kotlinx.coroutines.flow.combine(thoughts.observeCompletedCount(), moods.observeCount()) { a, b -> a + b }
 
     override suspend fun exportAll(now: Long) = db.withTransaction {
-        BackupData(createdAt = now, thoughtRecords = thoughts.getAll(), moodEntries = moods.getAll())
+        BackupData(
+            createdAt = now,
+            thoughtRecords = thoughts.getAll(),
+            moodEntries = moods.getAll(),
+            activities = db.activities().getAll(),
+            sleepEntries = db.sleep().getAll(),
+            exposureLadders = db.exposure().getAllLadders(),
+            exposureSteps = db.exposure().getAllSteps(),
+            exposureAttempts = db.exposure().getAllAttempts(),
+            experiments = db.experiments().getAll(),
+            worries = db.worries().getAll(),
+            problems = db.problems().getAll(),
+        )
     }
 
-    override suspend fun replaceAll(data: BackupData) = db.withTransaction {
-        thoughts.deleteAll()
-        moods.deleteAll()
-        thoughts.insertAll(data.thoughtRecords)
-        moods.insertAll(data.moodEntries)
+    /** One transaction: a failed restore leaves the old entries untouched. */
+    override suspend fun replaceAll(data: BackupData) {
+        db.withTransaction {
+            thoughts.deleteAll()
+            moods.deleteAll()
+            db.activities().deleteAll()
+            db.sleep().deleteAll()
+            db.exposure().deleteAll()
+            db.experiments().deleteAll()
+            db.worries().deleteAll()
+            db.problems().deleteAll()
+            // Parents before children (exposure).
+            thoughts.insertAll(data.thoughtRecords)
+            moods.insertAll(data.moodEntries)
+            db.activities().insertAll(data.activities)
+            db.sleep().insertAll(data.sleepEntries)
+            db.exposure().insertLadders(data.exposureLadders)
+            db.exposure().insertSteps(data.exposureSteps)
+            db.exposure().insertAttempts(data.exposureAttempts)
+            db.experiments().insertAll(data.experiments)
+            db.worries().insertAll(data.worries)
+            db.problems().insertAll(data.problems)
+        }
     }
 
     /** Also runs VACUUM, so deleted text does not linger in free pages of the file. */

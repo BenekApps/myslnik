@@ -35,7 +35,9 @@ import com.benekapps.myslnik.R
 import com.benekapps.myslnik.data.AppSettings
 import com.benekapps.myslnik.data.EntriesRepository
 import com.benekapps.myslnik.data.SettingsRepository
+import com.benekapps.myslnik.data.db.ActivityDao
 import com.benekapps.myslnik.data.db.MoodEntry
+import com.benekapps.myslnik.data.db.PlannedActivity
 import com.benekapps.myslnik.data.db.ThoughtRecord
 import com.benekapps.myslnik.domain.TimeRange
 import com.benekapps.myslnik.ui.appViewModel
@@ -51,10 +53,12 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import java.time.LocalDate
 import java.time.ZoneId
 
 data class HomeUiState(
     val todayMood: MoodEntry? = null,
+    val todayActivities: List<PlannedActivity> = emptyList(),
     val draft: ThoughtRecord? = null,
     val recent: List<HistoryItem> = emptyList(),
     val showBackupReminder: Boolean = false,
@@ -62,6 +66,7 @@ data class HomeUiState(
 
 class HomeViewModel(
     repo: EntriesRepository,
+    activities: ActivityDao,
     private val settings: SettingsRepository,
     private val now: () -> Long = System::currentTimeMillis,
 ) : ViewModel() {
@@ -69,12 +74,14 @@ class HomeViewModel(
     val state: StateFlow<HomeUiState> = combine(
         repo.observeThoughtRecords(),
         repo.observeMoodEntries(),
+        activities.observeDay(LocalDate.now().toEpochDay()),
         settings.settings,
-    ) { thoughts, moods, s ->
+    ) { thoughts, moods, todayActivities, s ->
         val time = now()
         val today = TimeRange.lastDays(1, time, ZoneId.systemDefault())
         HomeUiState(
             todayMood = moods.firstOrNull { it.createdAt in today },
+            todayActivities = todayActivities,
             draft = thoughts.filter { it.isDraft }.maxByOrNull { it.updatedAt },
             recent = combineHistory(thoughts.filterNot { it.isDraft }, moods).take(RECENT_COUNT),
             showBackupReminder = shouldRemindAboutBackup(thoughts.count { !it.isDraft } + moods.size, s, time),
@@ -104,12 +111,12 @@ fun HomeScreen(
     onNewThought: () -> Unit,
     onContinueDraft: (Long) -> Unit,
     onNewMood: () -> Unit,
-    onOpenThought: (ThoughtRecord) -> Unit,
-    onOpenMood: (Long) -> Unit,
+    onOpenItem: (HistoryItem) -> Unit,
+    onOpenActivities: () -> Unit,
     onOpenModel: () -> Unit,
     onOpenBackup: () -> Unit,
     onSos: () -> Unit,
-    viewModel: HomeViewModel = appViewModel { c -> HomeViewModel(c.entries, c.settings) },
+    viewModel: HomeViewModel = appViewModel { c -> HomeViewModel(c.entries, c.db.activities(), c.settings) },
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
 
@@ -160,6 +167,30 @@ fun HomeScreen(
                 )
             }
 
+            if (state.todayActivities.isNotEmpty()) {
+                OutlinedCard(
+                    onClick = onOpenActivities,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 16.dp),
+                ) {
+                    Column(Modifier.padding(16.dp)) {
+                        val done = state.todayActivities.count { it.done }
+                        Text(
+                            stringResource(R.string.home_today_plan, done, state.todayActivities.size),
+                            style = MaterialTheme.typography.titleMedium,
+                        )
+                        state.todayActivities.take(3).forEach { a ->
+                            Text(
+                                (if (a.done) "✓ " else "• ") + a.title,
+                                style = MaterialTheme.typography.bodyLarge,
+                                color = if (a.done) MaterialTheme.colorScheme.onSurfaceVariant else MaterialTheme.colorScheme.onSurface,
+                            )
+                        }
+                    }
+                }
+            }
+
             state.draft?.let { draft ->
                 OutlinedCard(
                     modifier = Modifier
@@ -204,15 +235,7 @@ fun HomeScreen(
                 )
             }
             state.recent.forEach { item ->
-                HistoryRow(
-                    item,
-                    onClick = {
-                        when (item) {
-                            is HistoryItem.Thought -> onOpenThought(item.record)
-                            is HistoryItem.Mood -> onOpenMood(item.entry.id)
-                        }
-                    },
-                )
+                HistoryRow(item, onClick = { onOpenItem(item) })
                 HorizontalDivider()
             }
 

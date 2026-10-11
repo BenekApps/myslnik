@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Ukrainian texts for the help numbers in values/helplines.xml (same order).
+    These are Polish services: the conversation may be in Polish.
+    Ukrainian-language lines are NOT listed until verified (see TODO.md).
+-->
+<resources>
+    <string-array name="helpline_names">
+        <item>Телефон емоційної підтримки</item>
+        <item>Центр підтримки для дорослих</item>
+        <item>Номер екстреної допомоги</item>
+        <item>Телефонна інформація для пацієнтів</item>
+        <item>Телефон довіри для дітей і молоді</item>
+    </string-array>
+
+    <string-array name="helpline_descriptions">
+        <item>Для дорослих в емоційній кризі. Безкоштовно. Розмова може бути польською мовою.</item>
+        <item>Розмова з психологом для дорослих у психічній кризі (Фонд ITAKA). На сайті centrumwsparcia.pl є також чат і e-mail. Безкоштовно. Розмова може бути польською мовою.</item>
+        <item>Коли під загрозою життя чи здоров’я — твоє або іншої людини.</item>
+        <item>Підкаже, де шукати допомоги психолога чи психіатра поблизу. Безкоштовно. Розмова може бути польською мовою.</item>
+        <item>Для людей до 18 років (Фонд Dajemy Dzieciom Siłę). Безкоштовно й анонімно. Розмова може бути польською мовою.</item>
+    </string-array>
+
+    <string-array name="helpline_hours">
+        <item>Цілодобово, 7 днів на тиждень</item>
+        <item>Цілодобово, 7 днів на тиждень</item>
+        <item>Цілодобово, 7 днів на тиждень</item>
+        <item>Цілодобово, 7 днів на тиждень</item>
+        <item>Цілодобово, 7 днів на тиждень</item>
+    </string-array>
+</resources>

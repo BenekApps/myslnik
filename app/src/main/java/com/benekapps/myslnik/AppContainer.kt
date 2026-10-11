@@ -45,9 +45,14 @@ class AppContainer(private val context: Context) {
 
     val entries: EntriesRepository by lazy { RoomEntriesRepository(openDatabase()) }
 
+    /** For the exercise modules, which use their DAOs directly. */
+    val db: AppDatabase get() = openDatabase()
+
     val backupManager: BackupManager by lazy { BackupManager(context.contentResolver, entries, settings) }
 
-    val pdfExporter: PdfExporter by lazy { PdfExporter(context) }
+    val pdfExporter = PdfExporter()
+
+    val reminders = com.benekapps.myslnik.reminders.ReminderScheduler(context)
 
     /** Generated PDFs, shared through FileProvider (res/xml/file_paths.xml). */
     val exportDir = File(context.cacheDir, "exports")

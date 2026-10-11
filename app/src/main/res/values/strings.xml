@@ -8,6 +8,8 @@
 -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="pl">
     <string name="app_name">Myślnik</string>
+    <!-- Locale for dates and numbers; follows the language of these texts. -->
+    <string name="content_locale">pl-PL</string>
 
     <!-- Common -->
     <string name="sos">SOS</string>
@@ -339,7 +341,7 @@
     <string name="onboarding_1_title">Cześć! To jest Myślnik</string>
     <string-array name="onboarding_1_paragraphs">
         <item>Myślnik to darmowy notatnik ćwiczeń terapii poznawczo-behawioralnej (CBT). Możesz z niego korzystać między sesjami terapii albo samodzielnie.</item>
-        <item>Znajdziesz tu zapis myśli krok po kroku, dziennik nastroju z wykresem i PDF, który możesz pokazać terapeucie.</item>
+        <item>Znajdziesz tu zapis myśli krok po kroku, dziennik nastroju z wykresem, ćwiczenia na działanie, sen i niepokój oraz PDF, który możesz pokazać terapeucie.</item>
         <item>Twoje wpisy są tylko na tym telefonie i są zaszyfrowane. Nie ma konta ani reklam.</item>
     </string-array>
     <string name="onboarding_2_title">Czym Myślnik nie jest</string>
@@ -402,6 +404,7 @@
         <item>Aplikacja nie ma uprawnienia do internetu. Dane opuszczają telefon tylko wtedy, gdy Ty o tym zdecydujesz: udostępnisz PDF albo zapiszesz kopię zapasową w wybranym miejscu.</item>
         <item>Kopia zapasowa jest zaszyfrowana Twoim hasłem. PDF nie jest zaszyfrowany, więc udostępniaj go tylko zaufanym osobom.</item>
         <item>Aplikacja nie czyta treści Twoich wpisów. Gdy ocenisz emocję bardzo wysoko albo nastrój bardzo nisko, pokaże numery pomocy. To sprawdzenie dzieje się tylko na telefonie.</item>
+        <item>Przypomnienia są planowane na telefonie, bez internetu. Na zablokowanym ekranie widać tylko słowo „Przypomnienie”.</item>
         <item>Wszystkie wpisy możesz usunąć w ustawieniach. Odinstalowanie aplikacji też usuwa wszystkie dane.</item>
     </string-array>
 
