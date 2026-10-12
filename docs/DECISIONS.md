@@ -3,6 +3,17 @@
 Newest first. Each entry: what was decided and why. The product plan is the
 "Darmowa aplikacja CBT po polsku — plan" document (Claude Docs).
 
+## 2026-10-12 — Language choice at first start, help numbers marked as Polish
+
+Onboarding now opens with a language screen (Polski / Українська, title in both languages),
+because a phone set to Polish or English never showed the Ukrainian version and the switch in
+settings was easy to miss. It uses the same per-app locale as settings (AppCompat) and can be
+changed there later. The help numbers stay the same in both languages: they are the verified
+Polish lines (Ukrainian-language lines wait for verification, see TODO). The SOS screen,
+onboarding and both store listings say plainly that these are Polish numbers that work in
+Poland; the Ukrainian texts add that the conversation may be in Polish. Store texts now have
+a Ukrainian listing in `distribution/listing/uk-UA/`.
+
 ## 2026-10-11 — Play Console: wellness, not medical
 
 Category "Zdrowie i fitness" and, in the health apps declaration, only "stress, relaxation,

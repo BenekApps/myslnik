@@ -19,12 +19,12 @@ TWOJE WPISY ZOSTAJĄ U CIEBIE
 • Kopię zapasową zabezpieczasz własnym hasłem.
 
 ZAWSZE POD RĘKĄ
-Przycisk SOS z numerami pomocy jest na każdym ekranie, także na ekranie blokady.
+Przycisk SOS z numerami pomocy jest na każdym ekranie, także na ekranie blokady. To numery polskich infolinii i numer alarmowy 112: działają w Polsce.
 
 CZYM MYŚLNIK NIE JEST
-Myślnik jest narzędziem samopomocy. Nie jest terapią, diagnozą ani wyrobem medycznym i nie zastąpi rozmowy ze specjalistą. Jeśli jest Ci bardzo ciężko albo grozi Ci niebezpieczeństwo, zadzwoń pod 112 lub skorzystaj z numerów w przycisku SOS.
+Myślnik jest narzędziem samopomocy. Nie jest terapią, diagnozą ani wyrobem medycznym i nie zastąpi rozmowy ze specjalistą. Jeśli jest Ci bardzo ciężko albo grozi Ci niebezpieczeństwo, zadzwoń pod 112 lub skorzystaj z polskich numerów pomocy w przycisku SOS.
 
 DARMOWY I OTWARTY
 Wszystkie funkcje są darmowe i nic nie jest zablokowane. Jeśli chcesz, możesz dobrowolnie wesprzeć projekt w aplikacji. Kod jest otwarty (licencja GPL-3.0), więc każdy może sprawdzić, co robi aplikacja.
 
-Aplikacja jest dostępna po polsku i po ukraińsku. Przeznaczona dla osób dorosłych.
+Aplikacja jest dostępna po polsku i po ukraińsku: język wybierzesz przy pierwszym uruchomieniu i zmienisz w ustawieniach. Przeznaczona dla osób dorosłych.

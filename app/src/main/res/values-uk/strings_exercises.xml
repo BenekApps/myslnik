@@ -255,6 +255,7 @@
     <!-- Language -->
     <string name="settings_language">Мова</string>
     <string name="language_system">Як у телефоні</string>
+    <string name="onboarding_language_hint">Мову можна змінити пізніше в налаштуваннях.</string>
 
     <!-- Voluntary support through Google Play (unlocks nothing) -->
     <string name="support_title">Підтримати проєкт</string>

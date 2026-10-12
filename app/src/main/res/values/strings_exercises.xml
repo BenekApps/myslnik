@@ -258,6 +258,12 @@
     <!-- Language -->
     <string name="settings_language">Język</string>
     <string name="language_system">Jak w telefonie</string>
+    <!-- Language names are always shown in their own language. -->
+    <string name="language_name_pl" translatable="false">Polski</string>
+    <string name="language_name_uk" translatable="false">Українська</string>
+    <!-- First onboarding screen: both languages, the user may not read the current one. -->
+    <string name="onboarding_language_title" translatable="false">Wybierz język · Оберіть мову</string>
+    <string name="onboarding_language_hint">Język możesz zmienić później w ustawieniach.</string>
 
     <!-- Voluntary support through Google Play (unlocks nothing) -->
     <string name="support_title">Wesprzyj projekt</string>

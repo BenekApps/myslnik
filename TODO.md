@@ -33,7 +33,8 @@
 - [ ] TalkBack, 200% font and Accessibility Scanner on a real phone.
 - [ ] Usability test with 5–8 people (thought record, find SOS, PDF export). People in
       therapy only through their therapist. Ethics committee first if it is part of a thesis.
-- [ ] Store listing in Ukrainian too (`distribution/whatsnew/whatsnew-uk`).
+- [ ] Ukrainian store listing: draft in `distribution/listing/uk-UA/` (needs native review),
+      add it in Play Console (Main store listing → Manage translations → Ukrainian).
 
 ## Done in code (2026-10-11)
 

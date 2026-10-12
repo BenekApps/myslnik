@@ -217,7 +217,7 @@
 
     <!-- SOS -->
     <string name="sos_title">Pomoc w kryzysie</string>
-    <string name="sos_intro">Jeśli zagraża Ci niebezpieczeństwo albo myślisz o odebraniu sobie życia, zadzwoń pod 112. Rozmowa z kimś może pomóc. Te numery są bezpłatne.</string>
+    <string name="sos_intro">Jeśli zagraża Ci niebezpieczeństwo albo myślisz o odebraniu sobie życia, zadzwoń pod 112. Rozmowa z kimś może pomóc. To polskie numery pomocy: działają w Polsce i są bezpłatne.</string>
     <string name="helplines_verified_label">Numery sprawdzone: %1$s</string>
     <string name="grounding_title">Ćwiczenie 5-4-3-2-1</string>
     <string name="grounding_card_text">Krótkie ćwiczenie, które pomaga wrócić uwagą do „tu i teraz”, gdy emocje są bardzo silne.</string>
@@ -350,7 +350,7 @@
         <item>Myślnik nie jest terapią ani diagnozą. Nie zastąpi rozmowy ze specjalistą.</item>
         <item>Nie jest też pomocą w nagłych wypadkach. Jeśli jest Ci bardzo ciężko albo grozi Ci niebezpieczeństwo, zadzwoń:</item>
     </string-array>
-    <string name="onboarding_2_sos">Przycisk SOS z numerami pomocy jest na każdym ekranie.</string>
+    <string name="onboarding_2_sos">To polskie numery pomocy. Przycisk SOS z numerami jest na każdym ekranie.</string>
     <string name="onboarding_3_title">Zabezpiecz swoje wpisy</string>
     <string-array name="onboarding_3_paragraphs">
         <item>Ustaw PIN, żeby nikt inny nie przeczytał Twoich wpisów. Możesz to zrobić też później w ustawieniach.</item>
