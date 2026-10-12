@@ -5,6 +5,7 @@ import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyProperties
 import android.util.AtomicFile
 import java.io.File
+import java.io.FileNotFoundException
 import java.security.KeyStore
 import java.security.SecureRandom
 import javax.crypto.Cipher
@@ -25,7 +26,13 @@ class DatabaseKeyManager(private val context: Context) {
 
     /** Returns the database key, creating it (and a fresh database) on first use. */
     fun getOrCreateDatabaseKey(): ByteArray {
-        val wrapped = runCatching { keyFile.readFully() }.getOrNull()
+        // Only a missing key file means "first start". Any other read error is
+        // thrown, so the caller can retry instead of deleting the user's entries.
+        val wrapped = try {
+            keyFile.readFully()
+        } catch (e: FileNotFoundException) {
+            null
+        }
         if (wrapped != null) return unwrap(wrapped)
 
         // A database without its key can never be opened again (for example
