@@ -183,8 +183,8 @@ fun SettingsScreen(
             val currentLanguage = remember(s.language) { AppLanguage.current() }
             listOf(
                 AppLanguage.SYSTEM to stringResource(R.string.language_system),
-                AppLanguage.POLISH to "Polski",
-                AppLanguage.UKRAINIAN to "Українська",
+                AppLanguage.POLISH to stringResource(R.string.language_name_pl),
+                AppLanguage.UKRAINIAN to stringResource(R.string.language_name_uk),
             ).forEach { (language, label) ->
                 Row(
                     Modifier

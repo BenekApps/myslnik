@@ -6,7 +6,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.selection.selectable
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material3.Button
@@ -15,6 +17,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -24,11 +27,13 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
@@ -37,6 +42,7 @@ import androidx.lifecycle.viewModelScope
 import com.benekapps.myslnik.R
 import com.benekapps.myslnik.data.SettingsRepository
 import com.benekapps.myslnik.data.security.PinHasher
+import com.benekapps.myslnik.domain.AppLanguage
 import com.benekapps.myslnik.domain.Helplines
 import com.benekapps.myslnik.ui.appViewModel
 import com.benekapps.myslnik.ui.components.ScreenScaffold
@@ -49,6 +55,12 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class OnboardingViewModel(private val settings: SettingsRepository) : ViewModel() {
+    /** Same as in settings: stored for background work, then AppCompat recreates the screen. */
+    fun setLanguage(language: AppLanguage) = viewModelScope.launch {
+        settings.setLanguage(language.tag)
+        AppLanguage.apply(language)
+    }
+
     fun finish(pin: String?, biometric: Boolean) {
         viewModelScope.launch {
             if (pin != null) {
@@ -60,9 +72,9 @@ class OnboardingViewModel(private val settings: SettingsRepository) : ViewModel(
     }
 }
 
-private const val PAGES = 3
+private const val PAGES = 4
 
-/** Three short screens: what it is, what it is not (with help numbers), the lock. */
+/** Four short screens: language, what it is, what it is not (with help numbers), the lock. */
 @Composable
 fun OnboardingScreen(
     onSos: () -> Unit,
@@ -85,10 +97,44 @@ fun OnboardingScreen(
             )
             when (page) {
                 0 -> {
+                    Title(stringResource(R.string.onboarding_language_title))
+                    // The language the texts are shown in: Polish also when the phone uses neither.
+                    val shown = if (stringResource(R.string.content_locale).startsWith("uk")) {
+                        AppLanguage.UKRAINIAN
+                    } else {
+                        AppLanguage.POLISH
+                    }
+                    listOf(
+                        AppLanguage.POLISH to stringResource(R.string.language_name_pl),
+                        AppLanguage.UKRAINIAN to stringResource(R.string.language_name_uk),
+                    ).forEach { (language, label) ->
+                        Row(
+                            Modifier
+                                .fillMaxWidth()
+                                .heightIn(min = 56.dp)
+                                .selectable(
+                                    selected = shown == language,
+                                    role = Role.RadioButton,
+                                    onClick = { if (shown != language) viewModel.setLanguage(language) },
+                                ),
+                            verticalAlignment = Alignment.CenterVertically,
+                        ) {
+                            RadioButton(selected = shown == language, onClick = null)
+                            Text(label, style = MaterialTheme.typography.titleMedium, modifier = Modifier.padding(start = 12.dp))
+                        }
+                    }
+                    Text(
+                        stringResource(R.string.onboarding_language_hint),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.padding(top = 12.dp),
+                    )
+                }
+                1 -> {
                     Title(stringResource(R.string.onboarding_1_title))
                     Paragraphs(R.array.onboarding_1_paragraphs)
                 }
-                1 -> {
+                2 -> {
                     Title(stringResource(R.string.onboarding_2_title))
                     Paragraphs(R.array.onboarding_2_paragraphs)
                     Helplines.short(LocalResources.current).forEach { h ->
